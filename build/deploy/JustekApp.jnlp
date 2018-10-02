@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JustekApp.jnlp">
+  <information>
+    <title>JustekApp</title>
+    <vendor>JustekApp</vendor>
+    <description>JustekApp</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JustekApp.jar" size="675025" download="eager" />
+    <jar href="libs\commons-dbcp-1.4.jar" size="160519" download="eager" />
+    <jar href="libs\commons-pool-1.6.jar" size="111119" download="eager" />
+    <jar href="libs\controlsfx-8.40.14.jar" size="1215643" download="eager" />
+    <jar href="libs\fxgraphics2d-1.5.jar" size="20386" download="eager" />
+    <jar href="libs\jackson-annotations-2.9.0.jar" size="66519" download="eager" />
+    <jar href="libs\jackson-core-2.9.5.jar" size="321590" download="eager" />
+    <jar href="libs\jackson-databind-2.9.5.jar" size="1342410" download="eager" />
+    <jar href="libs\java-json.jar" size="84697" download="eager" />
+    <jar href="libs\jcommon-1.0.23.jar" size="330246" download="eager" />
+    <jar href="libs\jfreechart-1.5.0.jar" size="1559088" download="eager" />
+    <jar href="libs\json-simple-1.1.jar" size="16046" download="eager" />
+    <jar href="libs\ojdbc6.jar" size="2152137" download="eager" />
+    <jar href="libs\supinan2-util1.0.jar" size="47868" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="0" height="0" main-class="justek.ide.MainApp"  name="JustekApp" />
+  <update check="background"/>
+</jnlp>

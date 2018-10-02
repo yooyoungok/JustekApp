@@ -1,0 +1,10 @@
+TA200
+TM1000
+TS50
+while(1)
+X1000
+sleep(2000000)
+X(-1000)
+sleep(2000000)
+endwhile
+RETURN

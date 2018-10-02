@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.AxisSetup6Controller">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <BorderPane BorderPane.alignment="CENTER">
+               <center>
+                  <AnchorPane BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="35.0" layoutY="10.0" text="MAximum Tracking Errors" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="20.0" />
+                        <Label layoutX="10.0" layoutY="56.0" text="Position Error Window ER[3] [cnt]" AnchorPane.leftAnchor="10.0" />
+                        <Label layoutX="10.0" layoutY="86.0" text="Velocity Error Window ER[2] [cnt/sec]" AnchorPane.leftAnchor="10.0" />
+                        <Label layoutX="10.0" layoutY="116.0" text="Yaw Position Error ER[5] [cnt]" AnchorPane.leftAnchor="10.0" />
+                        <Label layoutX="10.0" layoutY="146.0" text="Motor Stuck" AnchorPane.leftAnchor="10.0" />
+                        <Label layoutX="10.0" layoutY="176.0" text="Current Limit CL2[2] [% of CL]" AnchorPane.leftAnchor="10.0" />
+                        <TextField fx:id="fxYawPositionErrorField" layoutX="250.0" layoutY="111.0" onAction="#saveData" prefWidth="300.0" AnchorPane.leftAnchor="250.0" />
+                        <Label layoutX="10.0" layoutY="206.0" text="Velocity Limit CL[3] [cnt/sec]" AnchorPane.leftAnchor="10.0" />
+                        <TextField fx:id="fxMotorStuckField" layoutX="250.0" layoutY="141.0" onAction="#saveData" prefWidth="300.0" AnchorPane.leftAnchor="250.0" />
+                        <TextField fx:id="fxCurrentLimitField" layoutX="250.0" layoutY="171.0" onAction="#saveData" prefWidth="300.0" AnchorPane.leftAnchor="250.0" />
+                        <TextField fx:id="fxVelocityLimitField" layoutX="250.0" layoutY="201.0" onAction="#saveData" prefWidth="300.0" AnchorPane.leftAnchor="250.0" />
+                        <TextField fx:id="fxMaxTrackingField" layoutX="353.0" layoutY="5.0" onAction="#saveData" prefWidth="300.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="20.0" />
+                        <TextField fx:id="fxPositionErrorField" layoutX="250.0" layoutY="51.0" onAction="#saveData" prefWidth="300.0" AnchorPane.leftAnchor="250.0" />
+                        <Accordion layoutX="27.0" layoutY="391.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="370.0">
+                          <panes>
+                            <TitledPane animated="false" text="Advanced">
+                              <content>
+                                <AnchorPane>
+                                       <children>
+                                          <Label layoutX="24.0" layoutY="25.0" text="Overvoltage Threshold - XP[1][V]" />
+                                          <Label layoutX="24.0" layoutY="60.0" text="Undervoltage Threshold - XP[13][V]" />
+                                          <TextField fx:id="fxOverVoltageField" layoutX="334.0" layoutY="20.0" onAction="#saveData" prefWidth="300.0" />
+                                          <TextField fx:id="fxUnderVoltageField" layoutX="334.0" layoutY="55.0" onAction="#saveData" prefWidth="300.0" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                                 <padding>
+                                    <Insets left="10.0" right="10.0" />
+                                 </padding>
+                            </TitledPane>
+                          </panes>
+                        </Accordion>
+                        <Label layoutX="10.0" layoutY="239.0" text="Time Duration CL[4] [msec]" AnchorPane.leftAnchor="10.0" />
+                        <Label layoutX="10.0" layoutY="260.0" text="The motor will be disabled (with Motor Stuck Fault : MF=0x200000) when the following conditions apply:" AnchorPane.leftAnchor="10.0" />
+                        <Text layoutX="20.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- The actual motor Current is above CL[2] current limit (given in % of CL[1], max continuous current limit), and" AnchorPane.leftAnchor="20.0" />
+                        <Text layoutX="20.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- The actual motor Velocity is below CL[3] velocity limit (given in counts/sec)" AnchorPane.leftAnchor="20.0" />
+                        <Text layoutX="20.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- For at least CL[4] consecutive time duration (given in milliSeconds)" AnchorPane.leftAnchor="20.0" />
+                        <TextField fx:id="fxVelocityErrorField" layoutX="250.0" layoutY="81.0" onAction="#saveData" prefWidth="300.0" AnchorPane.leftAnchor="250.0" />
+                     </children>
+                  </AnchorPane>
+               </center>
+               <bottom>
+                  <FlowPane alignment="CENTER" hgap="20.0" prefHeight="45.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button mnemonicParsing="false" onMouseClicked="#onClickRevert" text="Revert" />
+                        <Button mnemonicParsing="false" onMouseClicked="#onClickApply" text="Apply" />
+                        <Button mnemonicParsing="false" onMouseClicked="#onClickErrors" text="Errors..." />
+                     </children>
+                  </FlowPane>
+               </bottom>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="818.0" prefWidth="1342.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.FirmWareDownloadViewController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="818.0" prefWidth="1342.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <BorderPane BorderPane.alignment="CENTER">
+               <center>
+                  <VBox BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="25.0">
+                           <children>
+                              <Label fx:id="fxDescriptionLabel" text="No File Selected..." HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <FlowPane alignment="CENTER_LEFT" hgap="20.0" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Pane prefWidth="300.0" />
+                              <Button mnemonicParsing="false" onAction="#onClickDownload" text="Download" />
+                              <Button mnemonicParsing="false" onAction="#onClickCancel" text="Cancel" />
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </VBox>
+               </center>
+               <top>
+                  <FlowPane alignment="CENTER_LEFT" hgap="20.0" prefHeight="50.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <TextField fx:id="fxFileNameField" prefHeight="23.0" prefWidth="479.0">
+                           <FlowPane.margin>
+                              <Insets left="10.0" />
+                           </FlowPane.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#onClickFileDialog" text="....." />
+                     </children>
+                  </FlowPane>
+               </top>
+            </BorderPane>
+         </center>
+         <top>
+            <AnchorPane prefHeight="45.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="14.0" layoutY="13.0" text="FirmWare Download" />
+                  <Label fx:id="fxDriverNoLabel" layoutX="139.0" layoutY="14.0" text="Drive01" />
+               </children>
+            </AnchorPane>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

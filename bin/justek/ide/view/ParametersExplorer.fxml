@@ -1,0 +1,1199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.ParametersExplorerController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <AnchorPane prefHeight="45.0" prefWidth="1390.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="14.0" layoutY="13.0" text="Parameters Explorer" />
+                        <Label layoutX="1286.0" layoutY="13.0" text="Drive01" />
+                     </children>
+                  </AnchorPane>
+               </top>
+               <center>
+                  <SplitPane dividerPositions="0.05422446406052964" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <GridPane layoutX="-37.0" layoutY="-45.0" prefHeight="39.0" prefWidth="1388.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="292.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="141.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="421.0" minWidth="10.0" prefWidth="94.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="507.0" minWidth="10.0" prefWidth="167.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="507.0" minWidth="10.0" prefWidth="165.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="507.0" minWidth="10.0" prefWidth="160.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="461.0" minWidth="10.0" prefWidth="388.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Name" />
+                                    <Label prefHeight="19.0" prefWidth="67.0" text="Value" GridPane.columnIndex="1" />
+                                    <Label text="Permission" GridPane.columnIndex="2" />
+                                    <Label text="Default Value" GridPane.columnIndex="3" />
+                                    <Label text="Description" GridPane.columnIndex="6" />
+                                    <Label text="Minimum" GridPane.columnIndex="4" />
+                                    <Label text="Maximum" GridPane.columnIndex="5" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <ScrollPane prefHeight="745.0" prefWidth="1388.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2000.0" prefWidth="1384.0">
+                                       <children>
+                                          <Accordion prefHeight="2000.0" prefWidth="1384.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <panes>
+                                              <TitledPane animated="false" text="Info">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="1382.0">
+                                                         <children>
+                                                            <TableView prefHeight="1738.0" prefWidth="1382.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <columns>
+                                                                <TableColumn prefWidth="265.0" text="Name" />
+                                                                <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                  <TableColumn prefWidth="85.0" text="Permission" />
+                                                                  <TableColumn prefWidth="159.0" text="Default Value" />
+                                                                  <TableColumn prefWidth="677.0" text="Description" />
+                                                                  <TableColumn prefWidth="159.0" text="Minimum" />
+                                                                  <TableColumn prefWidth="159.0" text="Maximum" />
+                                                              </columns>
+                                                            </TableView>
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </TitledPane>
+                                              <TitledPane animated="false" text="Communication">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <Accordion prefHeight="563.0" prefWidth="1382.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <panes>
+                                                                <TitledPane animated="false" text="EO">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                                <TitledPane animated="false" text="PP">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                              </panes>
+                                                            </Accordion>
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </TitledPane>
+                                                <TitledPane animated="false" layoutX="10.0" layoutY="10.0" text="Commutation">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <Accordion prefHeight="563.0" prefWidth="1382.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <panes>
+                                                                <TitledPane animated="false" text="CA">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                                <TitledPane animated="false" text="SC">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                              </panes>
+                                                            </Accordion>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" layoutX="10.0" layoutY="68.0" text="Digital/Analog Interface">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <Accordion prefHeight="563.0" prefWidth="1382.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <panes>
+                                                                <TitledPane animated="false" text="AD">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                                <TitledPane animated="false" text="AG">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                                <TitledPane animated="false" text="AR">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="68.0" text="AS">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="97.0" text="IF">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="126.0" text="IL">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="155.0" text="OL">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="184.0" text="XI">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="213.0" text="XO">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                              </panes>
+                                                            </Accordion>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" layoutX="10.0" layoutY="97.0" text="Internal">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <Accordion prefHeight="563.0" prefWidth="1382.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <panes>
+                                                                <TitledPane animated="false" text="EA">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                                <TitledPane animated="false" text="ZF">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                                <TitledPane animated="false" text="ZI">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                              </panes>
+                                                            </Accordion>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" layoutX="10.0" layoutY="126.0" text="Limits">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <Accordion prefHeight="563.0" prefWidth="1382.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <panes>
+                                                                <TitledPane animated="false" text="CL">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                                <TitledPane animated="false" text="ER">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                                <TitledPane animated="false" text="HL">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="68.0" text="LL">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="97.0" text="PL">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="126.0" text="VH">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="155.0" text="VL">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="184.0" text="XM">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="213.0" text="YM">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                              </panes>
+                                                            </Accordion>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" layoutX="10.0" layoutY="155.0" text="Motion">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <Accordion prefHeight="563.0" prefWidth="1382.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <panes>
+                                                                <TitledPane animated="false" text="AC">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                                <TitledPane animated="false" text="BP">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                                <TitledPane animated="false" text="DC">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="68.0" text="EM">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="97.0" text="ET">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="126.0" text="FF">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="155.0" text="GI">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="184.0" text="GO">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="213.0" text="GS">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="242.0" text="HT">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="271.0" text="KG">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="300.0" text="KI">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="329.0" text="KP">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="358.0" text="KV">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="387.0" text="NF">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="416.0" text="NT">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="445.0" text="PM">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="474.0" text="PO">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="503.0" text="RM">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="532.0" text="SD">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="561.0" text="SF">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="590.0" text="SP">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="619.0" text="UM">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="648.0" text="US">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                              </panes>
+                                                            </Accordion>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" layoutX="10.0" layoutY="184.0" text="System">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <Accordion prefHeight="563.0" prefWidth="1382.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <panes>
+                                                                <TitledPane animated="false" text="FC">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                                <TitledPane animated="false" text="IA">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                                <TitledPane animated="false" text="PC">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="68.0" text="TR">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="97.0" text="TS">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="126.0" text="XA">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="155.0" text="XP">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                                  <TitledPane animated="false" layoutX="10.0" layoutY="184.0" text="XT">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
+                                                              </panes>
+                                                            </Accordion>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" layoutX="10.0" layoutY="213.0" text="User">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <Accordion prefHeight="563.0" prefWidth="1382.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <panes>
+                                                                <TitledPane animated="false" text="UF">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                                <TitledPane animated="false" text="UI">
+                                                                  <content>
+                                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <TableView prefHeight="563.0" prefWidth="1382.0">
+                                                                                 <columns>
+                                                                                    <TableColumn prefWidth="382.0" text="Name" />
+                                                                                    <TableColumn minWidth="0.0" prefWidth="168.0" text="Value" />
+                                                                                    <TableColumn prefWidth="135.0" text="Permission" />
+                                                                                    <TableColumn prefWidth="218.0" text="Default Value" />
+                                                                                    <TableColumn prefWidth="451.0" text="Description" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                  </content>
+                                                                </TitledPane>
+                                                              </panes>
+                                                            </Accordion>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </TitledPane>
+                                            </panes>
+                                          </Accordion>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </center>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

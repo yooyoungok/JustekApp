@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.ControllerMotionController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="900.0" prefWidth="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" prefHeight="415.0" prefWidth="1388.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.07131011608623548" layoutX="14.0" layoutY="14.0" orientation="VERTICAL" prefHeight="413.0" prefWidth="689.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <items>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="41.0" prefWidth="687.0">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="12.0" text="Multi Axis Motion" />
+                                                <Button layoutX="163.0" layoutY="7.0" mnemonicParsing="false" text="+" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                             <children>
+                                                <ScrollPane layoutX="88.0" layoutY="80.0" prefHeight="360.0" prefWidth="687.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="810.0" prefWidth="977.0">
+                                                         <children>
+                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="810.0" prefWidth="977.0">
+                                                               <children>
+                                                                  <GridPane layoutX="7.0" layoutY="14.0" prefHeight="802.0" prefWidth="152.0">
+                                                                     <children>
+                                                                        <Label text="Axis Name" />
+                                                                        <Label text="Op Mode" GridPane.rowIndex="1" />
+                                                                        <Label text="Actual Position" GridPane.rowIndex="2" />
+                                                                        <Label text="Actual Velocity" GridPane.rowIndex="3" />
+                                                                        <Label text="Active Current" GridPane.rowIndex="4" />
+                                                                        <Label text="Limits" GridPane.rowIndex="6" />
+                                                                        <Label text="Axis Status" GridPane.rowIndex="7" />
+                                                                        <Label text="Motion Status" GridPane.rowIndex="8" />
+                                                                        <Label text="PTP Absolute" GridPane.rowIndex="10" />
+                                                                        <Label text=" PTP Relative" GridPane.rowIndex="12" />
+                                                                        <Label text="Jogging" GridPane.rowIndex="14" />
+                                                                        <Label layoutX="10.0" layoutY="614.0" text="Velocity Command" GridPane.rowIndex="15" />
+                                                                     </children>
+                                                                     <columnConstraints>
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                     </columnConstraints>
+                                                                     <rowConstraints>
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                     </rowConstraints>
+                                                                  </GridPane>
+                                                                  <ComboBox layoutX="159.0" layoutY="27.0" prefHeight="29.0" prefWidth="122.0" />
+                                                                  <ComboBox fx:id="opMode1Combo" layoutX="159.0" layoutY="66.0" prefHeight="29.0" prefWidth="163.0" promptText="Profile Position" />
+                                                                  <TextField layoutX="159.0" layoutY="112.0" prefHeight="29.0" prefWidth="110.0" />
+                                                                  <TextField layoutX="159.0" layoutY="153.0" prefHeight="29.0" prefWidth="110.0" />
+                                                                  <TextField layoutX="159.0" layoutY="196.0" prefHeight="29.0" prefWidth="110.0" />
+                                                                  <Button layoutX="294.0" layoutY="27.0" mnemonicParsing="false" text="X" />
+                                                                  <Text layoutX="281.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cnt" />
+                                                                  <Text layoutX="278.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cnt/sec" />
+                                                                  <Text layoutX="278.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amp" />
+                                                                  <Button layoutX="159.0" layoutY="238.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="171.0" text="Enable" />
+                                                                  <RadioButton layoutX="156.0" layoutY="287.0" mnemonicParsing="false" text="RLS" />
+                                                                  <RadioButton layoutX="277.0" layoutY="287.0" mnemonicParsing="false" text="FLS" />
+                                                                  <CheckBox layoutX="156.0" layoutY="410.0" mnemonicParsing="false" text="Repetitive" />
+                                                                  <Text layoutX="270.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[cnt]" />
+                                                                  <Button layoutX="293.0" layoutY="443.0" mnemonicParsing="false" text="&gt;" />
+                                                                  <TextField layoutX="158.0" layoutY="443.0" prefHeight="29.0" prefWidth="132.0" />
+                                                                  <TextField layoutX="157.0" layoutY="485.0" prefHeight="29.0" prefWidth="132.0" />
+                                                                  <Button layoutX="292.0" layoutY="485.0" mnemonicParsing="false" text="&gt;" />
+                                                                  <Text layoutX="272.0" layoutY="552.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[cnt]" />
+                                                                  <CheckBox layoutX="158.0" layoutY="537.0" mnemonicParsing="false" text="Repetitive" />
+                                                                  <TextField layoutX="189.0" layoutY="570.0" prefHeight="29.0" prefWidth="100.0" />
+                                                                  <Button layoutX="292.0" layoutY="570.0" mnemonicParsing="false" text="&gt;" />
+                                                                  <Button layoutX="156.0" layoutY="570.0" mnemonicParsing="false" text="&lt;" />
+                                                                  <Button layoutX="157.0" layoutY="613.0" mnemonicParsing="false" text="&lt;" />
+                                                                  <Button layoutX="293.0" layoutY="613.0" mnemonicParsing="false" text="&gt;" />
+                                                                  <CheckBox layoutX="189.0" layoutY="617.0" mnemonicParsing="false" text="Run Held" />
+                                                                  <Text layoutX="277.0" layoutY="674.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cnt/sec" />
+                                                                  <TextField layoutX="158.0" layoutY="654.0" prefHeight="29.0" prefWidth="110.0" />
+                                                                  <Button layoutX="157.0" layoutY="692.0" mnemonicParsing="false" text="0" />
+                                                                  <Button layoutX="203.0" layoutY="692.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="122.0" text="Home" />
+                                                                  <Button layoutX="203.0" layoutY="727.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="122.0" text="Stop" />
+                                                                  <Button layoutX="157.0" layoutY="727.0" mnemonicParsing="false" text="R" />
+                                                                  <Button layoutX="153.0" layoutY="767.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="171.0" text="Parameters..." />
+                                                                  <Button layoutX="359.0" layoutY="766.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="171.0" text="Parameters..." />
+                                                                  <Button layoutX="363.0" layoutY="726.0" mnemonicParsing="false" text="R" />
+                                                                  <Button layoutX="409.0" layoutY="726.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="122.0" text="Stop" />
+                                                                  <Button layoutX="409.0" layoutY="691.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="122.0" text="Home" />
+                                                                  <Button layoutX="363.0" layoutY="691.0" mnemonicParsing="false" text="0" />
+                                                                  <TextField layoutX="364.0" layoutY="653.0" prefHeight="29.0" prefWidth="110.0" />
+                                                                  <Text layoutX="483.0" layoutY="673.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cnt/sec" />
+                                                                  <CheckBox layoutX="395.0" layoutY="616.0" mnemonicParsing="false" text="Run Held" />
+                                                                  <Button layoutX="499.0" layoutY="612.0" mnemonicParsing="false" text="&gt;" />
+                                                                  <Button layoutX="363.0" layoutY="612.0" mnemonicParsing="false" text="&lt;" />
+                                                                  <Button layoutX="362.0" layoutY="569.0" mnemonicParsing="false" text="&lt;" />
+                                                                  <Button layoutX="498.0" layoutY="569.0" mnemonicParsing="false" text="&gt;" />
+                                                                  <TextField layoutX="395.0" layoutY="569.0" prefHeight="29.0" prefWidth="100.0" />
+                                                                  <CheckBox layoutX="364.0" layoutY="536.0" mnemonicParsing="false" text="Repetitive" />
+                                                                  <Text layoutX="478.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[cnt]" />
+                                                                  <Button layoutX="498.0" layoutY="484.0" mnemonicParsing="false" text="&gt;" />
+                                                                  <TextField layoutX="363.0" layoutY="484.0" prefHeight="29.0" prefWidth="132.0" />
+                                                                  <TextField layoutX="364.0" layoutY="442.0" prefHeight="29.0" prefWidth="132.0" />
+                                                                  <Button layoutX="499.0" layoutY="442.0" mnemonicParsing="false" text="&gt;" />
+                                                                  <Text layoutX="476.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[cnt]" />
+                                                                  <CheckBox layoutX="362.0" layoutY="409.0" mnemonicParsing="false" text="Repetitive" />
+                                                                  <RadioButton layoutX="483.0" layoutY="286.0" mnemonicParsing="false" text="FLS" />
+                                                                  <RadioButton layoutX="362.0" layoutY="286.0" mnemonicParsing="false" text="RLS" />
+                                                                  <Button layoutX="365.0" layoutY="237.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="171.0" text="Enable" />
+                                                                  <Text layoutX="484.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amp" />
+                                                                  <Text layoutX="484.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cnt/sec" />
+                                                                  <Text layoutX="487.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cnt" />
+                                                                  <Button layoutX="500.0" layoutY="26.0" mnemonicParsing="false" text="X" />
+                                                                  <TextField layoutX="365.0" layoutY="195.0" prefHeight="29.0" prefWidth="110.0" />
+                                                                  <TextField layoutX="365.0" layoutY="152.0" prefHeight="29.0" prefWidth="110.0" />
+                                                                  <TextField layoutX="365.0" layoutY="111.0" prefHeight="29.0" prefWidth="110.0" />
+                                                                  <ComboBox fx:id="opMode2Combo" layoutX="365.0" layoutY="65.0" prefHeight="29.0" prefWidth="163.0" promptText="Profile Position" />
+                                                                  <ComboBox layoutX="365.0" layoutY="26.0" prefHeight="29.0" prefWidth="122.0" />
+                                                                  <ComboBox layoutX="564.0" layoutY="25.0" prefHeight="29.0" prefWidth="122.0" />
+                                                                  <ComboBox fx:id="opMode3Combo" layoutX="564.0" layoutY="64.0" prefHeight="29.0" prefWidth="163.0" promptText="Profile Position" />
+                                                                  <TextField layoutX="564.0" layoutY="110.0" prefHeight="29.0" prefWidth="110.0" />
+                                                                  <TextField layoutX="564.0" layoutY="151.0" prefHeight="29.0" prefWidth="110.0" />
+                                                                  <TextField layoutX="564.0" layoutY="194.0" prefHeight="29.0" prefWidth="110.0" />
+                                                                  <Button layoutX="699.0" layoutY="25.0" mnemonicParsing="false" text="X" />
+                                                                  <Text layoutX="686.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cnt" />
+                                                                  <Text layoutX="683.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cnt/sec" />
+                                                                  <Text layoutX="683.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amp" />
+                                                                  <Button layoutX="564.0" layoutY="236.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="171.0" text="Enable" />
+                                                                  <RadioButton layoutX="561.0" layoutY="285.0" mnemonicParsing="false" text="RLS" />
+                                                                  <RadioButton layoutX="682.0" layoutY="285.0" mnemonicParsing="false" text="FLS" />
+                                                                  <CheckBox layoutX="561.0" layoutY="408.0" mnemonicParsing="false" text="Repetitive" />
+                                                                  <Text layoutX="675.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[cnt]" />
+                                                                  <Button layoutX="698.0" layoutY="441.0" mnemonicParsing="false" text="&gt;" />
+                                                                  <TextField layoutX="563.0" layoutY="441.0" prefHeight="29.0" prefWidth="132.0" />
+                                                                  <TextField layoutX="562.0" layoutY="483.0" prefHeight="29.0" prefWidth="132.0" />
+                                                                  <Button layoutX="697.0" layoutY="483.0" mnemonicParsing="false" text="&gt;" />
+                                                                  <Text layoutX="677.0" layoutY="550.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[cnt]" />
+                                                                  <CheckBox layoutX="563.0" layoutY="535.0" mnemonicParsing="false" text="Repetitive" />
+                                                                  <TextField layoutX="594.0" layoutY="568.0" prefHeight="29.0" prefWidth="100.0" />
+                                                                  <Button layoutX="697.0" layoutY="568.0" mnemonicParsing="false" text="&gt;" />
+                                                                  <Button layoutX="561.0" layoutY="568.0" mnemonicParsing="false" text="&lt;" />
+                                                                  <Button layoutX="562.0" layoutY="611.0" mnemonicParsing="false" text="&lt;" />
+                                                                  <Button layoutX="698.0" layoutY="611.0" mnemonicParsing="false" text="&gt;" />
+                                                                  <CheckBox layoutX="594.0" layoutY="615.0" mnemonicParsing="false" text="Run Held" />
+                                                                  <Text layoutX="682.0" layoutY="672.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cnt/sec" />
+                                                                  <TextField layoutX="563.0" layoutY="652.0" prefHeight="29.0" prefWidth="110.0" />
+                                                                  <Button layoutX="562.0" layoutY="690.0" mnemonicParsing="false" text="0" />
+                                                                  <Button layoutX="608.0" layoutY="690.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="122.0" text="Home" />
+                                                                  <Button layoutX="608.0" layoutY="725.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="122.0" text="Stop" />
+                                                                  <Button layoutX="562.0" layoutY="725.0" mnemonicParsing="false" text="R" />
+                                                                  <Button layoutX="558.0" layoutY="765.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="171.0" text="Parameters..." />
+                                                                  <Button layoutX="769.0" layoutY="764.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="171.0" text="Parameters..." />
+                                                                  <Button layoutX="773.0" layoutY="724.0" mnemonicParsing="false" text="R" />
+                                                                  <Button layoutX="819.0" layoutY="724.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="122.0" text="Stop" />
+                                                                  <Button layoutX="819.0" layoutY="689.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="122.0" text="Home" />
+                                                                  <Button layoutX="773.0" layoutY="689.0" mnemonicParsing="false" text="0" />
+                                                                  <TextField layoutX="774.0" layoutY="651.0" prefHeight="29.0" prefWidth="110.0" />
+                                                                  <Text layoutX="893.0" layoutY="671.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cnt/sec" />
+                                                                  <CheckBox layoutX="805.0" layoutY="614.0" mnemonicParsing="false" text="Run Held" />
+                                                                  <Button layoutX="909.0" layoutY="610.0" mnemonicParsing="false" text="&gt;" />
+                                                                  <Button layoutX="773.0" layoutY="610.0" mnemonicParsing="false" text="&lt;" />
+                                                                  <Button layoutX="772.0" layoutY="567.0" mnemonicParsing="false" text="&lt;" />
+                                                                  <Button layoutX="908.0" layoutY="567.0" mnemonicParsing="false" text="&gt;" />
+                                                                  <TextField layoutX="805.0" layoutY="567.0" prefHeight="29.0" prefWidth="100.0" />
+                                                                  <CheckBox layoutX="774.0" layoutY="534.0" mnemonicParsing="false" text="Repetitive" />
+                                                                  <Text layoutX="888.0" layoutY="549.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[cnt]" />
+                                                                  <Button layoutX="908.0" layoutY="482.0" mnemonicParsing="false" text="&gt;" />
+                                                                  <TextField layoutX="773.0" layoutY="482.0" prefHeight="29.0" prefWidth="132.0" />
+                                                                  <TextField layoutX="774.0" layoutY="440.0" prefHeight="29.0" prefWidth="132.0" />
+                                                                  <Button layoutX="909.0" layoutY="440.0" mnemonicParsing="false" text="&gt;" />
+                                                                  <Text layoutX="886.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[cnt]" />
+                                                                  <CheckBox layoutX="772.0" layoutY="407.0" mnemonicParsing="false" text="Repetitive" />
+                                                                  <RadioButton layoutX="893.0" layoutY="284.0" mnemonicParsing="false" text="FLS" />
+                                                                  <RadioButton layoutX="772.0" layoutY="284.0" mnemonicParsing="false" text="RLS" />
+                                                                  <Button layoutX="775.0" layoutY="235.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="171.0" text="Enable" />
+                                                                  <Text layoutX="894.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amp" />
+                                                                  <Text layoutX="894.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cnt/sec" />
+                                                                  <Text layoutX="897.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cnt" />
+                                                                  <Button layoutX="910.0" layoutY="24.0" mnemonicParsing="false" text="X" />
+                                                                  <TextField layoutX="775.0" layoutY="193.0" prefHeight="29.0" prefWidth="110.0" />
+                                                                  <TextField layoutX="775.0" layoutY="150.0" prefHeight="29.0" prefWidth="110.0" />
+                                                                  <TextField layoutX="775.0" layoutY="109.0" prefHeight="29.0" prefWidth="110.0" />
+                                                                  <ComboBox fx:id="opMode4Combo" layoutX="775.0" layoutY="63.0" prefHeight="29.0" prefWidth="163.0" promptText="Profile Position" />
+                                                                  <ComboBox layoutX="775.0" layoutY="24.0" prefHeight="29.0" prefWidth="122.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.06965174129353234" layoutX="57.0" layoutY="29.0" orientation="VERTICAL" prefHeight="413.0" prefWidth="689.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <items>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="12.0" text="Recorder" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                             <children>
+                                                <SplitPane dividerPositions="0.5" layoutX="59.0" layoutY="37.0" orientation="VERTICAL" prefHeight="530.0" prefWidth="687.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <items>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                         <children>
+                                                            <LineChart prefHeight="377.0" prefWidth="814.0">
+                                                               <xAxis>
+                                                                  <CategoryAxis side="BOTTOM" />
+                                                               </xAxis>
+                                                               <yAxis>
+                                                                  <NumberAxis side="LEFT" />
+                                                               </yAxis>
+                                                            </LineChart>
+                                                         </children>
+                                                      </AnchorPane>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                         <children>
+                                                            <LineChart prefHeight="376.0" prefWidth="814.0">
+                                                               <xAxis>
+                                                                  <CategoryAxis side="BOTTOM" />
+                                                               </xAxis>
+                                                               <yAxis>
+                                                                  <NumberAxis side="LEFT" />
+                                                               </yAxis>
+                                                            </LineChart>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </items>
+                                                </SplitPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

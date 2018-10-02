@@ -1,0 +1,10 @@
+2018년 07월 04일 오후 04시 48분 22초
+java.io.IOException: Cannot run program "./run_beremiz.sh": CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+2018년 07월 04일 오후 04시 53분 30초
+java.io.IOException: Cannot run program "./run_beremiz.sh": CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+2018년 07월 04일 오후 04시 55분 34초
+[Ljava.lang.StackTraceElement;@66596034
+2018년 07월 04일 오후 04시 56분 35초
+Cannot run program "./run_beremiz.sh": CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+2018년 07월 04일 오후 04시 57분 05초
+java.io.IOException: Cannot run program "./run_beremiz.sh": CreateProcess error=2, 지정된 파일을 찾을 수 없습니다

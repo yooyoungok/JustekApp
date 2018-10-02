@@ -1,0 +1,15 @@
+2018년 09월 06일 오전 11시 09분 50초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 09월 06일 오전 11시 25분 53초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 09월 06일 오전 11시 26분 02초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 09월 06일 오전 11시 26분 03초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 09월 06일 오전 11시 26분 04초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect

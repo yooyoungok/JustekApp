@@ -1,0 +1,24 @@
+cmd "&1"
+cmd "#1->x"
+cmd "#1->"
+sleep (250000)
+cmd "#2->y"
+cmd "#2->"
+sleep (500000)
+cmd "#3->z"
+cmd "#3->"
+sleep (500000)
+cmd "b1"
+sleep (2000000)
+cmd "r"
+sleep (5000000)
+cmd "a"
+sleep (3000000)
+cmd "b2"
+sleep (2000000)
+cmd "r"
+sleep (5000000)
+cmd "a"
+sleep (3000000)
+
+

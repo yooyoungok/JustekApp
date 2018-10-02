@@ -1,0 +1,76 @@
+.button {
+    -fx-background-color: 
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+} 
+
+.button:pressed {
+	    -fx-background-color: 
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-text-fill:yellow ;
+}
+
+.text-field{
+	-fx-background-color: transparent;
+	-fx-border-width:1px;
+	-fx-border-color: lightskyblue;
+	-fx-font-size: 11px;
+}
+
+.tab-pane
+{
+    -fx-tab-min-width:80px;
+}
+
+.text-field:focused {
+    -fx-background-color: #a9a9a9 , white , white;
+    	-fx-border-width:1px;
+	-fx-border-color :black ;
+}
+
+.combo-box
+{
+	-fx-border-width:1px;
+	-fx-border-color :darkgrey ;
+}
+
+.tab:selected {
+	-fx-font-size:14px ;
+	-fx-background-color:  -fx-control-inner-background;
+}
+
+.pane{
+	-fx-alignment:center-left ;
+	-fx-hgap:10.0;
+	-fx-background-color: transparent;
+}
+
+.combo-box .combo-box-popup .list-view, .combo-box .combo-box-popup .list-cell {
+    -fx-background-color:darkgrey 	    ;
+    -fx-text-fill: white ;
+}
+.combo-box .combo-box-popup .list-cell:hover {
+    -fx-text-fill: yellow ;
+    -fx-background-color: green ;
+}
+
+.slider:focused
+{
+     -fx-color:#549534;
+}
+
+ .slider:hover
+{
+     -fx-color:#549534;
+}
+

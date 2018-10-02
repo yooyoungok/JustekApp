@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="justek.ide.view.RealTimeStatusViewController">
+  <center>
+    <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+          <children>
+            <Label text="Status_Word" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="30.0" />
+            <Label layoutX="30.0" layoutY="57.0" text="Target_Position" />
+            <Label layoutX="30.0" layoutY="86.0" text="Actual_Position" />
+            <Label layoutX="30.0" layoutY="116.0" text="Actual_Velocity" />
+            <TextField id="stautField" fx:id="statusField" layoutX="143.0" layoutY="28.0" prefWidth="200.0" />
+            <TextField id="target_field" fx:id="targetPositionField" layoutX="144.0" layoutY="56.0" prefWidth="200.0" />
+            <TextField fx:id="actualPositionField" layoutX="143.0" layoutY="85.0" prefWidth="200.0" />
+            <TextField fx:id="actualVelocityField" layoutX="143.0" layoutY="114.0" prefWidth="200.0" />
+          </children>
+        </AnchorPane>
+      </center>
+    </BorderPane>
+  </center>
+  <padding>
+    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+  </padding>
+  <top>
+    <AnchorPane prefHeight="45.0" prefWidth="1390.0" BorderPane.alignment="CENTER">
+      <children>
+        <Label text="Status Viewer" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="14.0">
+          <font>
+            <Font size="15.0" />
+          </font>
+        </Label>
+        <ComboBox fx:id="driverComboBox" layoutX="161.0" layoutY="15.0" prefWidth="133.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+      </children>
+    </AnchorPane>
+  </top>
+</BorderPane>

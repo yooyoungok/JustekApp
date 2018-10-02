@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1457.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.AxisSetup2Controller">
+	   <children>
+	      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="855.0" prefWidth="1365.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.4" prefHeight="401.0" prefWidth="1363.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                             <children>
+                                                <SplitPane dividerPositions="0.2" orientation="VERTICAL" prefHeight="399.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                  <items>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="81.0">
+                                                         <children>
+                                                            <Label layoutX="10.0" layoutY="20.0" text="Feedback on Motor" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="22.0" />
+                                                            <Label layoutX="158.0" layoutY="21.0" text="Position" AnchorPane.topAnchor="22.0" />
+                                                            <TextField layoutX="219.0" layoutY="3.0" prefWidth="212.0" AnchorPane.topAnchor="20.0" />
+                                                            <ComboBox fx:id="feedbackCombo1" layoutY="40.0" prefWidth="433.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="55.0" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                         <children>
+                                                            <ScrollPane prefHeight="311.0" prefWidth="691.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <content>
+                                                                  <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                                     <children>
+                                                                        <GridPane layoutX="200.0" prefHeight="465.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                           <children>
+                                                                              <Label text="- General">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets left="5.0" />
+                                                                                 </GridPane.margin></Label>
+                                                                              <Label text="Sensor Name" GridPane.rowIndex="1">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets left="20.0" />
+                                                                                 </GridPane.margin></Label>
+                                                                              <Label text="Sensor Type" GridPane.rowIndex="2">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets left="20.0" />
+                                                                                 </GridPane.margin></Label>
+                                                                              <Label text="Feedback Control Function" GridPane.rowIndex="3">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets left="20.0" />
+                                                                                 </GridPane.margin></Label>
+                                                                              <Label text="User Digital Halls" GridPane.rowIndex="4">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets left="20.0" />
+                                                                                 </GridPane.margin></Label>
+                                                                              <Label text="- Sensor Parameters" GridPane.rowIndex="5">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets left="5.0" />
+                                                                                 </GridPane.margin></Label>
+                                                                              <Label text="Direction" GridPane.rowIndex="6">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets left="20.0" />
+                                                                                 </GridPane.margin></Label>
+                                                                              <Label text="Multiplication Factor" GridPane.rowIndex="7">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets left="20.0" />
+                                                                                 </GridPane.margin></Label>
+                                                                              <Label text="Glitch Filter (Cycles/sec)" GridPane.rowIndex="8">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets left="20.0" />
+                                                                                 </GridPane.margin></Label>
+                                                                              <Label text="Absolute Position Offset" GridPane.rowIndex="9">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets left="20.0" />
+                                                                                 </GridPane.margin></Label>
+                                                                              <Label text="Velocity FIR Filter Windows" GridPane.rowIndex="10">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets left="20.0" />
+                                                                                 </GridPane.margin></Label>
+                                                                              <Label text="- Resolution" GridPane.rowIndex="11">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets left="5.0" />
+                                                                                 </GridPane.margin></Label>
+                                                                              <Label text="cycles/revolution" GridPane.rowIndex="12">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets left="20.0" />
+                                                                                 </GridPane.margin></Label>
+                                                                              <Label text="counts/revolution" GridPane.rowIndex="13">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets left="20.0" />
+                                                                                 </GridPane.margin></Label>
+                                                                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets left="5.0" />
+                                                                                 </GridPane.margin></Label>
+                                                                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets left="5.0" />
+                                                                                 </GridPane.margin></Label>
+                                                                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets left="5.0" />
+                                                                                 </GridPane.margin></Label>
+                                                                              <ComboBox fx:id="digitalHallsCombo1" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                                              <ComboBox fx:id="directionCombo1" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                                              <ComboBox fx:id="multiFactorCombo1" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                                                              <ComboBox fx:id="velFilterCombo1" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                                                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                                                                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                                                                           </children>
+                                                                           <columnConstraints>
+                                                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="199.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="384.0" minWidth="10.0" prefWidth="201.0" />
+                                                                           </columnConstraints>
+                                                                           <rowConstraints>
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                           </rowConstraints>
+                                                                        </GridPane>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                               </content>
+                                                            </ScrollPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                  </items>
+                                                </SplitPane>
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                             <children>
+                                                <SplitPane dividerPositions="0.2" orientation="VERTICAL" prefHeight="422.0" prefWidth="955.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <items>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="81.0" prefWidth="585.0">
+                                                         <children>
+                                                            <Label layoutY="10.0" text="Feedback on Load" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="22.0" />
+                                                            <Label layoutX="264.0" layoutY="10.0" text="Position" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="22.0" />
+                                                            <TextField layoutX="257.0" layoutY="3.0" prefWidth="212.0" AnchorPane.topAnchor="20.0" />
+                                                            <ComboBox fx:id="feedbackCombo2" layoutY="40.0" prefWidth="465.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="55.0" />
+                                                         </children>
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                      </AnchorPane>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                         <children>
+                                                            <ScrollPane prefHeight="294.0" prefWidth="678.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <content>
+                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="465.0" prefWidth="565.0">
+                                                                     <children>
+                                                                        <GridPane layoutX="200.0" prefHeight="465.0" prefWidth="565.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                           <children>
+                                                                              <Label text="- General" />
+                                                                              <Label text="Sensor Name" GridPane.rowIndex="1" />
+                                                                              <Label text="Sensor Type" GridPane.rowIndex="2" />
+                                                                              <Label text="Feedback Control Function" GridPane.rowIndex="3" />
+                                                                              <Label text="User Digital Halls" GridPane.rowIndex="4" />
+                                                                              <Label text="- Sensor Parameters" GridPane.rowIndex="5" />
+                                                                              <Label text="Direction" GridPane.rowIndex="6" />
+                                                                              <Label text="Multiplication Factor" GridPane.rowIndex="7" />
+                                                                              <Label text="Glitch Filter (Cycles/sec)" GridPane.rowIndex="8" />
+                                                                              <Label text="Absolute Position Offset" GridPane.rowIndex="9" />
+                                                                              <Label text="Velocity FIR Filter Windows" GridPane.rowIndex="10" />
+                                                                              <Label text="- Resolution" GridPane.rowIndex="11" />
+                                                                              <Label text="cycles/revolution" GridPane.rowIndex="12" />
+                                                                              <Label text="counts/revolution" GridPane.rowIndex="13" />
+                                                                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                                              <ComboBox fx:id="digitalHallsCombo2" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                                              <ComboBox fx:id="directionCombo2" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                                              <ComboBox fx:id="multiFactorCombo2" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                                                              <ComboBox fx:id="velFilterCombo2" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                                                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                                                                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                                                                           </children>
+                                                                           <columnConstraints>
+                                                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="269.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.0" minWidth="10.0" prefWidth="308.0" />
+                                                                           </columnConstraints>
+                                                                           <rowConstraints>
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                           </rowConstraints>
+                                                                        </GridPane>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                               </content>
+                                                            </ScrollPane>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets left="5.0" />
+                                                         </padding>
+                                                      </AnchorPane>
+                                                   </items>
+                                                </SplitPane>
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: transparent;">
+                                 <children>
+                                    <SplitPane orientation="VERTICAL" prefHeight="401.0" prefWidth="1363.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                             <children>
+                                                <SplitPane dividerPositions="0.7" orientation="VERTICAL" prefHeight="400.0" prefWidth="1345.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                  <items>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                         <children>
+                                                            <SplitPane dividerPositions="0.34097633136094674" prefHeight="196.0" prefWidth="2504.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <items>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <SplitPane dividerPositions="0.3" prefHeight="93.0" prefWidth="695.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                          <items>
+                                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                                                 <children>
+                                                                                    <Label layoutX="14.0" layoutY="14.0" text="Socket 1" />
+                                                                                    <Label layoutX="14.0" layoutY="36.0" text="Socket2" />
+                                                                                    <Label layoutX="14.0" layoutY="58.0" text="Socket3" />
+                                                                                 </children>
+                                                                              </AnchorPane>
+                                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="191.0" prefWidth="462.0">
+                                                                                 <children>
+                                                                                    <ScrollPane prefHeight="192.0" prefWidth="565.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                                      <content>
+                                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                                                                                             <children>
+                                                                                                <Label layoutX="14.0" layoutY="14.0" text="Sensors" AnchorPane.topAnchor="20.0" />
+                                                                                                <Label layoutX="100.0" layoutY="33.0" text="Analog Sin/Cos, Port B" AnchorPane.topAnchor="20.0" />
+                                                                                                <Label layoutX="100.0" layoutY="44.0" text="Encoder Quad, Port A" />
+                                                                                             </children>
+                                                                                          </AnchorPane>
+                                                                                      </content>
+                                                                                    </ScrollPane>
+                                                                                 </children>
+                                                                              </AnchorPane>
+                                                                          </items>
+                                                                        </SplitPane>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                                     <children>
+
+                                                                                                 <ScrollPane prefHeight="194.0" prefWidth="1245.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                          <content>
+                                                                            <AnchorPane />
+                                                                       <Label layoutX="282.0" layoutY="5.0" text="Position" />
+                                                                        <TextField layoutX="359.0" prefHeight="29.0" prefWidth="75.0" />
+                                                                        <GridPane layoutY="20.0" prefHeight="465.0" prefWidth="565.0">
+                                                                           <children>
+                                                                              <Label text="- General" />
+                                                                              <Label text="Sensor Name" GridPane.rowIndex="1" />
+                                                                              <Label text="Sensor Type" GridPane.rowIndex="2" />
+                                                                              <Label text="Feedback Control Function" GridPane.rowIndex="3" />
+                                                                              <Label text="User Digital Halls" GridPane.rowIndex="4" />
+                                                                              <Label text="- Sensor Parameters" GridPane.rowIndex="5" />
+                                                                              <Label text="Direction" GridPane.rowIndex="6" />
+                                                                              <Label text="Multiplication Factor" GridPane.rowIndex="7" />
+                                                                              <Label text="Glitch Filter (Cycles/sec)" GridPane.rowIndex="8" />
+                                                                              <Label text="Absolute Position Offset" GridPane.rowIndex="9" />
+                                                                              <Label text="Velocity FIR Filter Windows" GridPane.rowIndex="10" />
+                                                                              <Label text="- Resolution" GridPane.rowIndex="11" />
+                                                                              <Label text="cycles/revolution" GridPane.rowIndex="12" />
+                                                                              <Label text="counts/revolution" GridPane.rowIndex="13" />
+                                                                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                                              <ComboBox fx:id="digitalHallsCombo3" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                                              <ComboBox fx:id="directionCombo3" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                                              <ComboBox fx:id="multiFactorCombo3" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                                                              <ComboBox fx:id="velFilterCombo3" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                                                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                                                                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                                                                           </children>
+                                                                           <columnConstraints>
+                                                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="269.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.0" minWidth="10.0" prefWidth="308.0" />
+                                                                           </columnConstraints>
+                                                                           <rowConstraints>
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                           </rowConstraints>
+                                                                        </GridPane>
+                                                                          </content>
+                                                                        </ScrollPane>
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" />
+                                                                     </padding>
+                                                                  </AnchorPane>
+                                                              </items>
+                                                            </SplitPane>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets left="5.0" />
+                                                         </padding>
+                                                      </AnchorPane>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="1153.0">
+                                                         <children>
+                                                            <Label layoutX="14.0" layoutY="14.0" style="-fx-font-size: 14; -fx-font-weight: bold;" text="Control Feedback Parameters">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="14.0" layoutY="40.0" text="Velocity and Position Feedback Socket Source" />
+                                                            <Label layoutX="14.0" layoutY="66.0" text="Commutation Feedback Socket Source" />
+                                                            <ComboBox fx:id="socketSourceCombo" layoutX="366.0" layoutY="35.0" prefWidth="150.0" />
+                                                            <ComboBox fx:id="feedbackCombo3" layoutX="366.0" layoutY="71.0" prefWidth="150.0" />
+                                                            <Label layoutX="557.0" layoutY="40.0" text="Velocity-Position Sensors Ratio" />
+                                                            <Label layoutX="557.0" layoutY="76.0" text="Home Socket" />
+                                                            <TextField layoutX="841.0" layoutY="35.0" prefWidth="294.0" />
+                                                            <ComboBox fx:id="homeSocketCombo" layoutX="841.0" layoutY="71.0" prefWidth="295.0" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                  </items>
+                                                </SplitPane>
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                    <FlowPane prefHeight="20.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </center>
+         <bottom>
+            <FlowPane alignment="CENTER" hgap="50.0" prefHeight="45.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" text="Revert" />
+                  <Button mnemonicParsing="false" text="Apply" />
+                  <Button mnemonicParsing="false" text="Errors" />
+               </children>
+            </FlowPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="834.0" prefWidth="1133.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.EditController">
+   <children>
+      <BorderPane prefHeight="834.0" prefWidth="1133.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <SplitPane dividerPositions="0.3536693191865606" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="832.0" prefWidth="397.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <BorderPane prefHeight="412.0" prefWidth="395.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <center>
+                                          <TreeView fx:id="treeView" onMouseClicked="#mouseEvent" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                             <contextMenu>
+                                                <ContextMenu>
+                                                  <items>
+                                                      <MenuItem mnemonicParsing="false" onAction="#refreshTree" text="Refresh" />
+                                                    <MenuItem mnemonicParsing="false" onAction="#openFileAtTreeView" text="Open" />
+                                                      <MenuItem mnemonicParsing="false" onAction="#runFileAtTree" text="Run" />
+                                                      <MenuItem mnemonicParsing="false" onAction="#deleteAtTreeView" text="Delete" />
+                                                  </items>
+                                                </ContextMenu>
+                                             </contextMenu></TreeView>
+                                       </center>
+                                       <top>
+                                          <FlowPane prefHeight="0.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                                       </top>
+                                    </BorderPane>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <BorderPane prefHeight="399.0" prefWidth="395.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <top>
+                                          <FlowPane alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="CENTER_LEFT">
+                                             <children>
+                                                <Label text="Log History">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                   <FlowPane.margin>
+                                                      <Insets left="10.0" />
+                                                   </FlowPane.margin>
+                                                </Label>
+                                             </children>
+                                             <BorderPane.margin>
+                                                <Insets />
+                                             </BorderPane.margin></FlowPane>
+                                       </top>
+                                       <center>
+                                          <ListView fx:id="listView" onMouseClicked="#mouseEvent" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <SplitPane dividerPositions="0.7771084337349398" orientation="VERTICAL" prefHeight="832.0" prefWidth="728.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <BorderPane prefHeight="642.0" prefWidth="726.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <center>
+                                          <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                                            <tabs>
+                                              <Tab text="New File">
+                                                   <content>
+                                                      <TextArea fx:id="editTextArea" prefHeight="200.0" prefWidth="200.0" />
+                                                   </content>
+                                                </Tab>
+                                            </tabs>
+                                             <contextMenu>
+                                                <ContextMenu>
+                                                  <items>
+                                                    <MenuItem mnemonicParsing="false" onAction="#addNewFile" text="New File" />
+                                                      <MenuItem mnemonicParsing="false" onAction="#saveFile" text="Save" />
+                                                      <MenuItem mnemonicParsing="false" onAction="#saveAsFile" text="Save as..." />
+                                                      <MenuItem mnemonicParsing="false" onAction="#closeTab" text="close" />
+                                                  </items>
+                                                </ContextMenu>
+                                             </contextMenu>
+                                          </TabPane>
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <FlowPane alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Button fx:id="clear_button" mnemonicParsing="false" onAction="#clearConsole" />
+                                       </children>
+                                       <padding>
+                                          <Insets left="5.0" right="5.0" />
+                                       </padding>
+                                    </FlowPane>
+                                    <TabPane fx:id="consolePane" layoutX="61.0" layoutY="-12.0" prefHeight="176.0" prefWidth="726.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                      <tabs>
+                                        <Tab text="Console">
+                                             <content>
+                                                <TextArea fx:id="consoleTextArea" onKeyPressed="#keyEvent" prefHeight="147.0" prefWidth="726.0" promptText="&gt;" wrapText="true" />
+                                             </content>
+                                        </Tab>
+                                        <Tab fx:id="errorTab" text="Error">
+                                             <content>
+                                                <TextArea fx:id="errorTextArea" editable="false" prefHeight="147.0" prefWidth="726.0" promptText="&gt;" />
+                                             </content>
+                                        </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </children></AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </center>
+         <top>
+            <AnchorPane prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MenuBar prefHeight="25.0" prefWidth="1133.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem mnemonicParsing="false" onAction="#addNewFile" text="New File" />
+                              <MenuItem mnemonicParsing="false" onAction="#openFileChoolser" text="open file" />
+                              <MenuItem mnemonicParsing="false" onAction="#saveFile" text="Save" />
+                              <MenuItem mnemonicParsing="false" onAction="#saveAsFile" text="Save as..." />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Edit">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Delete" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+            </AnchorPane>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

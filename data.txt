@@ -1,0 +1,4 @@
+words:0x1221
+command position : 1234
+actual position : 3456
+velocity : 123

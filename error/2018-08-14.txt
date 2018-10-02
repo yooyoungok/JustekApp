@@ -1,0 +1,73 @@
+2018년 08월 14일 오후 01시 43분 15초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 01시 43분 16초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 01시 43분 19초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 01시 43분 20초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 02시 09분 21초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 02시 09분 22초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 02시 18분 53초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 02시 18분 54초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 02시 18분 59초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 02시 19분 23초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 02시 19분 24초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 02시 19분 27초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 02시 19분 35초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 02시 19분 37초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 02시 19분 40초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 02시 40분 35초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 02시 40분 36초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 03시 43분 07초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 03시 43분 08초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 03시 43분 26초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 03시 43분 34초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 14일 오후 04시 15분 47초
+MainApp :: initRootLayout
+javafx.fxml.LoadException: Error resolving onMouseClicked='#mouseClick', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/cty/eclipse-workspace/work/JustekApp/bin/justek/ide/view/RootLayout.fxml:106
+
+2018년 08월 14일 오후 04시 16분 05초
+MainApp :: initRootLayout
+javafx.fxml.LoadException: Error resolving onMouseClicked='#mouseClick', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/cty/eclipse-workspace/work/JustekApp/bin/justek/ide/view/RootLayout.fxml:106
+

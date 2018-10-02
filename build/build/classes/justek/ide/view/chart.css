@@ -1,0 +1,25 @@
+.button-stop {
+   -fx-background-color:red ;
+   -fx-text-fill:white ;
+}
+
+.button-ignore {
+   -fx-background-color:orange ;
+   -fx-text-fill:white ;
+}
+.button-Ok {
+   -fx-background-color:green ;
+   -fx-text-fill:white ;
+}
+
+.button-cancel {
+   -fx-background-color:olive ;
+   -fx-text-fill:white ;
+}
+
+.textField-transparent{
+	-fx-background-color: transparent;
+	-fx-border-width:1px;
+	-fx-border-color: lightskyblue;
+	-fx-font-size: 10px;
+}

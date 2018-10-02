@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="821.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.ParameterComparisonController">
+  <children>
+    <BorderPane prefHeight="730.0" prefWidth="1082.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <bottom>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="1036.0" visible="false">
+          <children>
+            <Label layoutX="14.0" layoutY="18.0" text="View Mode" />
+            <ComboBox id="viewModeCombo" layoutX="115.0" layoutY="13.0" prefWidth="150.0" />
+            <Button layoutX="290.0" layoutY="13.0" mnemonicParsing="false" text="&lt;&lt;" />
+            <Button layoutX="355.0" layoutY="13.0" mnemonicParsing="false" text="&gt;&gt;" />
+          </children>
+        </AnchorPane>
+      </bottom>
+      <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+          <children>
+            <BorderPane prefHeight="765.0" prefWidth="1040.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <center>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="565.0" prefWidth="789.0">
+                  <children>
+                    <Accordion id="accordin" minWidth="779.0" prefHeight="645.0" prefWidth="779.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <panes>
+                        <TitledPane id="motorPane" animated="false" text="Motor Data">
+                          <content>
+                            <AnchorPane>
+                              <children>
+                                <TableView fx:id="motorTable" editable="true" prefHeight="563.0" prefWidth="1382.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                  <columns>
+                                    <TableColumn fx:id="motorIndex" editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="105.0" sortable="false" text="Index" />
+                                    <TableColumn fx:id="motorSubIndex" editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="105.0" sortable="false" text="SubIndex" />
+                                    <TableColumn fx:id="motorNameCol" editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="201.0" sortable="false" text="Name" />
+                                    <TableColumn fx:id="motorValueCol" editable="false" maxWidth="5000.0" minWidth="0.0" prefWidth="241.0" sortable="false" text="Motor1_Value" />
+                                    <TableColumn fx:id="motorValueCol2" editable="false" maxWidth="5000.0" minWidth="0.0" prefWidth="279.0" sortable="false" text="Motor2_Value" />
+                                  </columns>
+                                </TableView>
+                              </children>
+                            </AnchorPane>
+                          </content>
+                        </TitledPane>
+                        <TitledPane id="currentPane" animated="false" text="Current Loop Gain">
+                          <content>
+                            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                              <children>
+                                <TableView fx:id="currentTable" editable="true" prefHeight="758.0" prefWidth="1596.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                  <columns>
+                                    <TableColumn fx:id="curIndex" editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="105.0" sortable="false" text="Index" />
+                                    <TableColumn fx:id="curSubIndex" editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="105.0" sortable="false" text="SubIndex" />
+                                    <TableColumn fx:id="curNameCol" editable="false" prefWidth="178.0" sortable="false" text="Name" />
+                                    <TableColumn fx:id="curValueCol" editable="false" minWidth="0.0" prefWidth="150.0" sortable="false" text="Motor1_Value" />
+                                    <TableColumn fx:id="curValueCol2" editable="false" maxWidth="5000.0" minWidth="0.0" prefWidth="279.0" sortable="false" text="Motor2_Value" />
+                                  </columns>
+                                </TableView>
+                              </children>
+                            </AnchorPane>
+                          </content>
+                        </TitledPane>
+                        <TitledPane id="currentPane" animated="false" prefHeight="456.0" prefWidth="1000.0" text="Position Loop Gains">
+                          <content>
+                            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                              <children>
+                                <TableView id="currentTable" fx:id="posTable" editable="true" prefHeight="758.0" prefWidth="1596.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                  <columns>
+                                    <TableColumn fx:id="posIndex" editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="105.0" sortable="false" text="Index" />
+                                    <TableColumn fx:id="posSubIndex" editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="77.99999237060547" sortable="false" text="SubIndex" />
+                                    <TableColumn fx:id="posNameCol" editable="false" prefWidth="227.0" sortable="false" text="Name" />
+                                    <TableColumn fx:id="posValueCol" editable="false" minWidth="0.0" prefWidth="150.0" sortable="false" text="Motor1_Value" />
+                                    <TableColumn fx:id="posValueCol2" editable="false" maxWidth="5000.0" minWidth="0.0" prefWidth="164.0" sortable="false" text="Motor2_Value" />
+                                  </columns>
+                                </TableView>
+                              </children>
+                            </AnchorPane>
+                          </content>
+                        </TitledPane>
+                        <TitledPane id="ampPane" animated="false" expanded="false" text="Amplifier Data">
+                          <content>
+                            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0">
+                              <children>
+                                <TableView fx:id="ampTable" editable="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                  <columns>
+                                    <TableColumn fx:id="ampIndex" editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="105.0" sortable="false" text="Index" />
+                                    <TableColumn fx:id="ampSubIndex" editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="105.0" sortable="false" text="SubIndex" />
+                                    <TableColumn fx:id="ampNameCol" editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="150.0" sortable="false" text="Name" />
+                                    <TableColumn fx:id="ampValueCol" editable="false" minWidth="0.0" prefWidth="168.0" sortable="false" text="Motor1_Value" />
+                                    <TableColumn fx:id="ampValueCol2" editable="false" maxWidth="5000.0" minWidth="0.0" prefWidth="279.0" sortable="false" text="Motor2_Value" />
+                                  </columns>
+                                </TableView>
+                              </children>
+                            </AnchorPane>
+                          </content>
+                        </TitledPane>
+                      </panes>
+                    </Accordion>
+                  </children>
+                           <BorderPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </BorderPane.margin>
+                </AnchorPane>
+              </center>
+              <top>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="80.0" prefWidth="-1.0">
+                  <children>
+                    <Button layoutX="252.0" layoutY="22.0" mnemonicParsing="false" onAction="#CompareData" prefHeight="29.0" prefWidth="188.0" text="Compare" />
+                    <Label layoutX="17.0" layoutY="13.0" text="Motor1" />
+                    <Label layoutX="17.0" layoutY="52.0" text="Motor2" />
+                    <ComboBox fx:id="motorCombo1" layoutX="79.0" layoutY="11.0" prefWidth="132.0">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Item 1" />
+                          <String fx:value="Item 2" />
+                          <String fx:value="Item 3" />
+                        </FXCollections>
+                      </items>
+                    </ComboBox>
+                    <ComboBox fx:id="motorCombo2" layoutX="79.0" layoutY="47.0" prefWidth="132.0">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Item 1" />
+                          <String fx:value="Item 2" />
+                          <String fx:value="Item 3" />
+                        </FXCollections>
+                      </items>
+                    </ComboBox>
+                              <Label layoutX="693.0" layoutY="51.0" text="0x : Hex / 0b : Binary" AnchorPane.rightAnchor="50.0" />
+                  </children>
+                </AnchorPane>
+              </top>
+            </BorderPane>
+          </children>
+        </AnchorPane>
+      </center>
+    </BorderPane>
+  </children>
+</AnchorPane>

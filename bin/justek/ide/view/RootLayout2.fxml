@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.RootLayoutController">
+   <children>
+    <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="System Configuration">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleWorkspace" text="System Configuration" />
+          </items>
+        </Menu>
+            <Menu mnemonicParsing="false" text="EtherCAT">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleEtherCATSlave" text="Load" />
+                  <MenuItem mnemonicParsing="false" text="Save" />
+              </items>
+            </Menu>
+        <Menu mnemonicParsing="false" text="Axis">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleAxisSetup" text="Axis Setup" />
+            <MenuItem mnemonicParsing="false" onAction="#handleMotionSingleAxis" text="Motion-Single Axis" />
+            <MenuItem mnemonicParsing="false" onAction="#handleMotionMultiAxis" text="Motion-Multiple Axis" />
+            <MenuItem mnemonicParsing="false" onAction="#handleParameters" text="Parameters" />
+            <MenuItem mnemonicParsing="false" onAction="#handleParameterComparison" text="Parameter Comparison" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Controller">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleControllerConfigurator" text="Controller Configurator" />
+            <MenuItem disable="true" mnemonicParsing="false" onAction="#handleControllerMotion" text="Motion" />
+            <MenuItem mnemonicParsing="false" onAction="#handleEtherCATDiagMaster" text="EtherCAT Diagnostics Master" />
+            <MenuItem mnemonicParsing="false" onAction="#handleEtherCATDiagSlave" text="EtherCAT Diagnostics Slave" />
+            <MenuItem disable="true" mnemonicParsing="false" onAction="#handleParametersExplorer" text="Parameters" />
+            <MenuItem mnemonicParsing="false" onAction="#handleJog" text="Jog" />
+            <MenuItem mnemonicParsing="false" onAction="#handleStatusView" text="Watch Window" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Motion Programming">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleMotionProgramEdit" text="Edit" />
+            <MenuItem mnemonicParsing="false" onAction="#handleMotionIDE" text="Motion IDE" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Parameters">
+          <items>
+            <MenuItem disable="true" mnemonicParsing="false" onAction="#handleUploadController" text="Upload from Controller" />
+            <MenuItem mnemonicParsing="false" onAction="#handleUploadDriver" text="Upload from Driver" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Firmware">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleDownloadDriverFirmware" text="Download to Driver" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Tools">
+          <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleRecorder" text="Recorder" />
+            <MenuItem mnemonicParsing="false" onAction="#handleShowStatistics" text="Octave" />
+                  <MenuItem mnemonicParsing="false" onAction="#onClickSystemMonitor" text="System Monitor" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+            <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Stop">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#serverOff" text="Stop" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <BorderPane HBox.hgrow="ALWAYS">
+               <center>
+                  <SplitPane dividerPositions="0.15" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+                    <items>
+                        <VBox fx:id="treepane" alignment="CENTER" maxWidth="300.0" style="-fx-background-color: white;">
+                           <children>
+                              <TabPane side="LEFT" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                                <tabs>
+                                  <Tab text="System Cofig">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TreeView fx:id="treeView" onMouseClicked="#mouseClick" prefHeight="171.0" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </Tab>
+                                  <Tab text="Axis Setup">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TreeView fx:id="axisTreeView" onMouseClicked="#onClickAxisTreeView" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children></AnchorPane>
+                                    </content>
+                                  </Tab>
+                                </tabs>
+                              </TabPane>
+                              <Button mnemonicParsing="false" onAction="#serverOff" onMouseClicked="#serverOff" style="-fx-background-color: red; -fx-text-fill: white;" stylesheets="@application.css" text="Emergency">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                        <SplitPane dividerPositions="0.6475409836065574" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                          <items>
+                            <AnchorPane fx:id="rootAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="137.0" prefWidth="607.0">
+                                 <children>
+                                    <TabPane fx:id="mainTab" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <tabs>
+                                        <Tab text="Untitled Tab 1" />
+                                          <Tab text="Untitled Tab">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                            </content>
+                                          </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </children></AnchorPane>
+                              <TabPane prefHeight="58.0" prefWidth="607.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
+                                <tabs>
+                                  <Tab text="Terminal">
+                                    <content>
+                                      <AnchorPane fx:id="consolePane" minHeight="0.0" minWidth="0.0" />
+                                    </content>
+                                  </Tab>
+                                </tabs>
+                              </TabPane>
+                          </items>
+                        </SplitPane>
+                    </items>
+                  </SplitPane>
+               </center>
+            </BorderPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

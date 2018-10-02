@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.TriggerController">
+   <children>
+      <VBox prefHeight="264.0" prefWidth="404.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <children>
+          <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="350.0" prefWidth="291.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <FlowPane alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label text="- Trigger">
+                                 <FlowPane.margin>
+                                    <Insets left="10.0" />
+                                 </FlowPane.margin>
+                              </Label>
+                           </children>
+                        </FlowPane>
+                        <Separator prefWidth="200.0" />
+                        <FlowPane alignment="CENTER_LEFT" hgap="10.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Label text="Source">
+                                 <FlowPane.margin>
+                                    <Insets left="10.0" />
+                                 </FlowPane.margin>
+                              </Label>
+                              <ComboBox fx:id="triggerComboBox" prefWidth="150.0">
+                                 <FlowPane.margin>
+                                    <Insets left="17.0" />
+                                 </FlowPane.margin>
+                              </ComboBox>
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER_LEFT" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Label text="Level">
+                                 <FlowPane.margin>
+                                    <Insets left="10.0" />
+                                 </FlowPane.margin>
+                              </Label>
+                              <TextField fx:id="levelTextField">
+                                 <FlowPane.margin>
+                                    <Insets left="35.0" />
+                                 </FlowPane.margin>
+                              </TextField>
+                              <Label text="Label" visible="false">
+                                 <FlowPane.margin>
+                                    <Insets left="10.0" />
+                                 </FlowPane.margin>
+                              </Label>
+                              <TextField visible="false" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER_LEFT" hgap="10.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Label text="Mode">
+                                 <FlowPane.margin>
+                                    <Insets left="10.0" />
+                                 </FlowPane.margin>
+                              </Label>
+                              <RadioButton fx:id="normalRadioButton" mnemonicParsing="false" text="Normal">
+                                 <FlowPane.margin>
+                                    <Insets left="23.0" />
+                                 </FlowPane.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="Mode" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="singleRadioButton" mnemonicParsing="false" selected="true" text="Single" toggleGroup="$Mode" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER_LEFT" hgap="10.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Label text="Slope">
+                                 <FlowPane.margin>
+                                    <Insets left="10.0" />
+                                 </FlowPane.margin>
+                              </Label>
+                              <RadioButton fx:id="positiveRadioButton" mnemonicParsing="false" selected="true" text="Positive Edge">
+                                 <FlowPane.margin>
+                                    <Insets left="23.0" />
+                                 </FlowPane.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="Slope" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="negativeRadioButton" mnemonicParsing="false" text="Negative Edge" toggleGroup="$Slope" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER_LEFT" hgap="10.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Label text="Delay(ms)">
+                                 <FlowPane.margin>
+                                    <Insets left="10.0" />
+                                 </FlowPane.margin>
+                              </Label>
+                              <TextField fx:id="delayTextField" />
+                           </children>
+                        </FlowPane>
+                        <Separator prefWidth="200.0" />
+                        <FlowPane alignment="CENTER" hgap="10.0" prefHeight="50.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#clickOK" prefWidth="100.0" text="OK" />
+                              <Button mnemonicParsing="false" onAction="#exit" prefWidth="100.0" text="Cancel">
+                                 <FlowPane.margin>
+                                    <Insets />
+                                 </FlowPane.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </FlowPane>
+                     </children>
+                  </VBox>
+               </children>
+          </AnchorPane>
+        </children>
+      </VBox>
+   </children>
+</AnchorPane>

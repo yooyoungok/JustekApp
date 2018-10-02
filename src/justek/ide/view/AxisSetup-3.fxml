@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.AxisSetup3Controller">
+   <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="10.0" layoutY="24.0" text="Position Display Units" AnchorPane.leftAnchor="10.0" />
+                        <Label layoutX="10.0" layoutY="53.0" text="Velocity Display Units" AnchorPane.leftAnchor="10.0" />
+                        <Label layoutX="10.0" layoutY="88.0" text="Unit Calculation" AnchorPane.leftAnchor="10.0" />
+                        <ComboBox fx:id="positionUnitsCombo" layoutX="214.0" layoutY="10.0" onAction="#onSelectComboBox" prefWidth="312.0" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="20.0" />
+                        <ComboBox fx:id="velocityUnitsCombo" layoutX="214.0" layoutY="45.0" onAction="#onSelectComboBox" prefWidth="313.0" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="50.0" />
+                        <Label layoutX="520.0" layoutY="23.0" text="Unit Factor" AnchorPane.leftAnchor="520.0" />
+                        <Label layoutX="520.0" layoutY="54.0" text="Unit Factor" AnchorPane.leftAnchor="520.0" />
+                        <RadioButton fx:id="fxMotorRadioButton" layoutX="214.0" layoutY="89.0" mnemonicParsing="false" onAction="#onSelectComboBox" selected="true" text="On the Motor" AnchorPane.leftAnchor="180.0">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="Unit" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="fxLoadRadioButton" layoutX="298.0" layoutY="89.0" mnemonicParsing="false" onAction="#onSelectComboBox" text="On the Load" toggleGroup="$Unit" AnchorPane.leftAnchor="298.0" />
+                        <TextField fx:id="fxPosionUnitField" layoutX="600.0" layoutY="10.0" onKeyReleased="#saveData" AnchorPane.leftAnchor="600.0" AnchorPane.topAnchor="20.0" />
+                        <TextField fx:id="fxVelocityUnitField" layoutX="863.0" layoutY="45.0" onKeyReleased="#saveData" AnchorPane.leftAnchor="600.0" AnchorPane.topAnchor="50.0" />
+                        <ImageView fitHeight="258.0" fitWidth="808.0" layoutX="178.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/dispUserUnit.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </center>
+         <bottom>
+            <FlowPane alignment="CENTER" hgap="20.0" prefHeight="45.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onClickRevert" text="Revert" />
+                  <Button mnemonicParsing="false" onAction="#onClickApply" text="Apply" />
+                  <Button mnemonicParsing="false" onAction="#onClickErrors" text="Errors" />
+               </children>
+            </FlowPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

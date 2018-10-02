@@ -1,0 +1,5 @@
+command "#1->10x"
+command "#2->10y"
+sleep(500000)
+command "b16r"
+sleep(500000)

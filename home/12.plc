@@ -1,0 +1,6 @@
+command "#1->100x"
+sleep(2500000)
+command "#1j=30000"
+sleep(2500000)
+command "#1j=0"
+

@@ -1,0 +1,21 @@
+2018년 08월 01일 오후 02시 27분 03초
+NetworkServerManager :: openSocket
+java.net.ConnectException: Connection timed out: connect
+2018년 08월 01일 오후 02시 57분 43초
+NetworkServerManager :: openSocket
+java.net.ConnectException: Connection timed out: connect
+2018년 08월 01일 오후 04시 35분 41초
+NetworkServerManager :: openSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 01일 오후 04시 35분 46초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 01일 오후 04시 35분 54초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 01일 오후 04시 35분 55초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 01일 오후 04시 35분 56초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect

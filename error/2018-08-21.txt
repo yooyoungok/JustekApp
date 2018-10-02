@@ -1,0 +1,330 @@
+2018년 08월 21일 오후 03시 51분 49초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 03시 54분 09초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 03시 54분 53초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 01분 36초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 03분 45초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 03분 50초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 03분 55초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 04분 02초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 05분 10초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 05분 21초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 05분 24초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 05분 26초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 05분 28초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 20분 02초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 20분 08초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 20분 36초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 24분 30초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 24분 35초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 28분 33초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 28분 47초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 29분 06초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 29분 08초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 29분 11초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 29분 13초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 31분 49초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 31분 56초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 31분 58초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 32분 02초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 32분 07초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 32분 13초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 32분 26초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 33분 35초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 33분 41초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 33분 44초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 33분 48초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 33분 52초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 33분 57초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 33분 59초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 34분 03초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 04시 34분 05초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 04분 03초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 04분 04초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 04분 14초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 04분 15초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 04분 26초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 05분 37초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 05분 42초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 05분 48초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 05분 49초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 05분 56초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 06분 00초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 06분 06초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 06분 13초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 06분 23초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 06분 26초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 06분 27초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 06분 31초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 06분 35초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 06분 40초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 06분 44초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 26분 01초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 26분 02초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 27분 55초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 27분 56초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 28분 03초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 28분 08초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 28분 13초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 28분 19초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 28분 26초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 28분 27초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 28분 31초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 28분 32초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 30분 27초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 30분 32초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 30분 33초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 30분 48초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 31분 58초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 32분 02초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 36분 19초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 36분 20초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 36분 33초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 37분 11초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 37분 12초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 37분 20초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 39분 22초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 39분 23초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 39분 36초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 39분 40초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 39분 47초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 39분 51초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 39분 55초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 39분 57초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 39분 59초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 40분 02초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 40분 05초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 40분 09초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 45분 21초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 45분 22초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 45분 29초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 45분 32초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 45분 56초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 45분 57초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 46분 03초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 46분 07초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 46분 10초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 46분 13초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 46분 15초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 46분 18초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 46분 24초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect
+2018년 08월 21일 오후 05시 46분 29초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect

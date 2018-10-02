@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<EtherCATInfo>
+  <!-- Slave 1 -->
+  <Vendor>
+    <Id>1301</Id>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="#x54490001" RevisionNo="#x00010211">SM01 EtherCAT Drive (PDO16)</Type>
+        <Name><![CDATA[SM01 EtherCAT Drive (PDO16)]]></Name>
+        <Sm Enable="1" StartAddress="#x1000" ControlByte="#x26" DefaultSize="128" />
+        <Sm Enable="1" StartAddress="#x1080" ControlByte="#x22" DefaultSize="128" />
+        <Sm Enable="1" StartAddress="#x1100" ControlByte="#x64" DefaultSize="4" />
+        <Sm Enable="1" StartAddress="#x1400" ControlByte="#x20" DefaultSize="4" />
+        <RxPdo Sm="2" Fixed="1" Mandatory="1">
+          <Index>#x1600</Index>
+          <Name>csp/csv RxPDo</Name>
+          <Entry>
+            <Index>#x0010</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>0</BitLen>
+            <Name></Name>
+            <DataType>UINT0</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x0020</Index>
+            <SubIndex>96</SubIndex>
+            <BitLen>64</BitLen>
+            <Name></Name>
+            <DataType>UINT64</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x0008</Index>
+            <SubIndex>96</SubIndex>
+            <BitLen>122</BitLen>
+            <Name></Name>
+            <DataType>BIT122</DataType>
+          </Entry>
+        </RxPdo>
+        <TxPdo Sm="3" Fixed="1" Mandatory="1">
+          <Index>#x1a00</Index>
+          <Name>csp/csv TxPD </Name>
+          <Entry>
+            <Index>#x0010</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>0</BitLen>
+            <Name></Name>
+            <DataType>UINT0</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x0020</Index>
+            <SubIndex>96</SubIndex>
+            <BitLen>65</BitLen>
+            <Name></Name>
+            <DataType>BIT65</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x0020</Index>
+            <SubIndex>96</SubIndex>
+            <BitLen>100</BitLen>
+            <Name></Name>
+            <DataType>BIT100</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x0008</Index>
+            <SubIndex>96</SubIndex>
+            <BitLen>108</BitLen>
+            <Name></Name>
+            <DataType>BIT108</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x0020</Index>
+            <SubIndex>96</SubIndex>
+            <BitLen>97</BitLen>
+            <Name></Name>
+            <DataType>BIT97</DataType>
+          </Entry>
+        </TxPdo>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

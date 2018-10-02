@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.AxisSetup4Controller">
+   <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="20.0" layoutY="19.0" text="Drive Ratings" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="23.0" />
+                        <Label layoutX="35.0" layoutY="45.0" text="Peak Current" AnchorPane.leftAnchor="20.0" />
+                        <Label layoutX="35.0" layoutY="80.0" text="Continuous Current" AnchorPane.leftAnchor="20.0" />
+                        <Label layoutX="20.0" layoutY="114.0" text="Peak Current Duration PL[2] [sec]" AnchorPane.leftAnchor="20.0" />
+                        <Label layoutX="20.0" layoutY="148.0" text="PWM Output Duty Cycle Limit US[1] [%]" AnchorPane.leftAnchor="20.0" />
+                        <Label layoutX="35.0" layoutY="185.0" text="Integral Limit US[2] [% of Max PWM]" AnchorPane.leftAnchor="20.0" />
+                        <Label layoutX="315.0" layoutY="19.0" text="Max Current MC [Amp]" AnchorPane.leftAnchor="280.0" AnchorPane.topAnchor="23.0" />
+                        <Label layoutX="315.0" layoutY="45.0" text="Drive PL[1]] [Amp]" AnchorPane.leftAnchor="280.0" />
+                        <Label layoutX="315.0" layoutY="80.0" text="Drive CL[1] [Amp]" AnchorPane.leftAnchor="280.0" />
+                        <Label layoutX="746.0" layoutY="23.0" text="Max Voltage BV" AnchorPane.leftAnchor="700.0" />
+                        <Label layoutX="746.0" layoutY="45.0" text="Motor [Amp]" AnchorPane.leftAnchor="700.0" />
+                        <Label layoutX="746.0" layoutY="80.0" text="Motor [Amp]" AnchorPane.leftAnchor="700.0" />
+                        <TextField fx:id="fxMaxCurrentField" layoutX="495.0" layoutY="5.0" onKeyReleased="#saveData" prefWidth="230.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="20.0" />
+                        <TextField fx:id="fxPeakDriverField" layoutX="495.0" layoutY="49.0" onKeyReleased="#saveData" prefWidth="230.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="50.0" />
+                        <TextField fx:id="fxConDriverField" layoutX="495.0" layoutY="75.0" onKeyReleased="#saveData" prefWidth="230.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="80.0" />
+                        <TextField fx:id="fxMaxVoltageField" layoutX="888.0" layoutY="5.0" onKeyReleased="#saveData" prefWidth="230.0" AnchorPane.leftAnchor="810.0" AnchorPane.topAnchor="20.0" />
+                        <TextField fx:id="fxPeakMotorField" layoutX="888.0" layoutY="49.0" onKeyReleased="#saveData" prefWidth="230.0" AnchorPane.leftAnchor="810.0" AnchorPane.topAnchor="50.0" />
+                        <TextField fx:id="fxConMotorField" layoutX="888.0" layoutY="75.0" onKeyReleased="#saveData" prefWidth="230.0" AnchorPane.leftAnchor="810.0" AnchorPane.topAnchor="80.0" />
+                        <TextField fx:id="fxPeakDurationField" layoutX="315.0" layoutY="110.0" onKeyReleased="#saveData" prefWidth="380.0" AnchorPane.leftAnchor="280.0" />
+                        <TextField fx:id="fxPWMField" layoutX="315.0" layoutY="143.0" onKeyReleased="#saveData" prefWidth="380.0" AnchorPane.leftAnchor="280.0" />
+                        <TextField fx:id="fxInterfalLimitField" layoutX="315.0" layoutY="177.0" onKeyReleased="#saveData" prefWidth="380.0" AnchorPane.leftAnchor="280.0" />
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </center>
+         <bottom>
+            <FlowPane alignment="CENTER" hgap="20.0" prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onClickRevert" text="Revert" />
+                  <Button mnemonicParsing="false" onAction="#onClickApply" text="Apply" />
+                  <Button mnemonicParsing="false" onAction="#onClickErrors" text="Errors..." />
+               </children>
+               <BorderPane.margin>
+                  <Insets top="10.0" />
+               </BorderPane.margin>
+            </FlowPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

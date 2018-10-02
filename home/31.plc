@@ -1,0 +1,9 @@
+cmd "a"
+#2J=0
+while(abs(h210)>0)
+sleep(1000000)
+endwhile
+#2J=100
+while((abs(h210)>0)
+sleep(1000000)
+endwhile

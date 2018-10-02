@@ -1,0 +1,22 @@
+Motor Type,0,RW,---,---
+Pole Pairs,16,RW,---,---
+Hall Sensor Type,0x001,RW,---,---
+Hall Offset,120,RW,---,---
+Resistance,1800,RW,---,---
+Inductance,7100,RW,---,---
+Back EMF,38500,RW,---,---
+Maximum Velocity,0,RW,---,---
+Torque Constant,66700,RW,---,---
+Peak Current,18000,RW,---,---
+Continuous Current,6000,RW,---,---
+Temperature Sensor,0x0000,RW,---,---
+Encoder Type codo,0x0000,RW,---,---
+Encoder Unit,0x0000,RW,---,---
+Encoder Direction,0,RW,---,---
+Counts per Revolution,8192000,RW,---,---
+Encoder Resolution,1,RW,---,---
+Electrical distance,300000,RW,---,---
+Auxiliary encoder type code,0x0000,RW,---,---
+Auxiliary encoder direction,0x0000,RW,---,---
+Auxiliary encoder resolution,1,RW,---,---
+Limit sensor Swad,1,RW,---,---

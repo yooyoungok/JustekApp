@@ -1,0 +1,6 @@
+ethercat debug 0
+
+echo -e "dure258\n" | sudo -S chmod -R 777 /var/log/etherCAT/etherCAT.log
+./getDatav2.py
+
+echo "endGetData"

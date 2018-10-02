@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.AxisSetup14Controller">
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <AnchorPane prefHeight="45.0" prefWidth="1390.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="14.0" layoutY="13.0" text="Axis Setup" />
+                  <Label layoutX="1319.0" layoutY="13.0" text="Drive01" AnchorPane.rightAnchor="14.0" />
+                  <Label layoutX="192.0" layoutY="13.0" text="Design" />
+               </children>
+            </AnchorPane>
+         </top>
+          <left>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <SplitPane dividerPositions="0.9456384323640961" orientation="VERTICAL" prefHeight="793.0" prefWidth="199.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <ScrollPane layoutX="-1.0" layoutY="14.0" prefHeight="744.0" prefWidth="197.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="814.0" prefWidth="200.0">
+                                       <children>
+                                          <GridPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label onMouseClicked="#handleAxisSetup" text="• Axis Configrations">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font></Label>
+                                                <Label text="- Motor and Feedback" GridPane.rowIndex="1" />
+                                                <Label onMouseClicked="#handleAxisSetup1" text="  • Motor Settings" GridPane.rowIndex="2" />
+                                                <Label onMouseClicked="#handleAxisSetup2" text="  • Feedback Settings" GridPane.rowIndex="3" />
+                                                <Label onMouseClicked="#handleAxisSetup3" text="• User Units" GridPane.rowIndex="4" />
+                                                <Label text="- Limits and Protections" GridPane.rowIndex="5" />
+                                                <Label onMouseClicked="#handleAxisSetup4" text="  • Current Limits" GridPane.rowIndex="6" />
+                                                <Label onMouseClicked="#handleAxisSetup5" text="  • Motor Limits" GridPane.rowIndex="7" />
+                                                <Label onMouseClicked="#handleAxisSetup6" text="  • Protections" GridPane.rowIndex="8" />
+                                                <Label text="- Application Settings" GridPane.rowIndex="9" />
+                                                <Label onMouseClicked="#handleAxisSetup7" text="  • Settling Window" GridPane.rowIndex="10" /> 
+                                                <Label onMouseClicked="#handleAxisSetup8" text="  • Inputs and Outputs" GridPane.rowIndex="11" />
+                                                <Label text="- Current" GridPane.rowIndex="12" />
+                                                <Label onMouseClicked="#handleAxisSetup9" text="  • Identification" GridPane.rowIndex="13" />
+                                                <Label onMouseClicked="#handleAxisSetup10" text="  • Design" GridPane.rowIndex="14" />
+                                                <Label onMouseClicked="#handleAxisSetup11" text="  • Verification - Time" GridPane.rowIndex="15" />
+                                                <Label onMouseClicked="#handleAxisSetup12" text="• Commutation" GridPane.rowIndex="16" />
+                                                <Label text="- Velocity and Position" GridPane.rowIndex="17" />
+                                                <Label onMouseClicked="#handleAxisSetup13" text="  • Identification" GridPane.rowIndex="18" />
+                                                <Label onMouseClicked="#handleAxisSetup14" text="  • Design" GridPane.rowIndex="19" />
+                                                <Label onMouseClicked="#handleAxisSetup15" text="  • Scheduling" GridPane.rowIndex="20" />
+                                                <Label onMouseClicked="#handleAxisSetup16" text="  • Verification - Time" GridPane.rowIndex="21" />
+                                                <Label onMouseClicked="#handleAxisSetup17" text="• Summary" GridPane.rowIndex="22" />
+                                              </children>
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="49.0" prefWidth="197.0">
+                           <children>
+                              <Button layoutX="13.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleAxisSetup13" text="&lt;&lt;" />
+                              <Button layoutX="120.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleAxisSetup15" text="&gt;&gt;" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <SplitPane dividerPositions="0.9445145018915511" orientation="VERTICAL" prefHeight="795.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <SplitPane dividerPositions="0.6096121416526138" prefHeight="745.0" prefWidth="1188.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="743.0" prefWidth="816.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <LineChart layoutX="54.0" layoutY="-16.0" prefHeight="367.0" prefWidth="814.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <xAxis>
+                                                          <CategoryAxis side="BOTTOM" />
+                                                        </xAxis>
+                                                        <yAxis>
+                                                          <NumberAxis side="LEFT" />
+                                                        </yAxis>
+                                                      </LineChart>
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <LineChart layoutX="8.0" layoutY="-11.0" prefHeight="366.0" prefWidth="814.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <xAxis>
+                                                          <CategoryAxis side="BOTTOM" />
+                                                        </xAxis>
+                                                        <yAxis>
+                                                          <NumberAxis side="LEFT" />
+                                                        </yAxis>
+                                                      </LineChart>
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="743.0" prefWidth="378.0">
+                                       <children>
+                                          <ScrollPane prefHeight="742.0" prefWidth="362.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1000.0" prefWidth="438.0">
+                                                   <children>
+                                                      <Text layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Controller Tuning" />
+                                                      <Label layoutX="14.0" layoutY="46.0" text="Objective" />
+                                                      <Label layoutX="14.0" layoutY="82.0" text="Scheduling" />
+                                                      <Label layoutX="14.0" layoutY="113.0" text="Velocity Gain[A/(cnt/sec)]" />
+                                                      <Label layoutX="14.0" layoutY="149.0" text="Velocity Integral[Hz]" />
+                                                      <Label layoutX="14.0" layoutY="183.0" text="Position Gain[rad/sec]" />
+                                                      <Label layoutX="14.0" layoutY="215.0" text="Acc. Feed Fw FF[1][A/(cnt/sec^2)]" />
+                                                      <Label layoutX="14.0" layoutY="246.0" text="Velocity Feed Forward FF[2] " />
+                                                      <Text layoutX="14.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Advanced Filters" />
+                                                      <TabPane layoutX="8.0" layoutY="314.0" prefHeight="431.0" prefWidth="431.0" tabClosingPolicy="UNAVAILABLE">
+                                                        <tabs>
+                                                          <Tab text="Velocity">
+                                                            <content>
+                                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="305.0" prefWidth="431.0">
+                                                                     <children>
+                                                                        <GridPane layoutX="14.0" layoutY="14.0" prefHeight="360.0" prefWidth="414.0">
+                                                                          <columnConstraints>
+                                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="138.0" />
+                                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.0" minWidth="10.0" prefWidth="276.0" />
+                                                                          </columnConstraints>
+                                                                          <rowConstraints>
+                                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                          </rowConstraints>
+                                                                           <children>
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter #1" />
+                                                                              <Label text="Filter Type" GridPane.rowIndex="1" />
+                                                                              <ComboBox fx:id="velFilter1Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter #2" GridPane.rowIndex="2" />
+                                                                              <Label text="Filter Type" GridPane.rowIndex="3" />
+                                                                              <ComboBox fx:id="velFilter2Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter #3" GridPane.rowIndex="4" />
+                                                                              <Label text="Filter Type" GridPane.rowIndex="5" />
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter #4" GridPane.rowIndex="6" />
+                                                                              <Label text="Filter Type" GridPane.rowIndex="7" />
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Feedback Filter #1" GridPane.rowIndex="8" />
+                                                                              <Label text="Filter Type" GridPane.rowIndex="9" />
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Feedback Filter #2" GridPane.rowIndex="10" />
+                                                                              <Label text="Filter Type" GridPane.rowIndex="11" />
+                                                                              <ComboBox fx:id="velFilter3Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                                              <ComboBox fx:id="velFilter4Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                                              <ComboBox fx:id="velFilter5Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                                                              <ComboBox fx:id="velFilter6Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                                                                           </children>
+                                                                        </GridPane>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                            </content>
+                                                          </Tab>
+                                                          <Tab text="Position">
+                                                            <content>
+                                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                     <children>
+                                                                        <GridPane prefHeight="128.0" prefWidth="414.0">
+                                                                           <children>
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter #1" />
+                                                                              <Label text="Filter Type" GridPane.rowIndex="1" />
+                                                                              <ComboBox fx:id="positionFilter1Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter #2" GridPane.rowIndex="2" />
+                                                                              <Label text="Filter Type" GridPane.rowIndex="3" />
+                                                                              <ComboBox fx:id="positionFilter2Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                                           </children>
+                                                                           <columnConstraints>
+                                                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="138.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.0" minWidth="10.0" prefWidth="276.0" />
+                                                                           </columnConstraints>
+                                                                           <rowConstraints>
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                           </rowConstraints>
+                                                                        </GridPane>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                            </content>
+                                                          </Tab>
+                                                            <Tab text="Scheduling">
+                                                               <content>
+                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                     <children>
+                                                                        <GridPane prefHeight="187.0" prefWidth="414.0">
+                                                                           <children>
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Velocity Filter #1" />
+                                                                              <Label text="Filter Type" GridPane.rowIndex="1" />
+                                                                              <ComboBox fx:id="schedulingFilter1Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Velocity Filter #2" GridPane.rowIndex="2" />
+                                                                              <Label text="Filter Type" GridPane.rowIndex="3" />
+                                                                              <ComboBox fx:id="schedulingFilter2Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Position Filter #1" GridPane.rowIndex="4" />
+                                                                              <Label text="Filter Type" GridPane.rowIndex="5" />
+                                                                              <ComboBox fx:id="schedulingFilter3Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                                           </children>
+                                                                           <columnConstraints>
+                                                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="138.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.0" minWidth="10.0" prefWidth="276.0" />
+                                                                           </columnConstraints>
+                                                                           <rowConstraints>
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                           </rowConstraints>
+                                                                        </GridPane>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                               </content>
+                                                            </Tab>
+                                                        </tabs>
+                                                      </TabPane>
+                                                      <TextField layoutX="267.0" layoutY="246.0" prefHeight="29.0" prefWidth="164.0" />
+                                                      <TextField layoutX="267.0" layoutY="210.0" prefHeight="29.0" prefWidth="164.0" />
+                                                      <TextField layoutX="267.0" layoutY="178.0" prefHeight="29.0" prefWidth="164.0" />
+                                                      <TextField layoutX="267.0" layoutY="144.0" prefHeight="29.0" prefWidth="164.0" />
+                                                      <TextField layoutX="267.0" layoutY="108.0" prefHeight="29.0" prefWidth="164.0" />
+                                                      <ComboBox fx:id="schedulingCombo2" layoutX="267.0" layoutY="77.0" prefHeight="29.0" prefWidth="163.0" />
+                                                      <ComboBox fx:id="schedulingCombo1" layoutX="108.0" layoutY="77.0" onAction="#schedulingCombo1Choice" prefHeight="29.0" prefWidth="149.0" />
+                                                      <ComboBox fx:id="objectiveCombo" layoutX="108.0" layoutY="41.0" prefHeight="29.0" prefWidth="149.0" />
+                                                      <Button layoutX="267.0" layoutY="41.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="160.0" text="Design" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </content>
+                                          </ScrollPane>
+                                       </children></AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Button layoutX="665.0" mnemonicParsing="false" text="Revert" />
+                              <Button layoutX="747.0" mnemonicParsing="false" text="Apply" />
+                              <Button layoutX="821.0" mnemonicParsing="false" text="Errors..." />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>

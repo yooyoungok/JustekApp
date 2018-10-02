@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane stylesheets="@justek.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.ChartViewController">
+  <children>
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <center>
+        <AnchorPane BorderPane.alignment="CENTER">
+          <children>
+                  <BorderPane prefHeight="953.0" prefWidth="1294.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <center>
+                        <AnchorPane>
+                           <children>
+                          <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <BorderPane fx:id="borderPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <bottom>
+                                          <VBox prefHeight="220.0" prefWidth="974.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <VBox prefHeight="50.0" prefWidth="100.0" spacing="10.0">
+                                                   <children>
+                                                      <Slider fx:id="sliderX2">
+                                                         <VBox.margin>
+                                                            <Insets left="115.0" right="60.0" top="3.0" />
+                                                         </VBox.margin>
+                                                      </Slider>
+                                                      <Slider fx:id="sliderX1">
+                                                         <VBox.margin>
+                                                            <Insets bottom="3.0" left="115.0" right="60.0" />
+                                                         </VBox.margin>
+                                                      </Slider>
+                                                   </children>
+                                                </VBox>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" VBox.vgrow="ALWAYS">
+                                                   <children>
+                                                      <AnchorPane prefHeight="200.0" prefWidth="110.0">
+                                                         <children>
+                                                            <FlowPane alignment="CENTER_LEFT" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <Label text="Zoom In">
+                                                                     <FlowPane.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </FlowPane.margin>
+                                                                  </Label>
+                                                               </children>
+                                                            </FlowPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                      <FlowPane alignment="CENTER_LEFT" hgap="10.0" prefHeight="200.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <ComboBox fx:id="zoomComboBox" onAction="#changeZoomComboBox" prefWidth="150.0">
+                                                               <FlowPane.margin>
+                                                                  <Insets left="10.0" />
+                                                               </FlowPane.margin>
+                                                            </ComboBox>
+                                                            <Label text="MIN_Y" />
+                                                            <TextField fx:id="minYField" prefWidth="100.0" />
+                                                            <Label text="MAX_Y" />
+                                                            <TextField fx:id="maxYField" prefWidth="100.0" />
+                                                            <Separator orientation="VERTICAL" />
+                                                            <Label text="MIN_X" />
+                                                            <TextField fx:id="minXField" prefWidth="100.0" />
+                                                            <Label text="MAX_X" />
+                                                            <TextField fx:id="maxXField" prefWidth="100.0" />
+                                                            <Button mnemonicParsing="false" onAction="#zoomIn" text="Zoom_In">
+                                                               <FlowPane.margin>
+                                                                  <Insets />
+                                                               </FlowPane.margin>
+                                                            </Button>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                      </FlowPane>
+                                                   </children>
+                                                </HBox>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                                   <children>
+                                                      <AnchorPane prefHeight="200.0" prefWidth="110.0">
+                                                         <children>
+                                                            <FlowPane alignment="CENTER_LEFT" orientation="VERTICAL" prefHeight="200.0" prefWidth="110.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <Label text="Plot Name">
+                                                                     <FlowPane.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </FlowPane.margin>
+                                                                  </Label>
+                                                               </children>
+                                                            </FlowPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                      <FlowPane alignment="CENTER_LEFT" prefHeight="200.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <ComboBox fx:id="chartNameComboBox" prefWidth="150.0" />
+                                                            <TextField fx:id="chartNameField" onKeyPressed="#ChartKeyEvent" promptText="변경할 차트명을 입력하세요.">
+                                                               <FlowPane.margin>
+                                                                  <Insets left="10.0" />
+                                                               </FlowPane.margin>
+                                                            </TextField>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </HBox.margin>
+                                                      </FlowPane>
+                                                   </children>
+                                                </HBox>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="150.0" prefWidth="200.0">
+                                                   <children>
+                                                      <AnchorPane prefHeight="200.0" prefWidth="110.0">
+                                                         <children>
+                                                            <FlowPane alignment="CENTER_LEFT" orientation="VERTICAL" prefHeight="200.0" prefWidth="180.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <Label text="Reference Value">
+                                                                     <FlowPane.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </FlowPane.margin>
+                                                                  </Label>
+                                                               </children>
+                                                            </FlowPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                      <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                                      <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="60.0">
+                                                         <children>
+                                                            <Label text="Y_Axis" />
+                                                         </children>
+                                                      </FlowPane>
+                                                      <HBox HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                               <children>
+                                                                  <FlowPane alignment="CENTER_LEFT" hgap="5.0" prefHeight="200.0" prefWidth="200.0">
+                                                                     <children>
+                                                                        <Label text="Left_Y1">
+                                                                           <FlowPane.margin>
+                                                                              <Insets left="10.0" />
+                                                                           </FlowPane.margin>
+                                                                        </Label>
+                                                                        <TextField fx:id="LeftY1Field" onKeyPressed="#ChartKeyEvent" prefWidth="100.0">
+                                                                           <FlowPane.margin>
+                                                                              <Insets left="10.0" />
+                                                                           </FlowPane.margin>
+                                                                        </TextField>
+                                                                        <Label text="Left_Y2">
+                                                                           <FlowPane.margin>
+                                                                              <Insets left="5.0" />
+                                                                           </FlowPane.margin>
+                                                                        </Label>
+                                                                        <TextField fx:id="LeftY2Field" onKeyPressed="#ChartKeyEvent" prefWidth="100.0">
+                                                                           <FlowPane.margin>
+                                                                              <Insets left="7.0" />
+                                                                           </FlowPane.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="YRangeField" prefWidth="100.0" styleClass="textField-transparent" stylesheets="@chart.css" />
+                                                                     </children>
+                                                                  </FlowPane>
+                                                                  <Separator prefWidth="200.0" />
+                                                                  <FlowPane alignment="CENTER_LEFT" hgap="5.0" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Label text="Right_Y1">
+                                                                           <FlowPane.margin>
+                                                                              <Insets left="10.0" />
+                                                                           </FlowPane.margin>
+                                                                        </Label>
+                                                                        <TextField fx:id="RightY1Field" onKeyPressed="#ChartKeyEvent" prefWidth="100.0" />
+                                                                        <Label text="Right_Y2">
+                                                                           <FlowPane.margin>
+                                                                              <Insets left="8.0" />
+                                                                           </FlowPane.margin>
+                                                                        </Label>
+                                                                        <TextField fx:id="RightY2Field" onKeyPressed="#ChartKeyEvent" prefWidth="100.0" />
+                                                                        <TextField fx:id="Y2RangeField" prefWidth="100.0" styleClass="textField-transparent" stylesheets="@chart.css" />
+                                                                     </children>
+                                                                  </FlowPane>
+                                                               </children>
+                                                            </VBox>
+                                                            <Separator orientation="VERTICAL" prefHeight="200.0">
+                                                               <HBox.margin>
+                                                                  <Insets left="5.0" />
+                                                               </HBox.margin>
+                                                            </Separator>
+                                                         </children>
+                                                      </HBox>
+                                                      <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="60.0">
+                                                         <children>
+                                                            <Label alignment="CENTER" text="X_Axis" />
+                                                         </children>
+                                                      </FlowPane>
+                                                      <FlowPane alignment="CENTER_LEFT" hgap="5.0" prefHeight="200.0" prefWidth="400.0">
+                                                         <children>
+                                                            <Label text="X1">
+                                                               <FlowPane.margin>
+                                                                  <Insets left="10.0" />
+                                                               </FlowPane.margin>
+                                                            </Label>
+                                                            <TextField fx:id="X1Field" onKeyPressed="#ChartKeyEvent" prefWidth="100.0">
+                                                               <FlowPane.margin>
+                                                                  <Insets />
+                                                               </FlowPane.margin>
+                                                            </TextField>
+                                                            <Label text="X2">
+                                                               <FlowPane.margin>
+                                                                  <Insets left="10.0" />
+                                                               </FlowPane.margin>
+                                                            </Label>
+                                                            <TextField fx:id="X2Field" onKeyPressed="#ChartKeyEvent" prefWidth="100.0">
+                                                               <FlowPane.margin>
+                                                                  <Insets />
+                                                               </FlowPane.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="XRangeField" prefWidth="100.0" styleClass="textField-transparent" stylesheets="@chart.css" />
+                                                         </children>
+                                                      </FlowPane>
+                                                   </children>
+                                                </HBox>
+                                                <Separator prefWidth="200.0" />
+                                             </children>
+                                          </VBox>
+                                       </bottom>
+                                       <left>
+                                          <HBox prefHeight="843.0" prefWidth="50.0" spacing="10.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <Slider fx:id="sliderY1" orientation="VERTICAL">
+                                                   <HBox.margin>
+                                                      <Insets bottom="30.0" left="5.0" top="25.0" />
+                                                   </HBox.margin>
+                                                </Slider>
+                                                <Slider fx:id="sliderY2" orientation="VERTICAL">
+                                                   <HBox.margin>
+                                                      <Insets bottom="30.0" right="5.0" top="25.0" />
+                                                   </HBox.margin>
+                                                </Slider>
+                                             </children>
+                                             <BorderPane.margin>
+                                                <Insets bottom="10.0" top="10.0" />
+                                             </BorderPane.margin>
+                                          </HBox>
+                                       </left>
+                                       <top>
+                                          <HBox fx:id="fxHBox" alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="974.0" spacing="5.0" style="-fx-background-color: darkolivegreen;" BorderPane.alignment="TOP_LEFT">
+                                             <children>
+                                                <TextField fx:id="fxLeftUnitTextField" onKeyPressed="#ChartKeyEvent" prefHeight="23.0" prefWidth="82.0" promptText="UserUnit" style="-fx-background-color: white;" />
+                                                <FlowPane alignment="CENTER_LEFT" hgap="20.0" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Label fx:id="fxTimeLabel" style="-fx-text-fill: white;" text="Recording 소요시간 : 0 시간 0 분 0초">
+                                                         <FlowPane.margin>
+                                                            <Insets left="20.0" />
+                                                         </FlowPane.margin>
+                                                      </Label>
+                                                      <Label fx:id="notiLabel" style="-fx-text-fill: white;" text="Recording 정보를 수집중입니다." visible="false" />
+                                                      <ProgressBar fx:id="processBar" prefWidth="200.0" visible="false" />
+                                                   </children>
+                                                </FlowPane>
+                                                <TextField fx:id="fxRightUnitTextField" onKeyPressed="#ChartKeyEvent" prefHeight="23.0" prefWidth="82.0" promptText="UserUnit" style="-fx-background-color: white;" />
+                                                <Button mnemonicParsing="false" onAction="#chartReDraw" text="ReFresh">
+                                                   <HBox.margin>
+                                                      <Insets right="20.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </top>
+                                    </BorderPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
+          </children>
+        </AnchorPane>
+      </center>
+    </BorderPane>
+  </children>
+</AnchorPane>

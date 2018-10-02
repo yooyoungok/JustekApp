@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="735.0" prefWidth="934.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.MotionMultiAxisController2">
+   <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <BorderPane BorderPane.alignment="CENTER">
+               <top>
+                <AnchorPane minHeight="0.0" minWidth="0.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Separator prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </top>
+               <center>
+                <AnchorPane BorderPane.alignment="CENTER">
+                     <children>
+                        <ScrollPane style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <HBox fx:id="nodeHBox" alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <VBox prefHeight="614.0" prefWidth="250.0" HBox.hgrow="NEVER">
+                                       <children>
+                                          <FlowPane alignment="CENTER_LEFT" hgap="30.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" prefWidth="170.0" VBox.vgrow="NEVER">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <children>
+                                                <Label text="Axis Name" />
+                                                <Button mnemonicParsing="false" onAction="#addPane" text="+" />
+                                             </children>
+                                          </FlowPane>
+                                          <Label prefHeight="30.0" text="OP Mode" />
+                                          <FlowPane alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="170.0" styleClass="flow-pane-center-left" VBox.vgrow="NEVER">
+                                             <children>
+                                                <Label text="Actual Position" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </FlowPane>
+                                          <FlowPane alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="170.0">
+                                             <children>
+                                                <Label text="Actual Velocity" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </FlowPane>
+                                          <FlowPane alignment="CENTER_LEFT" prefWidth="170.0" VBox.vgrow="NEVER">
+                                             <children>
+                                                <Label prefHeight="30.0" text="Active Current" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </FlowPane>
+                                          <Pane prefHeight="30.0" prefWidth="200.0">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Pane>
+                                          <Pane prefHeight="30.0" prefWidth="200.0">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Pane>
+                                          <Separator prefWidth="200.0" />
+                                          <Label prefHeight="30.0" text="Limits">
+                                             <VBox.margin>
+                                                <Insets top="3.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label prefHeight="30.0" text="Program Status" />
+                                          <Label prefHeight="30.0" text="Motion Status" />
+                                          <Separator prefWidth="200.0">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Separator>
+                                          <FlowPane alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="200.0">
+                                             <VBox.margin>
+                                                <Insets top="3.0" />
+                                             </VBox.margin></FlowPane>
+                                          <FlowPane alignment="CENTER_LEFT" hgap="10.0" prefHeight="30.0">
+                                             <children>
+                                                <Label text="PTP Absolute" />
+                                                <Button mnemonicParsing="false" onAction="#onClickAllPTPAbsoluteOne" text="1) &gt;" />
+                                                <CheckBox fx:id="fxAbsRepCheckBox" mnemonicParsing="false" text="rep">
+                                                   <FlowPane.margin>
+                                                      <Insets />
+                                                   </FlowPane.margin>
+                                                </CheckBox>
+                                                <Button mnemonicParsing="false" onAction="#onClickAllPTPAbsoluteTwo" text="2) &gt;">
+                                                   <FlowPane.margin>
+                                                      <Insets />
+                                                   </FlowPane.margin>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="3.0" />
+                                             </VBox.margin>
+                                          </FlowPane>
+                                          <FlowPane alignment="CENTER_RIGHT" hgap="10.0" prefHeight="30.0">
+                                             <VBox.margin>
+                                                <Insets top="3.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding></FlowPane>
+                                          <Separator prefWidth="200.0" />
+                                          <FlowPane alignment="CENTER_LEFT" hgap="10.0" prefHeight="60.0" prefWidth="200.0">
+                                             <children>
+                                                <Label text=" PTP Relative" />
+                                                <Button mnemonicParsing="false" onAction="#onClickAllPTPRelativeLeft" text="&lt;" />
+                                                <CheckBox fx:id="fxRelRepCheckBox" mnemonicParsing="false" text="rep" />
+                                                <Button mnemonicParsing="false" onAction="#onClickAllPTPRelativeRight" text="&gt;" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="3.0" />
+                                             </VBox.margin>
+                                          </FlowPane>
+                                          <Separator prefWidth="200.0" />
+                                          <FlowPane alignment="CENTER_LEFT" hgap="10.0" prefHeight="30.0" prefWidth="200.0">
+                                             <children>
+                                                <Label text="Jogging" />
+                                                <Button mnemonicParsing="false" onAction="#onClickAllJogLeft" text="&lt;">
+                                                   <FlowPane.margin>
+                                                      <Insets left="28.0" />
+                                                   </FlowPane.margin>
+                                                </Button>
+                                                <Button mnemonicParsing="false" onAction="#onClickAllJogRight" text="&gt;" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="3.0" />
+                                             </VBox.margin>
+                                          </FlowPane>
+                                          <Separator prefWidth="200.0" />
+                                          <FlowPane alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="170.0">
+                                             <children>
+                                                <Label text="Acc.[cnt/sec^2]" />
+                                             </children></FlowPane>
+                                          <FlowPane alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="170.0">
+                                             <children>
+                                                <Label text="Speed" />
+                                             </children>
+                                          </FlowPane>
+                                          <FlowPane alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="170.0">
+                                             <VBox.margin>
+                                                <Insets top="3.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Label text="Dwell Time[msec]" />
+                                             </children>
+                                          </FlowPane>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

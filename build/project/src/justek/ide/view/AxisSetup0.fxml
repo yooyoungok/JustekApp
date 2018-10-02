@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane id="Axis0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.AxisSetup0Controller">
+   <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <BorderPane BorderPane.alignment="CENTER">
+               <center>
+                  <AnchorPane onDragDetected="#combo2Choice" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="35.0" layoutY="10.0" text="Axis and Control Configuration" AnchorPane.leftAnchor="20.0" />
+                        <Label layoutX="20.0" layoutY="42.0" text="Axis identity" AnchorPane.leftAnchor="20.0" />
+                        <Label layoutX="20.0" layoutY="72.0" text="Electro Mechanical Configuration" AnchorPane.leftAnchor="20.0" />
+                        <Label layoutX="35.0" layoutY="115.0" text="Total Gear Ratio" AnchorPane.leftAnchor="20.0" />
+                        <Label layoutX="250.0" layoutY="116.0" text="Numerator" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="117.0" />
+                        <Label layoutX="20.0" layoutY="151.0" text="Transmission" AnchorPane.leftAnchor="20.0" />
+                        <Label layoutX="35.0" layoutY="185.0" text="Feedback (Loop) Configuration" AnchorPane.leftAnchor="20.0" />
+                        <Label layoutX="20.0" layoutY="212.0" text="Loop Feedback Configuration" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="212.0" />
+                        <Label layoutX="35.0" layoutY="255.0" text="Mode of Operation" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="240.0" />
+                        <Label layoutX="35.0" layoutY="290.0" text="Using Brake" visible="false" />
+                        <Label layoutX="35.0" layoutY="325.0" text="Unbalanced / Vertical Axis" visible="false" />
+                        <Label layoutX="35.0" layoutY="360.0" text="Using Drive User Units" visible="false" />
+                        <ComboBox fx:id="axis0Combo1" layoutX="431.0" layoutY="10.0" onAction="#combo1Choice" prefWidth="493.0" promptText="choose" AnchorPane.leftAnchor="250.0" />
+                        <ComboBox fx:id="axis0Combo2" layoutX="250.0" layoutY="41.0" onAction="#combo2Choice" prefWidth="492.0" AnchorPane.leftAnchor="250.0" />
+                        <ComboBox fx:id="axis0Combo3" layoutX="250.0" layoutY="72.0" onAction="#onSelectComboBox" prefWidth="491.0" AnchorPane.leftAnchor="250.0" />
+                        <TextField fx:id="NumeratorField" layoutX="431.0" layoutY="115.0" onKeyPressed="#saveData" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="115.0" />
+                        <TextField fx:id="DemoinatorField" layoutX="578.0" layoutY="116.0" onKeyPressed="#saveData" AnchorPane.topAnchor="115.0" />
+                        <TextField fx:id="TransmissionField" layoutX="251.0" layoutY="147.0" onKeyPressed="#saveData" AnchorPane.leftAnchor="251.0" />
+                        <ComboBox fx:id="axis0Combo4" layoutX="431.0" layoutY="220.0" onAction="#onSelectComboBox" prefWidth="485.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="210.0" />
+                        <RadioButton fx:id="singleFeedBackRaidoButton" layoutX="431.0" layoutY="185.0" mnemonicParsing="false" onAction="#onSelectComboBox" text="Single Feedback" AnchorPane.leftAnchor="250.0" />
+                        <RadioButton fx:id="fbRb2" layoutX="631.0" layoutY="185.0" mnemonicParsing="false" text="Dual Feedback" visible="false" />
+                        <RadioButton fx:id="fbRb3" layoutX="803.0" layoutY="185.0" mnemonicParsing="false" text="No Feedback" visible="false" />
+                        <ComboBox fx:id="axis0Combo5" layoutX="431.0" layoutY="255.0" onAction="#onSelectComboBox" prefWidth="482.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="240.0" />
+                        <CheckBox layoutX="431.0" layoutY="290.0" mnemonicParsing="false" visible="false" />
+                        <CheckBox layoutX="431.0" layoutY="325.0" mnemonicParsing="false" visible="false" />
+                        <CheckBox layoutX="431.0" layoutY="360.0" mnemonicParsing="false" visible="false" />
+                        <ImageView fitHeight="244.0" fitWidth="316.0" layoutX="342.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="250.0">
+                           <image>
+                              <Image url="@../../../img/RotaryMotor.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="472.0" layoutY="121.0" text="Denominator" AnchorPane.topAnchor="117.0" />
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </center>
+         <bottom>
+            <FlowPane alignment="CENTER" hgap="20.0" prefHeight="45.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onClickRevert" text="Revert" />
+                  <Button mnemonicParsing="false" onAction="#onClickApply" text="Apply" />
+                  <Button mnemonicParsing="false" onAction="#onClickErrors" text="Errors..." />
+               </children>
+               <BorderPane.margin>
+                  <Insets top="10.0" />
+               </BorderPane.margin>
+            </FlowPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

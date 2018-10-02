@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkspaceModel>
+  <Workspace>
+    <Targets>
+      <item>
+        <item_type>JustekMotionControl.Target.Model.TargetDevices.SingleAxisTargetModel, JustekMotionControl.Target.Model</item_type>
+        <SingleAxisTargetModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          Name="Drive01"
+          TargetType="DriveNG"
+          Version="Unknown"
+          ID="1"
+          SerialNumber="Unknown"
+          DeviceType="Unknown"
+          PersonalityDeviceType="Unknown"
+          Selected="false"
+          Active="false"
+          ParentJMCName=""
+          CommunicationInfoString="Communication Type:Offline;"
+          ConnectWithGateway="false"
+          DisconnectWithGateway="false"
+          WS30="0"
+          HardwareName=""
+          MC="0"
+          BV="0">
+          <Parameters
+            AnInputCount="0"
+            AnOutputCount="0"
+            BaudRateCAN="KbitPerSecond500"
+            BGCycleTime="0"
+            CAN="false"
+            CycleTime="0"
+            CycleTimeDivider="Divider0"
+            CycleTimeModulo="0"
+            DiInputCount="0"
+            DiOutputCount="0"
+            DoutSupport="false"
+            Functionality="Motion"
+            HbtSupport="true"
+            IOModuleType="0"
+            MBCycleTime="0"
+            Nnc="Nc"
+            ReceiveFBstatus="false"
+            ResID="1478"
+            SyncDelayTime="0" />
+          <MotionParameters>
+            <AbsolutePosition1>0</AbsolutePosition1>
+            <AbsolutePosition2>0</AbsolutePosition2>
+            <AbsoluteIsRepetitive>false</AbsoluteIsRepetitive>
+            <RelativePosition>0</RelativePosition>
+            <RelativeIsRepetitive>false</RelativeIsRepetitive>
+            <JoggingRunHeld>true</JoggingRunHeld>
+            <CurrentTorqueCommand1>0</CurrentTorqueCommand1>
+            <CurrentTorqueCommand2>0</CurrentTorqueCommand2>
+            <CurrentTorqueCommand3>0</CurrentTorqueCommand3>
+            <CurrentTorqueCommand4>0</CurrentTorqueCommand4>
+            <CurrentTorqueCommand5>0</CurrentTorqueCommand5>
+            <SineStepRunHeld>false</SineStepRunHeld>
+            <IsStep>false</IsStep>
+          </MotionParameters>
+        </SingleAxisTargetModel>
+      </item>
+      <item>
+        <item_type>JustekMotionControl.Target.Model.TargetDevices.JMCTargetModel, JustekMotionControl.Target.Model</item_type>
+        <JMCTargetModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          Name="G01"
+          TargetType="JMC"
+          Version="Unknown"
+          ID="0"
+          SerialNumber="Unknown"
+          DeviceType="Unknown"
+          PersonalityDeviceType="Unknown"
+          Selected="false"
+          Active="false"
+          ParentJMCName=""
+          CommunicationInfoString="Communication Type:IPMulti;IP:127.0.0.1;Host:192.168.56.1;"
+          ConnectWithGateway="false"
+          DisconnectWithGateway="false"
+          OldJMCVer="false">
+          <Parameters
+            AnInputCount="0"
+            AnOutputCount="0"
+            BaudRateCAN="Undefined"
+            BGCycleTime="100"
+            CAN="false"
+            CycleTime="1000"
+            CycleTimeDivider="Divider0"
+            CycleTimeModulo="0"
+            DiInputCount="0"
+            DiOutputCount="0"
+            DoutSupport="false"
+            Functionality="Motion"
+            HbtSupport="true"
+            IOModuleType="0"
+            MBCycleTime="5000"
+            Nnc="Nc"
+            ReceiveFBstatus="false"
+            ResID="1874"
+            SyncDelayTime="0" />
+        </JMCTargetModel>
+      </item>
+    </Targets>
+  </Workspace>
+</WorkspaceModel>

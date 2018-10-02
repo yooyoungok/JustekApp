@@ -1,0 +1,4 @@
+command "#2->100y"
+sleep(500000)
+command "b6r"
+sleep(500000)

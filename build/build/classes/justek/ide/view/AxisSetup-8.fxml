@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.AxisSetup8Controller">
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <AnchorPane prefHeight="45.0" prefWidth="1390.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="14.0" layoutY="13.0" text="Axis Setup" />
+                  <Label layoutX="1017.0" layoutY="13.0" text="Drive01" />
+                  <Label layoutX="192.0" layoutY="13.0" text="Inputs and Outputs" />
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <SplitPane dividerPositions="0.9456384323640961" orientation="VERTICAL" prefHeight="793.0" prefWidth="199.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <ScrollPane layoutX="-1.0" layoutY="14.0" prefHeight="744.0" prefWidth="197.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="814.0" prefWidth="200.0">
+                                       <children>
+                                          <GridPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label onMouseClicked="#handleAxisSetup" text="• Axis Configrations">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font></Label>
+                                                <Label text="- Motor and Feedback" GridPane.rowIndex="1" />
+                                                <Label onMouseClicked="#handleAxisSetup1" text="  • Motor Settings" GridPane.rowIndex="2" />
+                                                <Label onMouseClicked="#handleAxisSetup2" text="  • Feedback Settings" GridPane.rowIndex="3" />
+                                                <Label onMouseClicked="#handleAxisSetup3" text="• User Units" GridPane.rowIndex="4" />
+                                                <Label text="- Limits and Protections" GridPane.rowIndex="5" />
+                                                <Label onMouseClicked="#handleAxisSetup4" text="  • Current Limits" GridPane.rowIndex="6" />
+                                                <Label onMouseClicked="#handleAxisSetup5" text="  • Motor Limits" GridPane.rowIndex="7" />
+                                                <Label onMouseClicked="#handleAxisSetup6" text="  • Protections" GridPane.rowIndex="8" />
+                                                <Label text="- Application Settings" GridPane.rowIndex="9" />
+                                                <Label onMouseClicked="#handleAxisSetup7" text="  • Settling Window" GridPane.rowIndex="10" /> 
+                                                <Label onMouseClicked="#handleAxisSetup8" text="  • Inputs and Outputs" GridPane.rowIndex="11" />
+                                                <Label text="- Current" GridPane.rowIndex="12" />
+                                                <Label onMouseClicked="#handleAxisSetup9" text="  • Identification" GridPane.rowIndex="13" />
+                                                <Label onMouseClicked="#handleAxisSetup10" text="  • Design" GridPane.rowIndex="14" />
+                                                <Label onMouseClicked="#handleAxisSetup11" text="  • Verification - Time" GridPane.rowIndex="15" />
+                                                <Label onMouseClicked="#handleAxisSetup12" text="• Commutation" GridPane.rowIndex="16" />
+                                                <Label text="- Velocity and Position" GridPane.rowIndex="17" />
+                                                <Label onMouseClicked="#handleAxisSetup13" text="  • Identification" GridPane.rowIndex="18" />
+                                                <Label onMouseClicked="#handleAxisSetup14" text="  • Design" GridPane.rowIndex="19" />
+                                                <Label onMouseClicked="#handleAxisSetup15" text="  • Scheduling" GridPane.rowIndex="20" />
+                                                <Label onMouseClicked="#handleAxisSetup16" text="  • Verification - Time" GridPane.rowIndex="21" />
+                                                <Label onMouseClicked="#handleAxisSetup17" text="• Summary" GridPane.rowIndex="22" />
+                                              </children>
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="49.0" prefWidth="197.0">
+                           <children>
+                              <Button layoutX="13.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleAxisSetup7" text="&lt;&lt;" />
+                              <Button layoutX="120.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleAxisSetup9" text="&gt;&gt;" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="35.0" layoutY="10.0" text="Number" />
+                  <Label layoutX="35.0" layoutY="45.0" text="Input 1" />
+                  <Label layoutX="35.0" layoutY="80.0" text="Input 2" />
+                  <Label layoutX="35.0" layoutY="115.0" text="Input 3" />
+                  <Button layoutX="821.0" layoutY="742.0" mnemonicParsing="false" text="Errors..." />
+                  <Button layoutX="747.0" layoutY="742.0" mnemonicParsing="false" text="Apply" />
+                  <Button layoutX="665.0" layoutY="742.0" mnemonicParsing="false" text="Revert" />
+                  <Label layoutX="35.0" layoutY="150.0" text="Input 4" />
+                  <Label layoutX="35.0" layoutY="185.0" text="Input 5" />
+                  <Label layoutX="35.0" layoutY="220.0" text="Input 6" />
+                  <Label layoutX="35.0" layoutY="255.0" text="Port A,A" />
+                  <Label layoutX="35.0" layoutY="290.0" text="Port A,B" />
+                  <Label layoutX="35.0" layoutY="325.0" text="Port A,Index" />
+                  <Label layoutX="35.0" layoutY="360.0" text="Port B,A" />
+                  <Label layoutX="35.0" layoutY="395.0" text="Port B,B" />
+                  <Label layoutX="35.0" layoutY="430.0" text="Port B,Index" />
+                  <Label layoutX="146.0" layoutY="10.0" text="Polarity" />
+                  <Label layoutX="276.0" layoutY="10.0" text="Function" />
+                  <Label layoutX="469.0" layoutY="10.0" text="Filter(msec}" />
+                  <Label layoutX="595.0" layoutY="10.0" text="Status" />
+                  <ComboBox fx:id="polarity1Combo" layoutX="146.0" layoutY="40.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="polarity2Combo" layoutX="146.0" layoutY="75.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="polarity3Combo" layoutX="146.0" layoutY="110.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="polarity4Combo" layoutX="146.0" layoutY="145.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="polarity5Combo" layoutX="146.0" layoutY="180.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="polarity6Combo" layoutX="146.0" layoutY="215.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="polarity7Combo" layoutX="146.0" layoutY="250.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="polarity8Combo" layoutX="146.0" layoutY="285.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="polarity9Combo" layoutX="146.0" layoutY="320.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="polarity10Combo" layoutX="146.0" layoutY="355.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="polarity11Combo" layoutX="146.0" layoutY="390.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="polarity12Combo" layoutX="146.0" layoutY="425.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="function1Combo" layoutX="276.0" layoutY="40.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="function2Combo" layoutX="276.0" layoutY="75.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="function3Combo" layoutX="276.0" layoutY="110.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="function4Combo" layoutX="276.0" layoutY="145.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="function5Combo" layoutX="276.0" layoutY="180.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="function6Combo" layoutX="276.0" layoutY="215.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="function7Combo" layoutX="276.0" layoutY="250.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="function8Combo" layoutX="276.0" layoutY="285.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="function9Combo" layoutX="276.0" layoutY="320.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="function10Combo" layoutX="276.0" layoutY="355.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="function11Combo" layoutX="276.0" layoutY="390.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="function12Combo" layoutX="276.0" layoutY="425.0" prefHeight="29.0" prefWidth="184.0" />
+                  <TextField layoutX="468.0" layoutY="40.0" prefHeight="29.0" prefWidth="105.0" />
+                  <TextField layoutX="468.0" layoutY="75.0" prefHeight="29.0" prefWidth="105.0" />
+                  <TextField layoutX="468.0" layoutY="110.0" prefHeight="29.0" prefWidth="105.0" />
+                  <TextField layoutX="468.0" layoutY="145.0" prefHeight="29.0" prefWidth="105.0" />
+                  <TextField layoutX="468.0" layoutY="180.0" prefHeight="29.0" prefWidth="105.0" />
+                  <TextField layoutX="468.0" layoutY="215.0" prefHeight="29.0" prefWidth="105.0" />
+                  <TextField layoutX="468.0" layoutY="250.0" prefHeight="29.0" prefWidth="105.0" />
+                  <TextField layoutX="468.0" layoutY="285.0" prefHeight="29.0" prefWidth="105.0" />
+                  <TextField layoutX="468.0" layoutY="320.0" prefHeight="29.0" prefWidth="105.0" />
+                  <TextField layoutX="468.0" layoutY="355.0" prefHeight="29.0" prefWidth="105.0" />
+                  <TextField layoutX="468.0" layoutY="390.0" prefHeight="29.0" prefWidth="105.0" />
+                  <TextField layoutX="468.0" layoutY="425.0" prefHeight="29.0" prefWidth="105.0" />
+                  <Label layoutX="932.0" layoutY="9.0" text="Function" />
+                  <Label layoutX="802.0" layoutY="9.0" text="Polarity" />
+                  <Label layoutX="691.0" layoutY="9.0" text="Number" />
+                  <Label layoutX="1123.0" layoutY="10.0" text="Status" />
+                  <ComboBox fx:id="opolarity1Combo" layoutX="802.0" layoutY="40.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="opolarity2Combo" layoutX="802.0" layoutY="75.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="opolarity3Combo" layoutX="802.0" layoutY="110.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="opolarity4Combo" layoutX="802.0" layoutY="145.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="opolarity5Combo" layoutX="802.0" layoutY="180.0" prefHeight="29.0" prefWidth="94.0" />                  
+                  <ComboBox fx:id="opolarity6Combo" layoutX="802.0" layoutY="215.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="opolarity7Combo" layoutX="802.0" layoutY="250.0" prefHeight="29.0" prefWidth="94.0" />
+                  <Label layoutX="691.0" layoutY="255.0" text="Port C,Index" />
+                  <Label layoutX="691.0" layoutY="220.0" text="Port C,B" />
+                  <Label layoutX="691.0" layoutY="185.0" text="Port C,A" />
+                  <Label layoutX="691.0" layoutY="147.0" text="Output 4" />
+                  <Label layoutX="691.0" layoutY="112.0" text="Output 3" />
+                  <Label layoutX="691.0" layoutY="76.0" text="Output 2" />
+                  <Label layoutX="691.0" layoutY="41.0" text="Output 1" />
+                  <ComboBox fx:id="ofunction1Combo" layoutX="932.0" layoutY="40.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="ofunction2Combo" layoutX="932.0" layoutY="75.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="ofunction3Combo" layoutX="932.0" layoutY="110.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="ofunction4Combo" layoutX="932.0" layoutY="145.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="ofunction5Combo" layoutX="932.0" layoutY="180.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="ofunction6Combo" layoutX="932.0" layoutY="215.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="ofunction7Combo" layoutX="932.0" layoutY="250.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="function13Combo" layoutX="166.0" layoutY="673.0" prefHeight="29.0" prefWidth="184.0" />
+                  <ComboBox fx:id="polarity13Combo" layoutX="36.0" layoutY="673.0" prefHeight="29.0" prefWidth="94.0" />
+                  <Button layoutX="368.0" layoutY="673.0" mnemonicParsing="false" text="Set all Digital Inputs" />
+                  <Button layoutX="997.0" layoutY="666.0" mnemonicParsing="false" text="Set all Digital Outputs" />
+                  <ComboBox fx:id="opolarity8Combo" layoutX="665.0" layoutY="666.0" prefHeight="29.0" prefWidth="94.0" />
+                  <ComboBox fx:id="ofunction8Combo" layoutX="795.0" layoutY="666.0" prefHeight="29.0" prefWidth="184.0" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="529.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.EtherCATBoardViewController">
+   <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <FlowPane alignment="CENTER_LEFT" hgap="10.0" prefHeight="40.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label style="-fx-text-fill: white;" text="I/O Port Infomation">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#testAction" text="test" visible="false" />
+               </children>
+            </FlowPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Separator prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <VBox prefHeight="484.0" prefWidth="904.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+                     <children>
+                        <HBox prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <BorderPane>
+                                 <center>
+                                    <GridPane prefHeight="90.0" prefWidth="494.0" BorderPane.alignment="CENTER">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Switch" GridPane.rowIndex="1" />
+                                          <Label text="Lamp" GridPane.rowIndex="2" />
+                                          <Label text="1" GridPane.columnIndex="1" />
+                                          <Label text="2" GridPane.columnIndex="2" />
+                                          <Label text="3" GridPane.columnIndex="3" />
+                                          <Label text="4" GridPane.columnIndex="4" />
+                                          <Label text="5" GridPane.columnIndex="5" />
+                                          <Label text="6" GridPane.columnIndex="6" />
+                                          <Label text="7" GridPane.columnIndex="7" />
+                                          <Label text="8" GridPane.columnIndex="8" />
+                                          <Circle fx:id="fxPort01" fill="#c1c2c2" layoutX="312.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort08" fill="#c1c2c2" layoutX="147.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort07" fill="#c1c2c2" layoutX="202.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort06" fill="#c1c2c2" layoutX="367.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort05" fill="#c1c2c2" layoutX="422.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort04" fill="#c1c2c2" layoutX="257.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort03" fill="#c1c2c2" layoutX="92.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort02" fill="#c1c2c2" layoutX="477.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <RadioButton fx:id="fxRadioButton01" contentDisplay="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#handle" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton02" contentDisplay="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#handle" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton03" contentDisplay="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#handle" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton04" contentDisplay="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#handle" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton05" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handle" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton06" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handle" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton07" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handle" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton08" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handle" GridPane.columnIndex="8" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                       </children>
+                                    </GridPane>
+                                 </center>
+                                 <top>
+                                    <FlowPane alignment="CENTER_LEFT" prefHeight="30.0" style="-fx-background-color: skyblue;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="fxNameLabel" text="S/W 700">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </FlowPane>
+                                 </top>
+                              </BorderPane>
+                              <BorderPane>
+                                 <center>
+                                    <GridPane prefHeight="90.0" prefWidth="494.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label text="Switch" GridPane.rowIndex="1" />
+                                          <Label text="Lamp" GridPane.rowIndex="2" />
+                                          <Label text="1" GridPane.columnIndex="1" />
+                                          <Label text="2" GridPane.columnIndex="2" />
+                                          <Label text="3" GridPane.columnIndex="3" />
+                                          <Label text="4" GridPane.columnIndex="4" />
+                                          <Label text="5" GridPane.columnIndex="5" />
+                                          <Label text="6" GridPane.columnIndex="6" />
+                                          <Label text="7" GridPane.columnIndex="7" />
+                                          <Label text="8" GridPane.columnIndex="8" />
+                                          <Circle fx:id="fxPort012" fill="#c1c2c2" layoutX="312.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort082" fill="#c1c2c2" layoutX="147.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort072" fill="#c1c2c2" layoutX="202.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort062" fill="#c1c2c2" layoutX="367.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort052" fill="#c1c2c2" layoutX="422.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort042" fill="#c1c2c2" layoutX="257.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort032" fill="#c1c2c2" layoutX="92.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort022" fill="#c1c2c2" layoutX="477.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <RadioButton fx:id="fxRadioButton012" contentDisplay="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#handle" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton022" contentDisplay="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#handle" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton032" contentDisplay="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#handle" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton042" contentDisplay="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#handle" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton052" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handle" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton062" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handle" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton072" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handle" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton082" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handle" GridPane.columnIndex="8" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                       </children>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                    </GridPane>
+                                 </center>
+                                 <top>
+                                    <FlowPane alignment="CENTER_LEFT" prefHeight="30.0" style="-fx-background-color: skyblue;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="fxNameLabel2" text="S/W 702">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </FlowPane>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox spacing="20.0">
+                           <children>
+                              <BorderPane>
+                                 <top>
+                                    <FlowPane alignment="CENTER_LEFT" prefHeight="30.0" style="-fx-background-color: skyblue;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="fxNameLabel1" text="S/W 701">
+                                             <FlowPane.margin>
+                                                <Insets left="5.0" />
+                                             </FlowPane.margin>
+                                          </Label>
+                                       </children>
+                                    </FlowPane>
+                                 </top>
+                                 <center>
+                                    <GridPane prefHeight="90.0" prefWidth="494.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label text="Switch" GridPane.rowIndex="1" />
+                                          <Label text="Lamp" GridPane.rowIndex="2" />
+                                          <Label text="1" GridPane.columnIndex="1" />
+                                          <Label text="2" GridPane.columnIndex="2" />
+                                          <Label text="3" GridPane.columnIndex="3" />
+                                          <Label text="4" GridPane.columnIndex="4" />
+                                          <Label text="5" GridPane.columnIndex="5" />
+                                          <Label text="6" GridPane.columnIndex="6" />
+                                          <Label text="7" GridPane.columnIndex="7" />
+                                          <Label text="8" GridPane.columnIndex="8" />
+                                          <Circle fx:id="fxPort011" fill="#c1c2c2" layoutX="312.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort081" fill="#c1c2c2" layoutX="147.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort071" fill="#c1c2c2" layoutX="202.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort061" fill="#c1c2c2" layoutX="367.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort051" fill="#c1c2c2" layoutX="422.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort041" fill="#c1c2c2" layoutX="257.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort031" fill="#c1c2c2" layoutX="92.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort021" fill="#c1c2c2" layoutX="477.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <RadioButton fx:id="fxRadioButton011" contentDisplay="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#handle" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton021" contentDisplay="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#handle" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton031" contentDisplay="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#handle" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton041" contentDisplay="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#handle" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton051" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handle" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton061" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handle" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton071" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handle" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton081" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handle" GridPane.columnIndex="8" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                       </children>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                    </GridPane>
+                                 </center>
+                              </BorderPane>
+                              <BorderPane>
+                                 <center>
+                                    <GridPane prefHeight="90.0" prefWidth="494.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label text="Swtich" GridPane.rowIndex="1" />
+                                          <Label text="Lamp" GridPane.rowIndex="2" />
+                                          <Label text="1" GridPane.columnIndex="1" />
+                                          <Label text="2" GridPane.columnIndex="2" />
+                                          <Label text="3" GridPane.columnIndex="3" />
+                                          <Label text="4" GridPane.columnIndex="4" />
+                                          <Label text="5" GridPane.columnIndex="5" />
+                                          <Label text="6" GridPane.columnIndex="6" />
+                                          <Label text="7" GridPane.columnIndex="7" />
+                                          <Label text="8" GridPane.columnIndex="8" />
+                                          <Circle fx:id="fxPort013" fill="#c1c2c2" layoutX="312.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort083" fill="#c1c2c2" layoutX="147.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort073" fill="#c1c2c2" layoutX="202.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort063" fill="#c1c2c2" layoutX="367.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort053" fill="#c1c2c2" layoutX="422.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort043" fill="#c1c2c2" layoutX="257.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort033" fill="#c1c2c2" layoutX="92.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Circle fx:id="fxPort023" fill="#c1c2c2" layoutX="477.0" layoutY="55.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <RadioButton fx:id="fxRadioButton013" contentDisplay="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#handle" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton023" contentDisplay="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#handle" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton033" contentDisplay="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#handle" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton043" contentDisplay="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#handle" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton053" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handle" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton063" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handle" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton073" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handle" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fxRadioButton083" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handle" GridPane.columnIndex="8" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </RadioButton>
+                                       </children>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                    </GridPane>
+                                 </center>
+                                 <top>
+                                    <FlowPane alignment="CENTER_LEFT" prefHeight="30.0" style="-fx-background-color: skyblue;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="fxNameLabel3" text="S/W 703">
+                                             <FlowPane.margin>
+                                                <Insets left="5.0" />
+                                             </FlowPane.margin>
+                                          </Label>
+                                       </children>
+                                    </FlowPane>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

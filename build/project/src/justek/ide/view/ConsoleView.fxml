@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.ConsoleViewController">
+   <children>
+      <TabPane fx:id="consolePane" layoutX="71.0" layoutY="-2.0" prefHeight="174.0" prefWidth="797.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab text="Console">
+               <content>
+                  <TextArea fx:id="consoleTextArea" onKeyPressed="#keyEvent" prefHeight="147.0" prefWidth="726.0" promptText="&gt;" wrapText="true" />
+               </content>
+            </Tab>
+            <Tab fx:id="errorTab" text="Error">
+               <content>
+                  <TextArea fx:id="errorTextArea" editable="false" prefHeight="147.0" prefWidth="726.0" promptText="&gt;" />
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

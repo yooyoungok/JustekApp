@@ -1,0 +1,272 @@
+
+.button {
+	-fx-background-color:
+                      #000000,
+                      linear-gradient(#7ebcea, #2f4b8f),
+                      linear-gradient(#426ab7, #263e75),
+                      linear-gradient(#395cab, #223768);
+    -fx-background-insets: 0,1,2,0;
+     -fx-background-radius: 5,4,3,5;
+     -fx-text-fill: white;
+    -fx-font-size: 11px;
+}
+
+.button:pressed{
+	-fx-background-color:
+                      #000000,
+                      linear-gradient(#7ebcea, #2f4b8f),
+                      linear-gradient(#426ab7, #263e75),
+                      linear-gradient(#395cab, #223768);
+    -fx-background-insets: 0,1,2,0;
+     -fx-background-radius: 5,4,3,5;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 11px;
+}
+
+.font_10{
+	-fx-font-size: 10px;
+}
+
+.label{
+	-fx-font-size: 11px;
+}
+ .text-field {
+  -fx-background-color: lightgray;
+/* 	-fx-border-width:1px;
+	-fx-border-color: lightskyblue;*/
+	-fx-font-size:11px;
+}
+
+.toggle-button:selected {
+	-fx-background-color:linear-gradient(orange, orangered );
+	-fx-background-insets: 0,1,2,0;
+    -fx-background-radius: 5,4,3,5;
+    -fx-text-fill:white;
+}
+
+.toggle-button {
+	-fx-background-color:
+                      #000000,
+                      linear-gradient(#7ebcea, #2f4b8f),
+                      linear-gradient(#426ab7, #263e75),
+                      linear-gradient(#395cab, #223768);
+    -fx-background-insets: 0,1,2,0;
+    -fx-background-radius: 5,4,3,5;
+    -fx-text-fill: white;
+}
+.scroll-pane {
+    -fx-background-color:transparent;
+}
+
+.combo-box{
+		-fx-background-color:lightgray;
+	-fx-font-size:10px;
+}
+
+.check-box{
+	-fx-font-size:11px;
+}
+
+.table-view .table-cell{
+	-fx-font-size:11px;
+}
+
+.table-view .column-header .label,
+.table-view .column-header .filler,
+.table-view .column-header-background .filler {
+    -fx-background-color: black;
+       -fx-text-fill: white;
+}
+
+
+.tree-view .tree-cell {
+   -fx-indent: 0;
+ }
+ 
+ .menu-bar .label {
+ 	-fx-font-size:11px;
+ }
+ 
+.menu:showing .label { /* Styles the text on a menu item when activated */
+	-fx-font-size:12px;
+}
+ 
+ .tree-cell:filled:selected {
+   -fx-border-color:skyblue ;
+   -fx-background-color: rgb(0,100,157);
+   -fx-text-fill:white 
+  }
+
+ .tree-cell:filled {
+	-fx-font-size:11px;
+  }
+  
+.slider .thumb
+{
+    -fx-background-color: #9d4024;
+}
+
+.radio-button .dot{
+ -fx-mark-highlight-color: red ;
+ -fx-mark-color: red ;
+}
+
+/* 2018.07.04 추가 -> title pane css 설정  */
+.titled-pane {
+    -fx-text-fill: rgb(0,100,157);
+}
+.titled-pane:focused {
+    -fx-color: -fx-base;
+    -fx-text-fill: white;
+}
+
+.titled-pane > .title {
+    -fx-text-fill: rgb(0,100,157);
+    -fx-font-weight: bold;
+}
+titled-pane > .title  > .label{
+    -fx-text-fill: rgb(0,100,157);
+    -fx-font-weight: bold;
+}
+.titled-pane:focused > .title {
+    -fx-color: rgb(0,100,157); 
+    -fx-text-fill: white;
+}
+.titled-pane > .title:hover {
+    -fx-color: lightgrey;
+}
+.titled-pane > * > * > AnchorPane {
+    -fx-padding: 0px ;
+}
+
+.text-area .scroll-bar:vertical:disabled {
+    -fx-opacity: 0;
+}
+
+/* ################# css id 설정  ######################   */
+#center-table .table-column {
+  -fx-alignment : CENTER ;
+}
+
+#side-list .list-cell:filled:selected {
+   -fx-border-color:chocolate ;
+   -fx-background-color: yellow;
+   -fx-text-fill:royalblue;
+   -fx-font-size:11px;
+  }
+  
+ #side-list .list-cell:filled {
+   -fx-font-size:11px;
+  }
+  
+/* Main Tab css */
+#main-tab .tab:selected {
+    -fx-background-color: rgb(0,100,157) ;
+    -fx-text-base-color:white ;
+    -fx-font-size: 11px;
+}
+
+#main-tab .tab  {
+    -fx-background-color: aliceblue ;
+    -fx-font-size: 11px;
+}
+
+#main-tab .tab-close-button   {
+  -fx-mark-color: white;
+}
+
+/* Side Tree Tab css */
+#side-tab .tab:selected  {
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+    -fx-text-base-color:white ;
+    /*-fx-background-color: greenyellow ;*/
+        -fx-background-color: black ;
+}
+
+#side-tab .tab {
+    -fx-background-color: aliceblue  ;
+    -fx-font-size: 11px;
+}
+
+#side-top-tab .tab {
+    -fx-background-color: aliceblue  ;
+    -fx-font-size: 11px;
+}
+
+/* Tab END */
+
+/* 일반 레드 버튼 css */
+#round-red-default {
+    -fx-background-color: linear-gradient(#ff5400, #be1d00);
+     -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+
+#round-red-default:pressed {
+    -fx-background-color: 
+        linear-gradient(#ffd65b, #e68400),
+        linear-gradient(#ffef84, #f2ba44),
+        linear-gradient(#ffea6a, #efaa22),
+        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+     -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0;
+    -fx-text-fill : black;
+}
+
+/* 비상정지버튼 css */
+#record-sales {
+    -fx-padding: 8 15 15 15;
+    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
+    -fx-background-radius: 8;
+    -fx-background-color: 
+        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
+        #9d4024,
+        #d86e3a,
+        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+    -fx-font-weight: bold;
+    -fx-font-size: 1.1em;
+}
+
+#record-sales:hover {
+    -fx-background-color: 
+        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
+        #9d4024,
+        #d86e3a,
+        radial-gradient(center 50% 50%, radius 100%, #ea7f4b, #c54e2c);
+            -fx-text-fill:white ;
+}
+#record-sales:pressed {
+    -fx-padding: 10 15 13 15;
+    -fx-background-insets: 2 0 0 0,2 0 3 0, 2 0 4 0, 2 0 5 0;
+     -fx-text-fill:white ;
+}
+/* 비상정지버튼 END */
+
+#round-red {
+    -fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-font-size: 16px;
+       -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+#round-red:pressed {
+    -fx-background-color: 
+        linear-gradient(#ffd65b, #e68400),
+        linear-gradient(#ffef84, #f2ba44),
+        linear-gradient(#ffea6a, #efaa22),
+        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-text-fill : black;
+}
+
+/* ################# css id 끝!  ######################   */

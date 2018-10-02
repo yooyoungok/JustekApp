@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="734.0" prefWidth="872.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.JogController">
+   <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <SplitPane dividerPositions="0.8" orientation="VERTICAL" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+                    <items>
+                      <AnchorPane minHeight="100.0">
+                           <children>
+                              <SplitPane dividerPositions="0.4054726368159204" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane>
+                                       <children>
+                                          <Text layoutX="14.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- Base Axes -" AnchorPane.leftAnchor="10.0" />
+                                          <TextArea layoutX="14.0" layoutY="33.0" prefHeight="127.0" prefWidth="318.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="33.0" />
+                                          <Text layoutX="14.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- General -" AnchorPane.leftAnchor="10.0" />
+                                          <Label layoutX="14.0" layoutY="197.0" text="Dwell Time[msec]" AnchorPane.leftAnchor="10.0" />
+                                          <Label layoutX="14.0" layoutY="230.0" text="Record Tests" AnchorPane.leftAnchor="10.0" />
+                                          <TextField layoutX="164.0" layoutY="192.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="5.0" />
+                                          <CheckBox layoutX="164.0" layoutY="229.0" mnemonicParsing="false" AnchorPane.leftAnchor="140.0" />
+                                          <Text layoutX="14.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- Admin. Motion -" AnchorPane.leftAnchor="10.0" />
+                                          <Label layoutX="17.0" layoutY="290.0" text="Axis" AnchorPane.leftAnchor="10.0" />
+                                          <Label layoutX="18.0" layoutY="329.0" text="Acc." AnchorPane.leftAnchor="10.0" />
+                                          <Label layoutX="17.0" layoutY="366.0" text="Dec." AnchorPane.leftAnchor="10.0" />
+                                          <Label layoutX="21.0" layoutY="400.0" text="Vel" AnchorPane.leftAnchor="10.0" />
+                                          <Label layoutX="19.0" layoutY="435.0" text="Jerk" AnchorPane.leftAnchor="10.0" />
+                                          <TextField layoutX="164.0" layoutY="314.0" AnchorPane.rightAnchor="5.0" />
+                                          <TextField layoutX="164.0" layoutY="343.0" AnchorPane.rightAnchor="5.0" />
+                                          <TextField layoutX="164.0" layoutY="372.0" AnchorPane.rightAnchor="5.0" />
+                                          <TextField layoutX="164.0" layoutY="400.0" AnchorPane.rightAnchor="5.0" />
+                                          <ComboBox layoutX="164.0" layoutY="285.0" AnchorPane.rightAnchor="5.0" />
+                                          <Button layoutX="164.0" layoutY="428.0" mnemonicParsing="false" prefWidth="174.0" text="Applto All Axes" AnchorPane.rightAnchor="5.0" />
+                                          <Label layoutX="14.0" layoutY="466.0" text="Recording Signals" AnchorPane.leftAnchor="10.0" />
+                                          <Button layoutX="163.0" layoutY="458.0" mnemonicParsing="false" prefWidth="174.0" text="Edit Signals..." AnchorPane.rightAnchor="5.0" />
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane>
+                                       <children>
+                                          <TabPane layoutX="14.0" layoutY="14.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <tabs>
+                                              <Tab text="Settings">
+                                                <content>
+                                                  <AnchorPane>
+                                                         <children>
+                                                          <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="+" />
+                                                                  <Button layoutX="57.0" layoutY="14.0" mnemonicParsing="false" text="-" />
+                                                                  <Button layoutX="102.0" layoutY="14.0" mnemonicParsing="false" text="Up" />
+                                                                  <Button layoutX="157.0" layoutY="14.0" mnemonicParsing="false" text="Down" />
+                                                                  <TableView layoutX="14.0" layoutY="51.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.0">
+                                                                    <columns>
+                                                                      <TableColumn prefWidth="75.0" text="#" />
+                                                                      <TableColumn prefWidth="156.0" text="Target" />
+                                                                        <TableColumn prefWidth="206.0" text="Test Name" />
+                                                                        <TableColumn prefWidth="179.0" text="Rel Position" />
+                                                                        <TableColumn prefWidth="239.0" text="Reps" />
+                                                                        <TableColumn prefWidth="109.0" text="Edit Test" />
+                                                                    </columns>
+                                                                     <columnResizePolicy>
+                                                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                                     </columnResizePolicy>
+                                                                  </TableView>
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </Tab>
+                                              <Tab text="Experiment">
+                                                <content>
+                                                  <AnchorPane>
+                                                         <children>
+                                                            <TableView AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <columns>
+                                                                  <TableColumn prefWidth="75.0" text="#" />
+                                                                  <TableColumn prefWidth="156.0" text="Target" />
+                                                                  <TableColumn prefWidth="122.0" text="Reps" />
+                                                                  <TableColumn prefWidth="149.0" text="Prof Time" />
+                                                                  <TableColumn prefWidth="109.0" text="Req Time" />
+                                                                  <TableColumn prefWidth="112.0" text="Min MT" />
+                                                                  <TableColumn prefWidth="112.0" text="Avg MT" />
+                                                                  <TableColumn prefWidth="129.0" text="\%Pass MT" />
+                                                               </columns>
+                                                               <columnResizePolicy>
+                                                                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                               </columnResizePolicy>
+                                                            </TableView>
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </Tab>
+                                            </tabs>
+                                          </TabPane>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane>
+                           <children>
+                              <Text layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Test Process" />
+                              <Text layoutX="14.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entire Experiment" />
+                              <Text layoutX="14.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Position" />
+                              <ProgressBar layoutX="361.0" layoutY="12.0" prefWidth="716.0" progress="0.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="10.0" />
+                              <ProgressBar layoutX="361.0" layoutY="43.0" prefWidth="716.0" progress="0.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="10.0" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </center>
+            </BorderPane>
+         </center>
+         <top>
+            <AnchorPane prefHeight="80.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="14.0" layoutY="13.0" text="Move &amp; Settle" />
+                  <Label layoutX="143.0" layoutY="13.0" text="Experiment Name :" />
+                  <Label alignment="CENTER_RIGHT" layoutX="1270.0" layoutY="13.0" text="G01 127.0.0.1" AnchorPane.rightAnchor="10.0" />
+                  <TextField layoutX="293.0" layoutY="8.0" />
+                  <Label layoutX="14.0" layoutY="46.0" text="Experiment Path" />
+                  <TextField layoutX="119.0" layoutY="41.0" prefHeight="23.0" prefWidth="252.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="60.0" />
+                  <Button layoutX="1308.0" layoutY="41.0" mnemonicParsing="false" text="File" AnchorPane.rightAnchor="5.0" />
+               </children>
+            </AnchorPane>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

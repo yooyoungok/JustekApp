@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="888.0" prefWidth="1214.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.AxisSetup16Controller">
+  <children>
+    <BorderPane prefHeight="800.0" prefWidth="1900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <bottom>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="50.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+          <children>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="10.0" prefHeight="50.0" prefWidth="1214.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <Button mnemonicParsing="false" text="Revert" />
+                <Button mnemonicParsing="false" onAction="#handleVerificationApply" text="Apply" />
+                <Button mnemonicParsing="false" text="Errors..." />
+                <Button id="btn" fx:id="btnStart" mnemonicParsing="false" onAction="#logStart" prefWidth="-1.0" text="Recording Start" />
+                <Button fx:id="btnStop" mnemonicParsing="false" onAction="#recordingStop2" prefWidth="-1.0" text="Recording Stop" />
+                <Button mnemonicParsing="false" onAction="#sampleGraph" text="Sample_Chart" />
+                <Button mnemonicParsing="false" onAction="#recordingStart" text="Log_Chart" />
+              </children>
+            </FlowPane>
+          </children>
+        </AnchorPane>
+      </bottom>
+      <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+          <children>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="793.0" prefWidth="1700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <SplitPane dividerPositions="0.35539714867617106" prefHeight="744.0" prefWidth="1188.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <items>
+                    <BorderPane prefHeight="791.0" prefWidth="302.0">
+                      <center>
+                        <TabPane prefHeight="500.0" prefWidth="227.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                          <tabs>
+                            <Tab text="Profiler">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                  <children>
+                                    <Label layoutY="47.0" text="PTP" AnchorPane.leftAnchor="12.0" />
+                                    <Label layoutY="81.0" text="Absolute" AnchorPane.leftAnchor="10.0" />
+                                    <CheckBox fx:id="rep1CheckBox" layoutX="83.0" layoutY="17.0" mnemonicParsing="false" text="Repetitive" />
+                                    <TextField fx:id="ptpAbsolute1" alignment="CENTER_RIGHT" layoutY="40.0" prefHeight="29.0" prefWidth="147.0" AnchorPane.leftAnchor="83.0" />
+                                    <TextField fx:id="ptpAbsolute2" alignment="CENTER_RIGHT" layoutY="75.0" prefHeight="29.0" prefWidth="147.0" AnchorPane.leftAnchor="82.0" />
+                                    <Text layoutX="165.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[cnt]" AnchorPane.leftAnchor="165.0" AnchorPane.topAnchor="18.0" />
+                                    <Label layoutX="10.0" layoutY="143.0" text="Relative" AnchorPane.leftAnchor="10.0" />
+                                    <Label layoutY="110.0" text="PTP" AnchorPane.leftAnchor="10.0" />
+                                    <Text layoutX="164.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[cnt]" AnchorPane.leftAnchor="165.0" AnchorPane.topAnchor="114.0" />
+                                    <TextField fx:id="ptpRelative" layoutX="123.0" layoutY="137.0" prefHeight="29.0" prefWidth="79.0" />
+                                    <CheckBox fx:id="rep2CheckBox" layoutX="82.0" layoutY="113.0" mnemonicParsing="false" text="Repetitive" />
+                                    <Label layoutX="10.0" layoutY="178.0" text="Jogging" AnchorPane.leftAnchor="10.0" />
+                                    <CheckBox fx:id="runHeldCheckbox" layoutX="126.0" layoutY="179.0" mnemonicParsing="false" text="Run Held" />
+                                    <Button layoutX="80.0" layoutY="174.0" mnemonicParsing="false" onAction="#handleJoggingLeft" text="&lt;" AnchorPane.leftAnchor="80.0" />
+                                    <Button layoutX="214.0" layoutY="174.0" mnemonicParsing="false" onAction="#handleJoggingRight" text="&gt;" AnchorPane.leftAnchor="214.0" />
+                                    <Button layoutX="215.0" layoutY="139.0" mnemonicParsing="false" onAction="#handleRelativeRight" text="&gt;" AnchorPane.leftAnchor="215.0" />
+                                    <Button layoutX="80.0" layoutY="141.0" mnemonicParsing="false" onAction="#handleRelativeLeft" text="&lt;" AnchorPane.leftAnchor="80.0" />
+                                    <Label layoutY="272.0" text="Acc.[cnt/sec^2]" AnchorPane.leftAnchor="13.0" />
+                                    <TextField fx:id="fxAcc" alignment="CENTER_RIGHT" layoutY="266.0" prefHeight="29.0" prefWidth="150.0" AnchorPane.leftAnchor="120.0" />
+                                    <TextField fx:id="fxDec" layoutY="372.0" prefHeight="29.0" prefWidth="79.0" visible="false" AnchorPane.leftAnchor="214.0" />
+                                    <Label disable="false" layoutY="355.0" text="Dec.[cnt/sec^2]" visible="false" AnchorPane.leftAnchor="196.0" />
+                                    <TextField fx:id="fxSmooth" alignment="CENTER_RIGHT" layoutY="299.0" prefHeight="29.0" prefWidth="150.0" AnchorPane.leftAnchor="120.0" />
+                                    <Separator layoutY="217.0" prefWidth="302.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Label layoutY="305.0" text="Jerk[%]" AnchorPane.leftAnchor="14.0" />
+                                    <Label layoutY="239.0" text="Speed[cnt/sec]" AnchorPane.leftAnchor="13.0" />
+                                    <TextField fx:id="fxSpeed" alignment="CENTER_RIGHT" layoutY="233.0" prefHeight="29.0" prefWidth="150.0" AnchorPane.leftAnchor="120.0" />
+                                    <TextField fx:id="fxDwell" alignment="CENTER_RIGHT" layoutY="333.0" prefHeight="29.0" prefWidth="150.0" AnchorPane.leftAnchor="120.0" />
+                                    <Label layoutY="341.0" text="Dwell" AnchorPane.leftAnchor="12.0" />
+                                    <Button layoutX="97.0" layoutY="419.0" mnemonicParsing="false" onAction="#handleProfilerStop" prefHeight="29.0" prefWidth="115.0" text="STOP" />
+                                  </children>
+                                </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Sine/Step">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                  <children>
+                                    <Label layoutY="14.0" text="Injection Point" AnchorPane.leftAnchor="10.0" />
+                                    <TextField fx:id="fxInjectionPoint" layoutY="9.0" prefHeight="29.0" prefWidth="101.0" AnchorPane.leftAnchor="120.0" />
+                                    <TextField fx:id="fxFrequency" layoutY="46.0" prefHeight="29.0" prefWidth="101.0" AnchorPane.leftAnchor="120.0" />
+                                    <Label layoutY="51.0" text="Frequency[Hz]" AnchorPane.leftAnchor="10.0" />
+                                    <Label layoutY="87.0" text="Amp[cnt]" AnchorPane.leftAnchor="10.0" />
+                                    <TextField fx:id="fxAmp" layoutY="82.0" prefHeight="29.0" prefWidth="101.0" AnchorPane.leftAnchor="120.0" />
+                                    <Label layoutY="120.0" text="Input Wave Type" AnchorPane.leftAnchor="10.0" />
+                                    <RadioButton fx:id="inputWave1Rb" layoutX="125.0" layoutY="120.0" mnemonicParsing="false" text="Sine" />
+                                    <RadioButton fx:id="inputWave2Rb" layoutX="125.0" layoutY="147.0" mnemonicParsing="false" text="Step" />
+                                    <CheckBox fx:id="sineRunHeldCheckbox" layoutY="182.0" mnemonicParsing="false" text="Run Held" AnchorPane.leftAnchor="10.0" />
+                                    <Button layoutY="211.0" mnemonicParsing="false" onAction="#handleSineStart" prefHeight="29.0" prefWidth="81.0" text="Start" AnchorPane.leftAnchor="63.0" />
+                                    <Button layoutX="152.0" layoutY="211.0" mnemonicParsing="false" onAction="#handleSineStop" prefHeight="29.0" prefWidth="81.0" text="STOP" />
+                                    <CheckBox fx:id="allowSineCheckbox" layoutY="255.0" mnemonicParsing="false" text="Allow Sine Motion" AnchorPane.leftAnchor="10.0" />
+                                  </children>
+                                </AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                      </center>
+                      <top>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                          <children>
+                            <Label layoutX="7.0" layoutY="101.0" text="Target_Position" AnchorPane.leftAnchor="7.0" />
+                            <Label layoutX="7.0" layoutY="169.0" text="Actual_Velocity" AnchorPane.leftAnchor="7.0" />
+                            <Label layoutX="7.0" layoutY="207.0" text="Follwing Error" AnchorPane.leftAnchor="7.0" />
+                            <Label layoutX="10.0" layoutY="21.0" text="Status" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="21.0">
+                              <font>
+                                <Font name="System Bold" size="14.0" fx:id="x1" />
+                              </font>
+                            </Label>
+                            <TextField fx:id="fxPosition" alignment="CENTER_RIGHT" editable="false" layoutX="120.0" layoutY="94.0" prefHeight="29.0" prefWidth="150.0" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="94.0" />
+                            <Text layoutX="276.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cnt" />
+                            <TextField fx:id="fxVelocity" alignment="CENTER_RIGHT" editable="false" layoutX="120.0" layoutY="162.0" prefHeight="29.0" prefWidth="150.0" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="162.0" />
+                            <TextField fx:id="fxCurrent" alignment="CENTER_RIGHT" editable="false" layoutX="120.0" layoutY="198.0" prefHeight="29.0" prefWidth="150.0" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="198.0" />
+                            <Text layoutX="276.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cnt/sec" />
+                            <Label layoutX="7.0" layoutY="134.0" text="Actual_Position" AnchorPane.leftAnchor="7.0" />
+                            <TextField id="fxPosition" fx:id="fxActualPosition" alignment="CENTER_RIGHT" editable="false" layoutX="120.0" layoutY="128.0" prefHeight="29.0" prefWidth="150.0" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="128.0" />
+                            <Text layoutX="276.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cnt" />
+                            <Text layoutX="276.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cnt" />
+                            <Button alignment="CENTER" layoutX="209.0" layoutY="64.0" mnemonicParsing="false" onAction="#increaseDot" text="0.00-&gt;" textAlignment="CENTER" AnchorPane.topAnchor="64.0">
+                                             <tooltip>
+                                                <Tooltip text="소수점이하 자리수 증가" />
+                                             </tooltip></Button>
+                            <Button alignment="CENTER" layoutX="121.0" layoutY="64.0" mnemonicParsing="false" onAction="#decreaseDot" text="&lt;-0.0" textAlignment="CENTER" AnchorPane.leftAnchor="121.0" AnchorPane.topAnchor="64.0">
+                                             <tooltip>
+                                                <Tooltip text="소수점이하 자리수 감소" />
+                                             </tooltip></Button>
+                                          <Separator layoutX="39.0" layoutY="247.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="267.0" />
+                                          <FlowPane alignment="CENTER" layoutX="-1.0" layoutY="224.0" prefHeight="50.0" prefWidth="326.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="270.0">
+                                             <children>
+                                  <Button mnemonicParsing="false" onAction="#serverOn" prefHeight="29.0" prefWidth="112.0" text="Servo On">
+                                                   <FlowPane.margin>
+                                                      <Insets />
+                                                   </FlowPane.margin>
+                                                </Button>
+                                  <Button mnemonicParsing="false" onAction="#serverOff" prefHeight="28.0" prefWidth="109.0" text="Servo Off">
+                                                   <FlowPane.margin>
+                                                      <Insets left="10.0" />
+                                                   </FlowPane.margin>
+                                                </Button>
+                                             </children>
+                                          </FlowPane>
+                                          <TextField fx:id="tfTimeInterval" alignment="CENTER_RIGHT" layoutX="248.0" layoutY="20.0" prefHeight="23.0" prefWidth="50.0" text="1000" AnchorPane.topAnchor="18.0">
+                                             <tooltip>
+                                                <Tooltip text="실시간 업데이트 시간을 조절" />
+                                             </tooltip></TextField>
+                                          <Label layoutX="182.0" layoutY="22.0" text="Up.Time" AnchorPane.topAnchor="20.0">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" fx:id="x11" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="304.0" layoutY="16.0" text="ms" AnchorPane.leftAnchor="301.0" AnchorPane.topAnchor="20.0">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" fx:id="x111" />
+                                             </font>
+                                          </Label>
+                          </children>
+                        </AnchorPane>
+                      </top>
+                    </BorderPane>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="698.0" prefWidth="971.0">
+                      <children>
+                        <BorderPane prefHeight="791.0" prefWidth="704.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <center>
+                            <TabPane prefHeight="418.0" prefWidth="472.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="1.7976931348623157E308" BorderPane.alignment="CENTER">
+                              <tabs>
+                                <Tab text="Velocity">
+                                  <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="305.0" prefWidth="431.0">
+                                      <children>
+                                        <GridPane prefHeight="360.0" prefWidth="414.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                          <children>
+                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter #1" />
+                                            <Label text="Filter Type" GridPane.rowIndex="1" />
+                                            <ComboBox fx:id="velFilter1Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter #2" GridPane.rowIndex="2" />
+                                            <Label text="Filter Type" GridPane.rowIndex="3" />
+                                            <ComboBox fx:id="velFilter2Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter #3" GridPane.rowIndex="4" />
+                                            <Label text="Filter Type" GridPane.rowIndex="5" />
+                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter #4" GridPane.rowIndex="6" />
+                                            <Label text="Filter Type" GridPane.rowIndex="7" />
+                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Feedback Filter #1" GridPane.rowIndex="8" />
+                                            <Label text="Filter Type" GridPane.rowIndex="9" />
+                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Feedback Filter #2" GridPane.rowIndex="10" />
+                                            <Label text="Filter Type" GridPane.rowIndex="11" />
+                                            <ComboBox fx:id="velFilter3Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                            <ComboBox fx:id="velFilter4Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                            <ComboBox fx:id="velFilter5Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                            <ComboBox fx:id="velFilter6Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                                          </children>
+                                          <columnConstraints>
+                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="138.0" />
+                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.0" minWidth="10.0" prefWidth="276.0" />
+                                          </columnConstraints>
+                                          <rowConstraints>
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          </rowConstraints>
+                                        </GridPane>
+                                      </children>
+                                    </AnchorPane>
+                                  </content>
+                                </Tab>
+                                <Tab text="Position">
+                                  <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                      <children>
+                                        <GridPane prefHeight="128.0" prefWidth="414.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                          <children>
+                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter #1" />
+                                            <Label text="Filter Type" GridPane.rowIndex="1" />
+                                            <ComboBox fx:id="positionFilter1Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter #2" GridPane.rowIndex="2" />
+                                            <Label text="Filter Type" GridPane.rowIndex="3" />
+                                            <ComboBox fx:id="positionFilter2Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          </children>
+                                          <columnConstraints>
+                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="138.0" />
+                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.0" minWidth="10.0" prefWidth="276.0" />
+                                          </columnConstraints>
+                                          <rowConstraints>
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          </rowConstraints>
+                                        </GridPane>
+                                      </children>
+                                    </AnchorPane>
+                                  </content>
+                                </Tab>
+                                <Tab text="Scheduling">
+                                  <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                      <children>
+                                        <GridPane prefHeight="187.0" prefWidth="414.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                          <children>
+                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Velocity Filter #1" />
+                                            <Label text="Filter Type" GridPane.rowIndex="1" />
+                                            <ComboBox fx:id="schedulingFilter1Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Velocity Filter #2" GridPane.rowIndex="2" />
+                                            <Label text="Filter Type" GridPane.rowIndex="3" />
+                                            <ComboBox fx:id="schedulingFilter2Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Position Filter #1" GridPane.rowIndex="4" />
+                                            <Label text="Filter Type" GridPane.rowIndex="5" />
+                                            <ComboBox fx:id="schedulingFilter3Combo" prefHeight="29.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          </children>
+                                          <columnConstraints>
+                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="138.0" />
+                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.0" minWidth="10.0" prefWidth="276.0" />
+                                          </columnConstraints>
+                                          <rowConstraints>
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          </rowConstraints>
+                                        </GridPane>
+                                      </children>
+                                    </AnchorPane>
+                                  </content>
+                                </Tab>
+                              </tabs>
+                            </TabPane>
+                          </center>
+                          <top>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="803.0" BorderPane.alignment="CENTER">
+                              <children>
+                                <Text font="$x1" layoutX="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Controller Tuning - Position Loop" AnchorPane.topAnchor="15.0" />
+                                <Label layoutX="14.0" layoutY="75.0" text="Proportional Gain" />
+                                <Label layoutX="14.0" layoutY="109.0" text="Integral Gain" />
+                                <Label layoutX="14.0" layoutY="145.0" text="Gain Divide" />
+                                <Label layoutX="14.0" layoutY="178.0" text="Scale" />
+                                <Label layoutX="14.0" layoutY="211.0" text="Velocity Feedback Derivative Gain" />
+                                <Label layoutX="14.0" layoutY="244.0" text="Velocity FF Gain" />
+                                <TextField id="" fx:id="velocityFFGain" alignment="CENTER_RIGHT" layoutY="238.0" prefHeight="29.0" prefWidth="150.0" AnchorPane.leftAnchor="366.0" />
+                                <TextField id="" fx:id="fbDerivativeGain" alignment="CENTER_RIGHT" layoutY="204.0" prefHeight="29.0" prefWidth="150.0" AnchorPane.leftAnchor="366.0" />
+                                <TextField id="" fx:id="scale" alignment="CENTER_RIGHT" layoutY="171.0" prefHeight="29.0" prefWidth="150.0" AnchorPane.leftAnchor="366.0" />
+                                <TextField id="" fx:id="gainDivide" alignment="CENTER_RIGHT" layoutY="137.0" prefHeight="29.0" prefWidth="150.0" AnchorPane.leftAnchor="366.0" />
+                                <TextField id="" fx:id="integralGain" alignment="CENTER_RIGHT" layoutY="103.0" prefHeight="29.0" prefWidth="150.0" AnchorPane.leftAnchor="366.0" />
+                                <TextField id="" fx:id="propotionalGain" alignment="CENTER_RIGHT" layoutY="69.0" prefHeight="29.0" prefWidth="150.0" AnchorPane.leftAnchor="366.0" />
+                                <TextField id="" fx:id="accelerationFFGain" alignment="CENTER_RIGHT" layoutY="271.0" prefHeight="29.0" prefWidth="150.0" AnchorPane.leftAnchor="366.0" />
+                                <Label layoutX="14.0" layoutY="280.0" text="Acceleration FF Gain" />
+                                <Label fx:id="proportioalLabel" alignment="CENTER_RIGHT" contentDisplay="LEFT" layoutX="245.0" layoutY="67.0" maxWidth="-1.0" prefHeight="29.0" prefWidth="100.0" text="0" textAlignment="RIGHT" />
+                                <Label fx:id="integralGainLabel" alignment="CENTER_RIGHT" contentDisplay="LEFT" layoutX="245.0" layoutY="101.0" maxWidth="-1.0" prefHeight="29.0" prefWidth="100.0" text="0" textAlignment="RIGHT" />
+                                <Label fx:id="gainDivideLabel" alignment="CENTER_RIGHT" contentDisplay="LEFT" layoutX="245.0" layoutY="136.0" maxWidth="-1.0" prefHeight="29.0" prefWidth="100.0" text="0" textAlignment="RIGHT" />
+                                <Label fx:id="scaleLabel" alignment="CENTER_RIGHT" contentDisplay="LEFT" layoutX="245.0" layoutY="170.0" maxWidth="-1.0" prefHeight="29.0" prefWidth="100.0" text="0" textAlignment="RIGHT" />
+                                <Label fx:id="fbDerivativeGainLabel" alignment="CENTER_RIGHT" contentDisplay="LEFT" layoutX="245.0" layoutY="202.0" maxWidth="-1.0" prefHeight="29.0" prefWidth="100.0" text="0" textAlignment="RIGHT" />
+                                <Label fx:id="velocityLabel" alignment="CENTER_RIGHT" contentDisplay="LEFT" layoutX="245.0" layoutY="236.0" maxWidth="-1.0" prefHeight="29.0" prefWidth="100.0" text="0" textAlignment="RIGHT" />
+                                <Label fx:id="accelerationFFGainLabel" alignment="CENTER_RIGHT" contentDisplay="LEFT" layoutX="245.0" layoutY="271.0" maxWidth="-1.0" prefHeight="29.0" prefWidth="100.0" text="0" textAlignment="RIGHT" />
+                                <Label layoutX="275.0" layoutY="42.0" text="Current" />
+                                <Label layoutX="419.0" layoutY="42.0" text="Modify" />
+                              </children>
+                            </AnchorPane>
+                          </top>
+                        </BorderPane>
+                      </children>
+                    </AnchorPane>
+                  </items>
+                </SplitPane>
+              </children>
+            </AnchorPane>
+          </children>
+        </AnchorPane>
+      </center>
+      <left>
+        <AnchorPane prefHeight="200.0" prefWidth="230.0" BorderPane.alignment="CENTER">
+          <children>
+            <SplitPane dividerPositions="0.9456384323640961" orientation="VERTICAL" prefHeight="793.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <ScrollPane hbarPolicy="NEVER" prefHeight="744.0" prefWidth="197.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="877.0" prefWidth="200.0">
+                          <children>
+                            <GridPane prefHeight="814.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <children>
+                                <Label onMouseClicked="#handleAxisSetup" text="• Axis Configrations">
+                                  <font>
+                                    <Font name="System Bold" size="15.0" />
+                                  </font>
+                                </Label>
+                                <Label text="- Motor and Feedback" GridPane.rowIndex="1" />
+                                <Label onMouseClicked="#handleAxisSetup1" text="  • Motor Settings" GridPane.rowIndex="2" />
+                                <Label onMouseClicked="#handleAxisSetup2" text="  • Feedback Settings" GridPane.rowIndex="3" />
+                                <Label onMouseClicked="#handleAxisSetup3" text="• User Units" GridPane.rowIndex="4" />
+                                <Label text="- Limits and Protections" GridPane.rowIndex="5" />
+                                <Label onMouseClicked="#handleAxisSetup4" text="  • Current Limits" GridPane.rowIndex="6" />
+                                <Label onMouseClicked="#handleAxisSetup5" text="  • Motor Limits" GridPane.rowIndex="7" />
+                                <Label onMouseClicked="#handleAxisSetup6" text="  • Protections" GridPane.rowIndex="8" />
+                                <Label text="- Application Settings" GridPane.rowIndex="9" />
+                                <Label onMouseClicked="#handleAxisSetup7" text="  • Settling Window" GridPane.rowIndex="10" />
+                                <Label onMouseClicked="#handleAxisSetup8" text="  • Inputs and Outputs" GridPane.rowIndex="11" />
+                                <Label text="- Current" GridPane.rowIndex="12" />
+                                <Label onMouseClicked="#handleAxisSetup9" text="  • Identification" GridPane.rowIndex="13" />
+                                <Label onMouseClicked="#handleAxisSetup10" text="  • Design" GridPane.rowIndex="14" />
+                                <Label onMouseClicked="#handleAxisSetup11" text="  • Verification - Time" GridPane.rowIndex="15" />
+                                <Label onMouseClicked="#handleAxisSetup12" text="• Commutation" GridPane.rowIndex="16" />
+                                <Label text="- Velocity and Position" GridPane.rowIndex="17" />
+                                <Label onMouseClicked="#handleAxisSetup13" text="  • Identification" GridPane.rowIndex="18" />
+                                <Label onMouseClicked="#handleAxisSetup14" text="  • Design" GridPane.rowIndex="19" />
+                                <Label onMouseClicked="#handleAxisSetup15" text="  • Scheduling" GridPane.rowIndex="20" />
+                                <Label onMouseClicked="#handleAxisSetup16" text="  • Verification - Time" GridPane.rowIndex="21" />
+                                <Label onMouseClicked="#handleAxisSetup17" text="• Summary" GridPane.rowIndex="22" />
+                              </children>
+                              <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <padding>
+                                <Insets left="10.0" />
+                              </padding>
+                              <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                            </GridPane>
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </ScrollPane>
+                  </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="49.0" prefWidth="200.0">
+                  <children>
+                    <Button layoutX="13.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleAxisSetup15" text="&lt;&lt;" />
+                    <Button layoutX="148.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleAxisSetup17" text="&gt;&gt;" />
+                  </children>
+                </AnchorPane>
+              </items>
+            </SplitPane>
+          </children>
+        </AnchorPane>
+      </left>
+      <top>
+        <AnchorPane prefHeight="45.0" prefWidth="1390.0" BorderPane.alignment="CENTER">
+          <children>
+            <Label text="Axis Setup" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="17.0" />
+            <Label text="Verification - Time" AnchorPane.leftAnchor="230.0" AnchorPane.topAnchor="17.0" />
+            <Label fx:id="driverLabel" layoutX="365.0" layoutY="17.0" text="DriverNo." />
+          </children>
+        </AnchorPane>
+      </top>
+    </BorderPane>
+  </children>
+</AnchorPane>

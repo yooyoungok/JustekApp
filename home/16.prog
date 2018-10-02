@@ -1,0 +1,12 @@
+TA500
+TM3000
+TS50
+while (1)
+    X5000
+    sleep(5000000)
+    Y5000
+    sleep(5000000)
+    X0 Y0
+    sleep(10000000)
+endwhile
+RETURN

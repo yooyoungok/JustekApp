@@ -1,0 +1,3 @@
+Proportional gain,7,RW,---,---
+Integral gain,9000,RW,---,--
+Gain divide,1,RW,---,---

@@ -1,0 +1,38 @@
+#JTR2403 모터입니다.
+0x2200,Amplifier peak current,15000,RW,---,---
+0x2200,Amplifier continuous current,7500,RW,---,---
+0x2200,Amplifier peak current time,2000,RW,---,---
+0x2200,Amplifier maximum voltage,3250,RW,---,---
+0x2200,Amplifier minimum voltage,2250,RW,---,---
+0x2600,Proportional gain,7,RW,---,---
+0x2600,Integral gain,9000,RW,---,--
+0x2600,Gain divide,1,RW,---,---
+0x2400,Position Loop Propotional Gain,0,RW,---,---
+0x2400,Integral gain,0,RW,---,--
+0x2400,Gain divide,0,RW,---,---
+0x2400,Proportional gain,0,RW,---,---
+0x2400,Integral gain,0,RW,---,--
+0x2400,Gain divide,0,RW,---,---
+0x2400,Proportional gain,0,RW,---,---
+0x2300,Motor Type,0,RW,---,---
+0x2300,Pole Pairs,17,RW,---,---
+0x2300,Hall Sensor Type,0x001,RW,---,---
+0x2300,Hall Offset,120,RW,---,---
+0x2300,Resistance,1800,RW,---,---
+0x2300,Inductance,7100,RW,---,---
+0x2300,Back EMF,36100,RW,---,---
+0x2300,Maximum Velocity,0,RW,---,---
+0x2300,Torque Constant,66700,RW,---,---
+0x2300,Peak Current,18000,RW,---,---
+0x2300,Continuous Current,6000,RW,---,---
+0x2300,Temperature Sensor,0x0000,RW,---,---
+0x2300,Encoder Type code,0x0001,RW,---,---
+0x2300,Encoder Unit,0x0000,RW,---,---
+0x2300,Encoder Direction,0,RW,---,---
+0x2300,Counts per Revolution,8192000,RW,---,---
+0x2300,Encoder Resolution,1,RW,---,---
+0x2300,Electrical distance,4194304,RW,---,---
+0x2300,Auxiliary encoder type code,0x0000,RW,---,---
+0x2300,Auxiliary encoder direction,0x0000,RW,---,---
+0x2300,Auxiliary encoder resolution,1,RW,---,---
+0x2300,Limit sensor Swad,1,RW,---,---

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.AxisSetup9Controller">
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <AnchorPane prefHeight="45.0" prefWidth="1390.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="14.0" layoutY="13.0" text="Axis Setup" />
+                  <Label layoutX="1319.0" layoutY="13.0" text="Drive01" AnchorPane.rightAnchor="14.0" />
+                  <Label layoutX="192.0" layoutY="13.0" text="Identification" />
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <SplitPane dividerPositions="0.9456384323640961" orientation="VERTICAL" prefHeight="793.0" prefWidth="199.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <ScrollPane layoutX="-1.0" layoutY="14.0" prefHeight="744.0" prefWidth="197.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="814.0" prefWidth="200.0">
+                                       <children>
+                                          <GridPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label onMouseClicked="#handleAxisSetup" text="• Axis Configrations">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font></Label>
+                                                <Label text="- Motor and Feedback" GridPane.rowIndex="1" />
+                                                <Label onMouseClicked="#handleAxisSetup1" text="  • Motor Settings" GridPane.rowIndex="2" />
+                                                <Label onMouseClicked="#handleAxisSetup2" text="  • Feedback Settings" GridPane.rowIndex="3" />
+                                                <Label onMouseClicked="#handleAxisSetup3" text="• User Units" GridPane.rowIndex="4" />
+                                                <Label text="- Limits and Protections" GridPane.rowIndex="5" />
+                                                <Label onMouseClicked="#handleAxisSetup4" text="  • Current Limits" GridPane.rowIndex="6" />
+                                                <Label onMouseClicked="#handleAxisSetup5" text="  • Motor Limits" GridPane.rowIndex="7" />
+                                                <Label onMouseClicked="#handleAxisSetup6" text="  • Protections" GridPane.rowIndex="8" />
+                                                <Label text="- Application Settings" GridPane.rowIndex="9" />
+                                                <Label onMouseClicked="#handleAxisSetup7" text="  • Settling Window" GridPane.rowIndex="10" /> 
+                                                <Label onMouseClicked="#handleAxisSetup8" text="  • Inputs and Outputs" GridPane.rowIndex="11" />
+                                                <Label text="- Current" GridPane.rowIndex="12" />
+                                                <Label onMouseClicked="#handleAxisSetup9" text="  • Identification" GridPane.rowIndex="13" />
+                                                <Label onMouseClicked="#handleAxisSetup10" text="  • Design" GridPane.rowIndex="14" />
+                                                <Label onMouseClicked="#handleAxisSetup11" text="  • Verification - Time" GridPane.rowIndex="15" />
+                                                <Label onMouseClicked="#handleAxisSetup12" text="• Commutation" GridPane.rowIndex="16" />
+                                                <Label text="- Velocity and Position" GridPane.rowIndex="17" />
+                                                <Label onMouseClicked="#handleAxisSetup13" text="  • Identification" GridPane.rowIndex="18" />
+                                                <Label onMouseClicked="#handleAxisSetup14" text="  • Design" GridPane.rowIndex="19" />
+                                                <Label onMouseClicked="#handleAxisSetup15" text="  • Scheduling" GridPane.rowIndex="20" />
+                                                <Label onMouseClicked="#handleAxisSetup16" text="  • Verification - Time" GridPane.rowIndex="21" />
+                                                <Label onMouseClicked="#handleAxisSetup17" text="• Summary" GridPane.rowIndex="22" />
+                                              </children>
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="49.0" prefWidth="197.0">
+                           <children>
+                              <Button layoutX="13.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleAxisSetup8" text="&lt;&lt;" />
+                              <Button layoutX="120.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleAxisSetup10" text="&gt;&gt;" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <SplitPane dividerPositions="0.9445145018915511" orientation="VERTICAL" prefHeight="795.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <SplitPane dividerPositions="0.6913996627318718" prefHeight="745.0" prefWidth="1188.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="743.0" prefWidth="816.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <LineChart layoutX="54.0" layoutY="-16.0" prefHeight="367.0" prefWidth="814.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <xAxis>
+                                                          <CategoryAxis side="BOTTOM" />
+                                                        </xAxis>
+                                                        <yAxis>
+                                                          <NumberAxis side="LEFT" />
+                                                        </yAxis>
+                                                      </LineChart>
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <LineChart layoutX="8.0" layoutY="-11.0" prefHeight="366.0" prefWidth="814.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <xAxis>
+                                                          <CategoryAxis side="BOTTOM" />
+                                                        </xAxis>
+                                                        <yAxis>
+                                                          <NumberAxis side="LEFT" />
+                                                        </yAxis>
+                                                      </LineChart>
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <Label layoutX="10.0" layoutY="10.0" text="Experiment Phases" />
+                                          <CheckBox layoutX="213.0" layoutY="9.0" mnemonicParsing="false" text="A" />
+                                          <CheckBox layoutX="261.0" layoutY="9.0" mnemonicParsing="false" text="B" />
+                                          <CheckBox layoutX="312.0" layoutY="9.0" mnemonicParsing="false" text="C" />
+                                          <Label layoutX="10.0" layoutY="50.0" text="Current Level[% of PL]" />
+                                          <TextField layoutX="181.0" layoutY="45.0" prefHeight="29.0" prefWidth="58.0" />
+                                          <CheckBox layoutX="10.0" layoutY="93.0" mnemonicParsing="false" text="Unbalanced/Vertical Axis" />
+                                          <Button layoutX="246.0" layoutY="89.0" mnemonicParsing="false" text="Identify" />
+                                          <Text layoutX="10.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estimated Motor Parameters" />
+                                          <ProgressBar layoutX="249.0" layoutY="48.0" prefHeight="23.0" prefWidth="98.0" progress="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Button layoutX="665.0" mnemonicParsing="false" text="Revert" />
+                              <Button layoutX="747.0" mnemonicParsing="false" text="Apply" />
+                              <Button layoutX="821.0" mnemonicParsing="false" text="Errors..." />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>

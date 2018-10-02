@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.AxisSetup17Controller">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <AnchorPane prefHeight="45.0" prefWidth="1390.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="14.0" layoutY="13.0" text="Axis Setup" />
+                        <Label fx:id="fxDriverLabel" layoutX="320.0" layoutY="16.0" AnchorPane.rightAnchor="1234.0" />
+                        <Label layoutX="252.0" layoutY="15.0" text="Summary" />
+                     </children>
+                  </AnchorPane>
+               </top>
+                <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="230.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <TreeView fx:id="treeView" onMouseClicked="#mouseClick" prefHeight="810.0" prefWidth="230.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets left="5.0" />
+                     </BorderPane.margin>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="810.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <CheckBox fx:id="fxSaveCheckBox" layoutX="26.0" layoutY="15.0" mnemonicParsing="false" text="Save Parameters in Drive (SV)" AnchorPane.leftAnchor="20.0" />
+                              <CheckBox fx:id="fxUploadCheckBox" layoutX="26.0" layoutY="50.0" mnemonicParsing="false" text="Upload Parameters from Drive" AnchorPane.leftAnchor="20.0" />
+                              <TextField fx:id="fxUploadFileField" layoutX="20.0" layoutY="73.0" prefHeight="29.0" prefWidth="700.0" AnchorPane.leftAnchor="20.0" />
+                              <Button layoutX="728.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#onClickFile" prefHeight="30.0" prefWidth="40.0" text="File" />
+                              <CheckBox fx:id="fxSaveDesignCheckBox" layoutX="20.0" layoutY="118.0" mnemonicParsing="false" text="Save Design Plants" AnchorPane.leftAnchor="20.0" />
+                              <Button layoutX="728.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#onClickFile" prefHeight="30.0" prefWidth="40.0" text="File" />
+                              <TextField fx:id="fxDesignFileField" layoutX="20.0" layoutY="143.0" prefHeight="29.0" prefWidth="700.0" AnchorPane.leftAnchor="20.0" />
+                              <Button layoutX="20.0" layoutY="221.0" mnemonicParsing="false" onMouseClicked="#onClickSave" prefWidth="70.0" text="Save" />
+                              <Button layoutX="105.0" layoutY="221.0" mnemonicParsing="false" onMouseClicked="#onClickCancel" prefWidth="70.0" text="Cancel" />
+                              <Separator layoutX="5.0" layoutY="201.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </center>
+         <bottom>
+            <FlowPane alignment="CENTER" hgap="50.0" prefHeight="45.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#onClickRevert" text="Revert" />
+                  <Button mnemonicParsing="false" onMouseClicked="#onClickApply" text="Apply" />
+                  <Button mnemonicParsing="false" onMouseClicked="#onClickErrors" text="Errors..." />
+               </children>
+            </FlowPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

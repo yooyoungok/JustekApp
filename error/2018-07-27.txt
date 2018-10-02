@@ -1,0 +1,12 @@
+2018년 07월 27일 오후 01시 09분 26초
+NetworkServerManager :: openSocket
+java.net.ConnectException: Connection timed out: connect
+2018년 07월 27일 오후 02시 19분 08초
+NetworkServerManager :: openSocket
+java.net.ConnectException: Connection timed out: connect
+2018년 07월 27일 오후 03시 45분 27초
+NetworkServerManager :: openSocket
+java.net.ConnectException: Connection timed out: connect
+2018년 07월 27일 오후 04시 42분 50초
+NetworkServerManager :: openSocket
+java.net.ConnectException: Connection timed out: connect

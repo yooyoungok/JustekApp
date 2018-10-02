@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EtherCATInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EtherCATInfo.xsd" Version="1.6">
+  <Vendor>
+    <Id>#x00000515 -test01</Id>
+    <Name>Justek, Inc. 파일1</Name>
+    <ImageData16x14>424DD6020000000000003600000028000000100000000E0000000100180000000000A0020000C30E0000C30E00000000000000000000FFFFFFFFFEFFD56D38D56D38FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD56D38F0DEAFFFFFFFD56D38FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0DEAFD66C37FFFFFFFFFFFFFEFEFED86B37FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD66C37D66C37FFFFFFFFFFFFD46D36EBC67CD16133D15F30EBBF78FFFFFFFFFFFFD25B2ED26331FFFFFFFFFEFFFFFFFFFFFFFFD66C37FFFFFFFFFFFFD66C36D56E35D36835D76A36D46D36D36434FFFEFFD36633D46D36FFFFFFFFFFFFFFFFFFFFFFFFD66C37FFFFFFFFFFFFD66C36FDFCF2FFFFFEFFFFFFD46D36D46632FBFFFFD36633D46D36FFFFFFFFFFFFFFFFFFFFFFFFD56E37FFFFFFFFFFFFD56E37F0DEAFD25F32D66C36D56D38D15F30FDFFFED36633D56E37FFFFFFFFFFFFFFFFFFFFFFFFD56E37FFFFFFFFFFFFD56E37D76D37D76E35D56E37D16133FDFFFFFFFFFFD36633D46D36FFFFFFFFFFFFFFFFFFFFFFFFD66C37FFFFFFFFFFFFD66C36D46D36D56D38EBBF78FFFFFFFFFFFFFFFFFFD36633D56E37FFFFFFFFFFFFFFFFFFFFFFFFD66C37FFFFFFFFFFFFD76D38D26734D56E35D76D37D86C36EBBF78D76D38D66C36D46D36D36C35D66C36FFFFFFFFFFFFD66C37D66C37D46C37D66C37FBFFFFE09C53D16133D8753BEBBF78D56835D56835D56835D56835D56834FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</ImageData16x14>
+  </Vendor>
+  <Descriptions>
+    <Groups>
+      <Group SortOrder="0">
+        <Type>MotionController</Type>
+        <Name LcId="1031">Motion Controller</Name>
+        <Name LcId="1033">Motion Controller</Name>
+        <ImageData16x14>424DD8020000000000003600000028000000100000000E0000000100180000000000A2020000AD1B0000AD1B00000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE1E1E1D2D2D29D9D9D7474747272727778788484849293939F9F9FBBBBBBE1E1E1E9E9E9FFFFFFFFFFFFDEDEDE7D7D7D3C3C3C2D2D2D3535353A3A3A4647475859596D6D6D8282829494949797978080807676769B9B9BE6E6E63B3B3B2020202929292F2F2F3535353A3A3A4747475959596D6D6D8281819393939696968888887777775F5F5F6363642121212020202929293131313838383D3D3D4B4A4B5E5E5E7474748989899B9B9B9D9D9D8C8C8C7777775E5F5E5454542626262121212424242424241D1D1D1717171818181616161B1B1B2C2C2C3B3B3B5251516767676A6A6A6262625858582323230D0D0D0606060404040909090E0E0E1515141F1F1F2626262626262525251919190B0B0B1111112626264D4D4D1414140909091010101515150F0F0F0707070A0A090C0C0B0E0E0E1111111515152C2C2C3D3D3D2A2A2A1A1A1A1C1C1C1919190808080303030000001414142F2F2F3738383E3E3E4646464D4D4D4948481F1F200000000606061616162929290D0D0D0000000000003333335D5E5E2D2D2D0F0F0F0909090808081413144A4949A4A4A55C5C5C0000000000000E0E0E2E2E2E0000000000002323234849493232321C1C1C1515153333324142416868688E8E8E4242420000000000002E2E2EE1E1E17272722121210000000404041616161D1D1D2222224F4F4F474747303030090909000000212121727272E1E1E1FFFFFFFFFFFFE0E0E0C9C9C98F8F8F5959594C4C4C3F3F3F3F3F3F4C4C4C5959598F8F8FC9C9C9E0E0E0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</ImageData16x14>
+      </Group>
+    </Groups>
+    <Devices>
+      <Device Physics="YY">
+        <Type ProductCode="#x54490001" RevisionNo="#x00010211">SM01 EtherCAT Drive (PDO16)</Type>
+        <Name LcId="1033">SM01 EtherCAT Drive (PDO16)</Name>
+        <Name LcId="1031">SM01 EtherCAT Drive (PDO16)</Name>
+        <Info>
+          <StateMachine>
+            <Timeout>
+              <PreopTimeout>2000</PreopTimeout>
+              <SafeopOpTimeout>9000</SafeopOpTimeout>
+              <BackToInitTimeout>5000</BackToInitTimeout>
+              <BackToSafeopTimeout>200</BackToSafeopTimeout>
+            </Timeout>
+          </StateMachine>
+          <Mailbox>
+            <Timeout>
+              <RequestTimeout>100</RequestTimeout>
+              <ResponseTimeout>2000</ResponseTimeout>
+            </Timeout>
+          </Mailbox>
+        </Info>
+        <GroupType>MotionController</GroupType>
+        <Profile>
+          <ChannelInfo>
+          <ProfileNo>402</ProfileNo>
+</ChannelInfo>
+	<Dictionary>
+
+          <DataTypes>
+<DataType><Name>UINT</Name><BitSize>16</BitSize></DataType>
+</DataTypes>
+   	<Objects>
+             <Object>
+	   <Index>#x6040</Index>
+	   <Name>Controlword</Name>
+	   <Type>UINT</Type>
+	   <BitSize>16</BitSize>
+	  <Info>
+	   <DefaultData>0000</DefaultData>
+	   </Info>
+	   <Flags>
+	    <Access>rw</Access>
+   	    <Category>m</Category>
+   	    <PdoMapping>RT</PdoMapping>
+	    </Flags>
+	  </Object>
+              </Objects>
+	</Dictionary>
+        </Profile>
+        <Fmmu>Outputs</Fmmu>
+        <Fmmu>Inputs</Fmmu>
+        <Fmmu>MBoxState</Fmmu>
+    <Sm MinSize="34" MaxSize="128" DefaultSize="128" StartAddress="#x1000" ControlByte="#x26" Enable="1">MBoxOut</Sm>
+        <Sm MinSize="34" MaxSize="128" DefaultSize="128" StartAddress="#x1080" ControlByte="#x22" Enable="1">MBoxIn</Sm>
+        <Sm StartAddress="#x1100" ControlByte="#x64" DefaultSize="4" Enable="1">Outputs</Sm>
+        <Sm StartAddress="#x1400" ControlByte="#x20" DefaultSize="4" Enable="1">Inputs</Sm>
+        <RxPdo Mandatory="true" Fixed="true" Sm="2">
+          <Index>#x1600</Index>
+          <Name>Outputs</Name>
+          <Entry>
+            <Index>#x6040</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>16</BitLen>
+            <Name>Control Word</Name>
+            <Comment>object 0x6040:0</Comment>
+            <DataType>UINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x607A</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>TargetPosition</Name>
+            <Comment>object 0x607A:0</Comment>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6060</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>ModeOfOperation</Name>
+            <Comment>object 0x6060:0</Comment>
+            <DataType>SINT</DataType>
+          </Entry>
+  		<Entry>
+            <Index>#x6061</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>Command_dump</Name>
+            <Comment>object 0x6061:0</Comment>
+            <DataType>SINT</DataType>
+          </Entry>
+          <!--**************** RxPDO for Profile Position Mode (wkk in SSLab) ****************-->
+        </RxPdo>
+        <TxPdo Fixed="1" Sm="3">
+          <Index>#x1a00</Index>
+          <Name>Inputs</Name>
+          <Entry>
+            <Index>#x6041</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>16</BitLen>
+            <Name>Status Word</Name>
+            <Comment>object 0x6041:0</Comment>
+            <DataType>UINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6064</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>ActualPosition</Name>
+            <Comment>object 0x6064:0</Comment>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x606C</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>ActualVelocity</Name>
+            <Comment>object 0x606C:0</Comment>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6061</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>ModesOfOperationDisplay</Name>
+            <Comment>object 0x6061:0</Comment>
+            <DataType>SINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>Digital inputs</Name>
+            <Comment>object 0x60FD:0</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump sending-->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data sending</Name>
+            <Comment>object 0xF0FD:0</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 1 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump1</Name>
+            <Comment>object 0xF0FD:1</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 2 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump2</Name>
+            <Comment>object 0xF0FD:2</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 3 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump3</Name>
+            <Comment>object 0xF0FD:3</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 4 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump4</Name>
+            <Comment>object 0xF0FD:4</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 5 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump5</Name>
+            <Comment>object 0xF0FD:5</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 6 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump6</Name>
+            <Comment>object 0xF0FD:6</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 7 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump7</Name>
+            <Comment>object 0xF0FD:7</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 8 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump8</Name>
+            <Comment>object 0xF0FD:8</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 9 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump9</Name>
+            <Comment>object 0xF0FD:9</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 10 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump10</Name>
+            <Comment>object 0xF0FD:10</Comment>
+            <DataType>UDINT</DataType>
+	</Entry>
+          <Entry> <!-- dump pdo 11 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump11</Name>
+            <Comment>object 0xF0FD:11</Comment>
+            <DataType>UDINT</DataType>
+          </Entry> 
+          <Entry> <!-- dump pdo 12 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump12</Name>
+            <Comment>object 0xF0FD:12</Comment>
+            <DataType>UDINT</DataType>
+          </Entry> 
+          <Entry> <!-- dump pdo 13 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump13</Name>
+            <Comment>object 0xF0FD:13</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 14 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump14</Name>
+            <Comment>object 0xF0FD:14</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 15 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump15</Name>
+            <Comment>object 0xF0FD:15</Comment>
+            <DataType>UDINT</DataType>
+          </Entry> 
+          <Entry> <!-- dump pdo 16 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump16</Name>
+            <Comment>object 0xF0FD:16</Comment>
+            <DataType>UDINT</DataType>
+          </Entry> 
+ 
+                                                                                                                 
+        </TxPdo>
+         <Mailbox DataLinkLayer="true">
+          <EoE />
+          <CoE SdoInfo="true" SegmentedSdo="true" CompleteAccess="true" />
+          <FoE />
+        </Mailbox>
+   <Dc>   <OpMode>
+            <Name>DC</Name>
+            <Desc>DC-Synchron</Desc>
+            <AssignActivate>#x300</AssignActivate>
+            <CycleTimeSync0 Factor="1">0</CycleTimeSync0>
+            <ShiftTimeSync0>0</ShiftTimeSync0>
+            <CycleTimeSync1 Factor="1">0</CycleTimeSync1>
+          </OpMode>
+          <OpMode>
+            <Name>Synchron</Name>
+            <Desc>SM-Synchron</Desc>
+            <AssignActivate>#x0</AssignActivate>
+            <CycleTimeSync0 Factor="1">0</CycleTimeSync0>
+            <ShiftTimeSync0>0</ShiftTimeSync0>
+            <CycleTimeSync1 Factor="1">0</CycleTimeSync1>
+          </OpMode>
+
+        </Dc>
+        <Eeprom>
+          <ByteSize>2048</ByteSize>
+          <ConfigData>890E808C88130000000000800000</ConfigData>
+        </Eeprom>
+        <ImageData16x14>424DD8020000000000003600000028000000100000000E0000000100180000000000A2020000120B0000120B00000000000000000000FFFFFFFFFFFF80441A773A15773A15773A15773A157A3F1A957157EAE4E0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF80441AC47E13D58C12D58C12D58C12C99346975819763A16875D3FDACFC7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF80441AB8B8B8D58C123F3F3F707070D49F4DBB7A1FB7761E9B5C1A8042167F5030C6B3A7FFFFFFFFFFFFFFFFFFFFFFFF80441AB8B8B8D58C123F3F3F707070D49F4DBB7A1FBA791EBA791EBA781EA0611B854717AF9582FFFFFFFFFFFFFFFFFF80441AC47E13D58C12D58C12D58C12D49F4DBB7A1FBA791EBA791EB9781EBA781E8F5018A88C77FFFFFFFFFFFFFFFFFF80441AB8B8B8D58C123F3F3F707070D49F4DBB7A1FBA791EBA791EB9781EBA781E8F5018A88C77FFFFFFFFFFFFFFFFFF80441AB8B8B8D58C123F3F3F707070D49F4DBB7A1FBA791EBA781EB9781EBA791E8F5018A88C77FFFFFFFFFFFFFFFFFF80441AC47E13D58C12D58C12D58C12D49F4DBB7A1EBA791EBA781EBA781EBA791E8F5118A98C77FFFFFFFFFFFFFFFFFF80441AC47E13D58C12D58C12D58C12D49E4DBA791EBA781EB9781EBA791EBA791E8F5119A98C77FFFFFFFFFFFFFFFFFF80441A34B42717FF0017FF0017FF00D39E4DBA791EBA781EBA781EBA791EBB7A1E8F5119A98C77FFFFFFFFFFFFFFFFFF80441A34B42734B42734B42734B427D39E4DBA781EB9781EBA781EBA791EBB7A1E8F5119A98C77FFFFFFFFFFFFFFFFFF80441AC47E13D58C12D58C12D58C12D39E4DBA781EB9781EBA781EBA791EBB7A1E8F5119A98C77FFFFFFFFFFFFFFFFFF96643D7C411B82471D965D2BAB7339BB884DBA8137B9781EBA781EBA791EBB7A1E8F5119A98C77FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE9DDD4C5A993A87E5F905D387F451F773A15773A15773A15773A15773A15A98C77FFFFFF</ImageData16x14>
+      </Device>
+       <Device Physics="YY">
+        <Type ProductCode="#x54490001" RevisionNo="#x00010211">SM01 EtherCAT Drive (PDO16)</Type>
+        <Name LcId="1033">SM01 EtherCAT Drive_1 (PDO16)</Name>
+        <Name LcId="1031">SM01 EtherCAT Drive_1 (PDO16)</Name>
+        <Info>
+          <StateMachine>
+            <Timeout>
+              <PreopTimeout>2000</PreopTimeout>
+              <SafeopOpTimeout>9000</SafeopOpTimeout>
+              <BackToInitTimeout>5000</BackToInitTimeout>
+              <BackToSafeopTimeout>200</BackToSafeopTimeout>
+            </Timeout>
+          </StateMachine>
+          <Mailbox>
+            <Timeout>
+              <RequestTimeout>100</RequestTimeout>
+              <ResponseTimeout>2000</ResponseTimeout>
+            </Timeout>
+          </Mailbox>
+        </Info>
+        <GroupType>MotionController</GroupType>
+        <Profile>
+          <ChannelInfo>
+          <ProfileNo>402</ProfileNo>
+</ChannelInfo>
+	<Dictionary>
+
+          <DataTypes>
+<DataType><Name>UINT</Name><BitSize>16</BitSize></DataType>
+</DataTypes>
+   	<Objects>
+             <Object>
+	   <Index>#x6040</Index>
+	   <Name>Controlword</Name>
+	   <Type>UINT</Type>
+	   <BitSize>16</BitSize>
+	  <Info>
+	   <DefaultData>0000</DefaultData>
+	   </Info>
+	   <Flags>
+	    <Access>rw</Access>
+   	    <Category>m</Category>
+   	    <PdoMapping>RT</PdoMapping>
+	    </Flags>
+	  </Object>
+              </Objects>
+	</Dictionary>
+        </Profile>
+        <Fmmu>Outputs</Fmmu>
+        <Fmmu>Inputs</Fmmu>
+        <Fmmu>MBoxState</Fmmu>
+    <Sm MinSize="34" MaxSize="128" DefaultSize="128" StartAddress="#x1000" ControlByte="#x26" Enable="1">MBoxOut</Sm>
+        <Sm MinSize="34" MaxSize="128" DefaultSize="128" StartAddress="#x1080" ControlByte="#x22" Enable="1">MBoxIn</Sm>
+        <Sm StartAddress="#x1100" ControlByte="#x64" DefaultSize="4" Enable="1">Outputs</Sm>
+        <Sm StartAddress="#x1400" ControlByte="#x20" DefaultSize="4" Enable="1">Inputs</Sm>
+        <RxPdo Mandatory="true" Fixed="true" Sm="2">
+          <Index>#x1600</Index>
+          <Name>Outputs</Name>
+          <Entry>
+            <Index>#x6040</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>16</BitLen>
+            <Name>Control Word</Name>
+            <Comment>object 0x6040:0</Comment>
+            <DataType>UINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x607A</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>TargetPosition</Name>
+            <Comment>object 0x607A:0</Comment>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6060</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>ModeOfOperation</Name>
+            <Comment>object 0x6060:0</Comment>
+            <DataType>SINT</DataType>
+          </Entry>
+  		<Entry>
+            <Index>#x6061</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>Command_dump</Name>
+            <Comment>object 0x6061:0</Comment>
+            <DataType>SINT</DataType>
+          </Entry>
+          <!--**************** RxPDO for Profile Position Mode (wkk in SSLab) ****************-->
+        </RxPdo>
+        <TxPdo Fixed="1" Sm="3">
+          <Index>#x1a00</Index>
+          <Name>Inputs</Name>
+          <Entry>
+            <Index>#x6041</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>16</BitLen>
+            <Name>Status Word</Name>
+            <Comment>object 0x6041:0</Comment>
+            <DataType>UINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6064</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>ActualPosition</Name>
+            <Comment>object 0x6064:0</Comment>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x606C</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>ActualVelocity</Name>
+            <Comment>object 0x606C:0</Comment>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6061</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>ModesOfOperationDisplay</Name>
+            <Comment>object 0x6061:0</Comment>
+            <DataType>SINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>Digital inputs</Name>
+            <Comment>object 0x60FD:0</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump sending-->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data sending</Name>
+            <Comment>object 0xF0FD:0</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 1 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump1</Name>
+            <Comment>object 0xF0FD:1</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 2 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump2</Name>
+            <Comment>object 0xF0FD:2</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 3 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump3</Name>
+            <Comment>object 0xF0FD:3</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 4 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump4</Name>
+            <Comment>object 0xF0FD:4</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 5 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump5</Name>
+            <Comment>object 0xF0FD:5</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 6 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump6</Name>
+            <Comment>object 0xF0FD:6</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 7 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump7</Name>
+            <Comment>object 0xF0FD:7</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 8 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump8</Name>
+            <Comment>object 0xF0FD:8</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 9 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump9</Name>
+            <Comment>object 0xF0FD:9</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 10 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump10</Name>
+            <Comment>object 0xF0FD:10</Comment>
+            <DataType>UDINT</DataType>
+	</Entry>
+          <Entry> <!-- dump pdo 11 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump11</Name>
+            <Comment>object 0xF0FD:11</Comment>
+            <DataType>UDINT</DataType>
+          </Entry> 
+          <Entry> <!-- dump pdo 12 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump12</Name>
+            <Comment>object 0xF0FD:12</Comment>
+            <DataType>UDINT</DataType>
+          </Entry> 
+          <Entry> <!-- dump pdo 13 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump13</Name>
+            <Comment>object 0xF0FD:13</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 14 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump14</Name>
+            <Comment>object 0xF0FD:14</Comment>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry> <!-- dump pdo 15 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump15</Name>
+            <Comment>object 0xF0FD:15</Comment>
+            <DataType>UDINT</DataType>
+          </Entry> 
+          <Entry> <!-- dump pdo 16 -->
+            <Index>#xF0FD</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>data dump16</Name>
+            <Comment>object 0xF0FD:16</Comment>
+            <DataType>UDINT</DataType>
+          </Entry> 
+ 
+                                                                                                                 
+        </TxPdo>
+         <Mailbox DataLinkLayer="true">
+          <EoE />
+          <CoE SdoInfo="true" SegmentedSdo="true" CompleteAccess="true" />
+          <FoE />
+        </Mailbox>
+   <Dc>   <OpMode>
+            <Name>DC</Name>
+            <Desc>DC-Synchron</Desc>
+            <AssignActivate>#x300</AssignActivate>
+            <CycleTimeSync0 Factor="1">0</CycleTimeSync0>
+            <ShiftTimeSync0>0</ShiftTimeSync0>
+            <CycleTimeSync1 Factor="1">0</CycleTimeSync1>
+          </OpMode>
+          <OpMode>
+            <Name>Synchron</Name>
+            <Desc>SM-Synchron</Desc>
+            <AssignActivate>#x0</AssignActivate>
+            <CycleTimeSync0 Factor="1">0</CycleTimeSync0>
+            <ShiftTimeSync0>0</ShiftTimeSync0>
+            <CycleTimeSync1 Factor="1">0</CycleTimeSync1>
+          </OpMode>
+
+        </Dc>
+        <Eeprom>
+          <ByteSize>2048</ByteSize>
+          <ConfigData>890E808C88130000000000800000</ConfigData>
+        </Eeprom>
+        <ImageData16x14>424DD8020000000000003600000028000000100000000E0000000100180000000000A2020000120B0000120B00000000000000000000FFFFFFFFFFFF80441A773A15773A15773A15773A157A3F1A957157EAE4E0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF80441AC47E13D58C12D58C12D58C12C99346975819763A16875D3FDACFC7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF80441AB8B8B8D58C123F3F3F707070D49F4DBB7A1FB7761E9B5C1A8042167F5030C6B3A7FFFFFFFFFFFFFFFFFFFFFFFF80441AB8B8B8D58C123F3F3F707070D49F4DBB7A1FBA791EBA791EBA781EA0611B854717AF9582FFFFFFFFFFFFFFFFFF80441AC47E13D58C12D58C12D58C12D49F4DBB7A1FBA791EBA791EB9781EBA781E8F5018A88C77FFFFFFFFFFFFFFFFFF80441AB8B8B8D58C123F3F3F707070D49F4DBB7A1FBA791EBA791EB9781EBA781E8F5018A88C77FFFFFFFFFFFFFFFFFF80441AB8B8B8D58C123F3F3F707070D49F4DBB7A1FBA791EBA781EB9781EBA791E8F5018A88C77FFFFFFFFFFFFFFFFFF80441AC47E13D58C12D58C12D58C12D49F4DBB7A1EBA791EBA781EBA781EBA791E8F5118A98C77FFFFFFFFFFFFFFFFFF80441AC47E13D58C12D58C12D58C12D49E4DBA791EBA781EB9781EBA791EBA791E8F5119A98C77FFFFFFFFFFFFFFFFFF80441A34B42717FF0017FF0017FF00D39E4DBA791EBA781EBA781EBA791EBB7A1E8F5119A98C77FFFFFFFFFFFFFFFFFF80441A34B42734B42734B42734B427D39E4DBA781EB9781EBA781EBA791EBB7A1E8F5119A98C77FFFFFFFFFFFFFFFFFF80441AC47E13D58C12D58C12D58C12D39E4DBA781EB9781EBA781EBA791EBB7A1E8F5119A98C77FFFFFFFFFFFFFFFFFF96643D7C411B82471D965D2BAB7339BB884DBA8137B9781EBA781EBA791EBB7A1E8F5119A98C77FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE9DDD4C5A993A87E5F905D387F451F773A15773A15773A15773A15773A15A98C77FFFFFF</ImageData16x14>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

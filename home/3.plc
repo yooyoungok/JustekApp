@@ -1,0 +1,5 @@
+command "#1->100x"
+sleep(500000)
+command "b3r"
+sleep(500000)
+command "dis plc 3"

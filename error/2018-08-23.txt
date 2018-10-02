@@ -1,0 +1,3 @@
+2018년 08월 23일 오후 03시 44분 31초
+NetworkServerManager :: checkSocket
+java.net.ConnectException: Connection refused: connect

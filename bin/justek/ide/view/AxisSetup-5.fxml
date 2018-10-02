@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.AxisSetup5Controller">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <AnchorPane BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="21.0" layoutY="21.0" text="Stop Deceleration SD [cnt/sec^2]" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="21.0" />
+                        <Label layoutX="21.0" layoutY="57.0" text="Max Velocity Command VH[2] [cnt/sec]" AnchorPane.leftAnchor="21.0" />
+                        <Label layoutX="21.0" layoutY="86.0" text="Modulo Options" AnchorPane.leftAnchor="21.0" />
+                        <Label layoutX="21.0" layoutY="116.0" text="Low Position Command VL[3] [cnt]" AnchorPane.leftAnchor="21.0" />
+                        <Label layoutX="21.0" layoutY="148.0" text="High Position Command VH[3] [cnt]" AnchorPane.leftAnchor="21.0" />
+                        <Label layoutX="21.0" layoutY="180.0" text="Low Modulo - XM[1] [cnt]" AnchorPane.leftAnchor="21.0" />
+                        <TextField fx:id="fxLowPosField" layoutX="300.0" layoutY="109.0" onAction="#saveData" prefWidth="300.0" AnchorPane.leftAnchor="270.0" />
+                        <Label layoutX="21.0" layoutY="211.0" text="High Modulo - XM[2] [cnt]" AnchorPane.leftAnchor="21.0" />
+                        <TextField fx:id="fxHighPosField" layoutX="300.0" layoutY="141.0" onAction="#saveData" prefWidth="300.0" AnchorPane.leftAnchor="270.0" />
+                        <TextField fx:id="fxLowModuloField" layoutX="300.0" layoutY="173.0" onAction="#saveData" prefWidth="300.0" AnchorPane.leftAnchor="270.0" />
+                        <TextField fx:id="fxHighModuloField" layoutX="300.0" layoutY="204.0" onAction="#saveData" prefWidth="300.0" AnchorPane.leftAnchor="270.0" />
+                        <TextField fx:id="fxStopField" layoutX="289.0" layoutY="20.0" onAction="#saveData" prefWidth="300.0" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="20.0" />
+                        <TextField fx:id="fxMaxVelocityField" layoutX="300.0" layoutY="50.0" onAction="#saveData" prefWidth="300.0" AnchorPane.leftAnchor="270.0" />
+                        <ComboBox fx:id="moduloCombo" layoutX="300.0" layoutY="79.0" onAction="#saveData" prefWidth="300.0" AnchorPane.leftAnchor="270.0" />
+                        <Accordion layoutX="27.0" layoutY="362.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="250.0">
+                          <panes>
+                            <TitledPane animated="false" style="-fx-background-color: transparent;" text="Advanced">
+                              <content>
+                                <AnchorPane style="-fx-border-color: transparent; -fx-border-width: 0; -fx-background-color: transparent;">
+                                       <children>
+                                          <CheckBox fx:id="fxAdvanceCheckBox01" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#saveData" text="Bypass Acceleration Limiting XA[4]:1" />
+                                          <CheckBox fx:id="fxAdvanceCheckBox02" layoutX="14.0" layoutY="47.0" mnemonicParsing="false" onAction="#saveData" text="Ignore Hardware and Software Limits All Cyclic Modes &amp; in IP Mode XA[4]:2" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </TitledPane>
+                          </panes>
+                        </Accordion>
+                     </children>
+                  </AnchorPane>
+               </center>
+               <bottom>
+                  <FlowPane alignment="CENTER" hgap="20.0" prefHeight="45.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onClickRevert" text="Revert" />
+                        <Button mnemonicParsing="false" onAction="#onClickApply" text="Apply" />
+                        <Button mnemonicParsing="false" onAction="#onClickErrors" text="Errors..." />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets top="10.0" />
+                     </BorderPane.margin>
+                  </FlowPane>
+               </bottom>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

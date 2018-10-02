@@ -1,0 +1,8 @@
+#2J=100
+while(h210>0)
+sleep(1000000)
+end while
+#2J=0
+while(h210>0)
+sleep(1000000)
+end while

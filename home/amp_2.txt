@@ -1,0 +1,5 @@
+Amplifier  peak current,15000,RW,---,---
+Amplifier continuous current,7500,RW,---,---
+Amplifier peak current time,2000,RW,---,---
+Amplifier maximum voltage,3250,RW,---,---
+Amplifier minimum voltage,2250,RW,---,---

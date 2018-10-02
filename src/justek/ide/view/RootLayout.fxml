@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane id="main_text_field" stylesheets="@justek.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.RootLayoutController">
+   <children>
+    <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="System Configuration">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleWorkspace" text="Work Space" />
+          </items>
+        </Menu>
+            <Menu mnemonicParsing="false" text="EtherCAT">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleEtherCATSlave" text="Load" />
+                  <MenuItem mnemonicParsing="false" text="Save" />
+              </items>
+            </Menu>
+        <Menu mnemonicParsing="false" text="Axis">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleAxisSetup" text="Axis Setup" />
+            <MenuItem mnemonicParsing="false" onAction="#handleMotionSingleAxis" text="Motion-Single Axis" />
+            <MenuItem mnemonicParsing="false" onAction="#handleMotionMultiAxis" text="Motion-Multiple Axis" />
+            <MenuItem mnemonicParsing="false" onAction="#handleParameters" text="Parameters" />
+            <MenuItem mnemonicParsing="false" onAction="#handleParameterComparison" text="Parameter Comparison" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Controller">
+          <items>
+            <MenuItem disable="true" mnemonicParsing="false" onAction="#handleControllerConfigurator" text="Controller Configurator" visible="false" />
+            <MenuItem disable="true" mnemonicParsing="false" onAction="#handleControllerMotion" text="Motion" visible="false" />
+            <MenuItem mnemonicParsing="false" onAction="#handleEtherCATDiagMaster" text="EtherCAT Diagnostics Master" visible="false" />
+            <MenuItem mnemonicParsing="false" onAction="#handleEtherCATDiagSlave" text="EtherCAT Diagnostics Slave" visible="false" />
+            <MenuItem disable="true" mnemonicParsing="false" onAction="#handleParametersExplorer" text="Parameters" visible="false" />
+            <MenuItem mnemonicParsing="false" onAction="#handleJog" text="Jog" visible="false" />
+            <MenuItem mnemonicParsing="false" onAction="#handleStatusView" text="Watch Window" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Motion Programming">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleMotionProgramEdit" text="Edit" />
+            <MenuItem mnemonicParsing="false" onAction="#handleMotionIDE" text="Motion IDE" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Parameters">
+          <items>
+            <MenuItem disable="true" mnemonicParsing="false" onAction="#handleUploadController" text="Upload from Controller" />
+            <MenuItem mnemonicParsing="false" onAction="#handleUploadDriver" text="Upload from Driver" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Firmware">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleDownloadDriverFirmware" text="Download to Driver" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Tools">
+          <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleRecorder" text="Recorder" />
+            <MenuItem mnemonicParsing="false" onAction="#handleShowStatistics" text="Octave" />
+                  <MenuItem mnemonicParsing="false" onAction="#onClickSystemMonitor" text="System Monitor" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleLogHistory" text="Log History" />
+                  <RadioMenuItem fx:id="fxOffLineRadioMenuItem" mnemonicParsing="false" onAction="#handleOffLine" text="OffLineMode">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="ServoIP" />
+                     </toggleGroup>
+                  </RadioMenuItem>
+                  <RadioMenuItem fx:id="fxOnLineRadioMenuItem" mnemonicParsing="false" onAction="#handleOffLine" selected="true" text="OnLineMode" toggleGroup="$ServoIP" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+            <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Stop">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#serverOff" text="Stop" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <BorderPane HBox.hgrow="ALWAYS">
+               <center>
+                  <SplitPane dividerPositions="0.15" BorderPane.alignment="CENTER">
+                    <items>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL">
+                           <items>
+                              <TabPane id="side-top-tab" minHeight="200.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
+                                <tabs>
+                                  <Tab text="System Cofig">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TreeView fx:id="treeView" onMouseClicked="#mouseClick" prefHeight="171.0" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </Tab>
+                                </tabs>
+                              </TabPane>
+                              <TabPane id="side-tab" prefHeight="200.0" prefWidth="200.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                  <Tab text="Axis Setup">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TreeView fx:id="axisTreeView" onMouseClicked="#onClickAxisTreeView" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </Tab>
+                                    <Tab disable="true" text="Configrator">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <ListView id="side-list" fx:id="controllerTreeView" onMouseClicked="#onClickControllerListView" prefHeight="200.0" prefWidth="73.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </items>
+                        </SplitPane>
+                        <SplitPane dividerPositions="0.9" orientation="VERTICAL">
+                          <items>
+                            <AnchorPane fx:id="rootAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="137.0" prefWidth="607.0">
+                                 <children>
+                                    <TabPane id="main-tab" fx:id="rootTabPane" prefHeight="285.0" prefWidth="650.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <tabs>
+                                        <Tab fx:id="systemMonitorTab" onSelectionChanged="#selectSystemMonitoringPane" text="Axis Settup">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TabPane fx:id="mainTabPane" prefHeight="256.0" prefWidth="650.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                        <Tab fx:id="systemConfigTab" disable="true" text="SystemConfigration">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TabPane fx:id="systemConfigPane" prefHeight="256.0" prefWidth="650.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children></AnchorPane>
+                                          </content>
+                                        </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </children></AnchorPane>
+                              <TabPane id="main-tab" side="LEFT" tabClosingPolicy="UNAVAILABLE">
+                                <tabs>
+                                  <Tab text="Terminal">
+                                    <content>
+                                      <AnchorPane fx:id="consolePane" minHeight="0.0" minWidth="0.0" />
+                                    </content>
+                                  </Tab>
+                                </tabs>
+                              </TabPane>
+                          </items>
+                        </SplitPane>
+                    </items>
+                  </SplitPane>
+               </center>
+               <bottom>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <FlowPane fx:id="fxButtonPane" alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS" />
+                        <FlowPane alignment="CENTER_RIGHT" prefHeight="49.0" prefWidth="97.0" BorderPane.alignment="CENTER" HBox.hgrow="NEVER">
+                           <children>
+                              <Label style="-fx-text-fill: blue;" text="Justek">
+                                 <FlowPane.margin>
+                                    <Insets right="20.0" />
+                                 </FlowPane.margin>
+                              </Label>
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </HBox>
+               </bottom>
+               <top>
+                  <HBox alignment="CENTER_LEFT" prefWidth="200.0" style="-fx-background-color: rgb(0,100,157);" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button id="round-red" mnemonicParsing="false" onAction="#serverOff" prefHeight="50.0" prefWidth="150.0" stylesheets="@justek.css" text="Emergency">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="20.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Label alignment="CENTER" style="-fx-text-fill: white; -fx-font-size: 12;" text="Current Driver :">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="fxDriverLabel" style="-fx-text-fill: white; -fx-font-size: 13; -fx-font-weight: bold;" text="-" />
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <Label fx:id="fxSerboModeLabel" style="-fx-text-fill: white;" text="Servo Mode">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Separator orientation="VERTICAL">
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Separator>
+                        <Label style="-fx-text-fill: white;" text="Servo IP">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="fxIPComboBox" onAction="#onClickServoIPListComboBox" prefWidth="150.0">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                     </children>
+                  </HBox>
+               </top>
+            </BorderPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

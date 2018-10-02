@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.input.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.RootLayoutController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="System Configuration">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleWorkspace" text="System Configuration" />
+               </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Axis">
+            <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleAxisSetup" text="Axis Configuration" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleMotionSingleAxis" text="Motion-Single Axis" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleMotionMultiAxis" text="Motion-Multiple Axis" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleParameters" text="Parameters" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleParameterComparison" text="Parameter Comparison" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleCompensationTable" text="Compensation Table" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Controller">
+               <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleControllerConfigurator" text="Controller Configurator" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleControllerMotion" text="Motion" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleEtherCATDiagMaster" text="EtherCAT Diagnostics Master" />
+                 <MenuItem mnemonicParsing="false" onAction="#handleEtherCATDiagSlave" text="EtherCAT Diagnostics Slave" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleParametersExplorer" text="Parameters" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleCompensationTable" text="Compensation Table" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleJog" text="Jog" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleStatusView" text="Status View" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Motion Programming">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Edit" />
+                  <MenuItem mnemonicParsing="false" text="Build and Run" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Parameters">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleUploadController" text="Upload from Controller" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleDownloadController" text="Download to Controller" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleUploadDriver" text="Upload from Driver" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleDownloadDriver" text="Download to Driver" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Firmware">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleDownloadControllerFirmware" text="Download to Controller" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleDownloadDriverFirmware" text="Download to Driver" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Tools">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Show Statistics" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <TreeView fx:id="treeView" onContextMenuRequested="#mouseClick" onMouseClicked="#mouseClick" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleOpenWorkspace" text="Open Workspace" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleNewWorkspace" text="New Workspace" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSaveWorkspace" text="Save Workspace" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleClearWorkspace" text="Clear Workspace" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleAddDriver" text="Add Driver" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleAddController" text="Add Controller" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleRemoveTarget" text="Remove Target" />
+                  <MenuItem mnemonicParsing="false" text="Connect Device" />
+                  <MenuItem mnemonicParsing="false" text="Connect Controller" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleEtherCATMaster" text="EtherCAT Master" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleEtherCATSlave" text="EtherCAT Slave" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Add Group" />
+                  <MenuItem mnemonicParsing="false" text="Add Virtual Device" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSystemConfiguratorController" text="Controller Configuration" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSystemConfiguratorDrive" text="Driver Configuration" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TreeView>
+   </left>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

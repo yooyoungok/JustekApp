@@ -1,0 +1,63 @@
+.button-stop {
+   -fx-background-color:red ;
+   -fx-text-fill:white ;
+}
+
+.button-ignore {
+   -fx-background-color:orange ;
+   -fx-text-fill:white ;
+}
+.button-Ok {
+   -fx-background-color:green ;
+   -fx-text-fill:white ;
+}
+
+.button-cancel {
+   -fx-background-color:olive ;
+   -fx-text-fill:white ;
+}
+
+.button-black {
+   -fx-background-color:black;
+   -fx-text-fill:white ;
+}
+
+.font_10{
+		-fx-font-size: 10px;
+}
+
+.textField-transparent{
+	-fx-background-color: transparent;
+	-fx-text-alignment:center-right ;
+	-fx-font-size: 10px;
+}
+
+.textField-line_transparent{
+	-fx-background-color: transparent;
+	-fx-border-width:1px;
+	-fx-border-color: lightskyblue;
+	-fx-font-size: 10px;
+}
+
+.label_title{
+	-fx-font-size: 15px;
+	-fx-font-weight:bold;
+}
+
+.label_sub_title{
+	-fx-font-size:14px ;
+}
+
+.tab-pane
+{
+    -fx-tab-min-width:80px;
+}
+
+.tab:selected {
+	-fx-background-color:  -fx-control-inner-background;
+}
+
+.button:pressed{
+	-fx-border-width:2px;
+	-fx-border-color: white;
+}

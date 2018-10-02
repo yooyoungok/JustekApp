@@ -1,0 +1,4 @@
+command "#1->100x"
+sleep(500000)
+command "b15r"
+sleep(500000)

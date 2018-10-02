@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="30.0" prefWidth="667.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.WatchNodeController">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="-211.0" layoutY="-172.0" prefHeight="34.0" prefWidth="667.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Name">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+            <ComboBox fx:id="nameBox" prefWidth="150.0" />
+            <Label text="Signal" />
+            <ComboBox fx:id="signalbox" onAction="#addPane" prefWidth="150.0" />
+            <Label layoutX="229.0" layoutY="20.0" text="Value" />
+            <TextField fx:id="valueLabel" editable="false" HBox.hgrow="ALWAYS" />
+            <Button fx:id="fxDeleteButton" mnemonicParsing="false" onAction="#onClickCancel" text="x" visible="false">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

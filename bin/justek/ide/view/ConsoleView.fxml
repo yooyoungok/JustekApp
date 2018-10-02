@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.ConsoleViewController">
+   <children>
+      <TabPane fx:id="consolePane" layoutX="71.0" layoutY="-2.0" prefHeight="174.0" prefWidth="797.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+         <tabs>
+            <Tab fx:id="fxTelnetTab" text="Telnet">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="35.0" layoutY="-55.0" prefHeight="145.0" prefWidth="797.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TextArea fx:id="fxResultTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+                                 </VBox.margin>
+                              </TextArea>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="errorTab" disable="true" text="Error">
+               <content>
+                  <TextArea fx:id="errorTextArea" editable="false" prefHeight="147.0" prefWidth="726.0" promptText="&gt;">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                     </padding></TextArea>
+               </content>
+            </Tab>
+            <Tab disable="true" text="Console">
+               <content>
+                  <HBox>
+                     <children>
+                        <TextArea fx:id="promptTextArea" editable="false" minWidth="25.0" prefHeight="145.0" prefWidth="30.0" style="-fx-border-color: #fff; -fx-background-color: #fff; -fx-border-width: 0;" text="&gt;" wrapText="true" HBox.hgrow="NEVER" />
+                        <TextArea fx:id="consoleTextArea" onKeyPressed="#keyEvent" prefHeight="147.0" prefWidth="726.0" style="-fx-background-color: #fff; -fx-border-color: #fff; -fx-border-width: 0;" wrapText="true" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <HBox alignment="CENTER_LEFT" prefHeight="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="입력">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="fxInputTextField" onKeyPressed="#keyEvent" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

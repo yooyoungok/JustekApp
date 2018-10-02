@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.AxisSetup11Controller">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <AnchorPane BorderPane.alignment="CENTER">
+                     <children>
+                      <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label layoutX="20.0" layoutY="11.0" text="Fine Tuning" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+                              <Label layoutY="45.0" text="Controller Gain KP[1][V/A]" AnchorPane.leftAnchor="20.0" />
+                              <Label layoutY="80.0" text="Controller Integral KI[1][Hz]" AnchorPane.leftAnchor="20.0" />
+                              <Label layoutY="150.0" text="Experiment Type" AnchorPane.leftAnchor="20.0" />
+                              <Label layoutX="20.0" layoutY="175.0" text="Excitation Type" AnchorPane.leftAnchor="20.0" />
+                              <Label layoutX="20.0" layoutY="204.0" text="Test in Phase" AnchorPane.leftAnchor="20.0" />
+                              <Label layoutX="18.0" layoutY="116.0" text="Current Response Test" AnchorPane.leftAnchor="18.0" />
+                              <Label layoutX="20.0" layoutY="230.0" text="Advanced" AnchorPane.leftAnchor="20.0" />
+                              <Label layoutX="20.0" layoutY="262.0" text="Frequency" AnchorPane.leftAnchor="20.0" />
+                              <Separator layoutX="170.0" layoutY="122.0" prefWidth="200.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" />
+                              <Label layoutX="20.0" layoutY="298.0" text="Minimum Current Value[Amp]" AnchorPane.leftAnchor="20.0" />
+                              <Label layoutX="20.0" layoutY="331.0" text="Maximum Current Value[Amp]" AnchorPane.leftAnchor="20.0" />
+                              <Label layoutX="20.0" layoutY="364.0" text="Pre-filter Cut-off Freq XP[6];Hz]" AnchorPane.leftAnchor="20.0" />
+                              <Label layoutX="20.0" layoutY="400.0" text="Slope Limit XP[5][% of MC/TS]" AnchorPane.leftAnchor="20.0" />
+                              <Label layoutX="20.0" layoutY="434.0" text="PWM Output Limit US[1][%]" AnchorPane.leftAnchor="20.0" />
+                              <Label layoutX="20.0" layoutY="470.0" text="Integral Limit US[2][% of Max PWM]" AnchorPane.leftAnchor="20.0" />
+                              <CheckBox fx:id="fxVoltageCheckBox" layoutX="20.0" layoutY="505.0" mnemonicParsing="false" text="Show Phase Voltage" AnchorPane.leftAnchor="20.0" />
+                              <TextField fx:id="fxMinCurrentField" layoutX="250.0" layoutY="290.0" prefWidth="180.0" AnchorPane.leftAnchor="250.0" />
+                              <TextField fx:id="fxMaxCurrentField" layoutX="250.0" layoutY="324.0" prefWidth="180.0" AnchorPane.leftAnchor="250.0" />
+                              <TextField fx:id="fxPreField" layoutX="250.0" layoutY="358.0" prefWidth="180.0" AnchorPane.leftAnchor="250.0" />
+                              <TextField fx:id="fxSlopeField" layoutX="250.0" layoutY="393.0" prefWidth="180.0" AnchorPane.leftAnchor="250.0" />
+                              <TextField fx:id="fxPwmField" layoutX="250.0" layoutY="428.0" prefWidth="180.0" AnchorPane.leftAnchor="250.0" />
+                              <ComboBox fx:id="fxGainComboBox" layoutX="251.0" layoutY="40.0" prefWidth="200.0" AnchorPane.leftAnchor="250.0" />
+                              <ComboBox fx:id="fxIntegralComboBox" layoutX="251.0" layoutY="75.0" prefWidth="200.0" AnchorPane.leftAnchor="250.0" />
+                              <TextField fx:id="fxIntegralField" layoutX="250.0" layoutY="465.0" prefWidth="180.0" AnchorPane.leftAnchor="250.0" />
+                              <ComboBox fx:id="fxFrequencyComboBox" layoutX="250.0" layoutY="254.0" prefWidth="180.0" AnchorPane.leftAnchor="250.0" />
+                              <CheckBox fx:id="textCheckBox1" layoutX="203.0" layoutY="203.0" mnemonicParsing="false" text="A" />
+                              <CheckBox fx:id="textCheckBox2" layoutX="256.0" layoutY="203.0" mnemonicParsing="false" text="B" />
+                              <CheckBox fx:id="testCheckBox3" layoutX="305.0" layoutY="203.0" mnemonicParsing="false" text="C" />
+                              <Button layoutX="351.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#onClickVerify" text="Verify" />
+                              <RadioButton fx:id="expRb1" layoutX="202.0" layoutY="150.0" mnemonicParsing="false" selected="true" text="Auto">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="expType" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="expRb2" layoutX="281.0" layoutY="150.0" mnemonicParsing="false" text="Single" toggleGroup="$expType" />
+                              <RadioButton fx:id="excRb2" layoutX="281.0" layoutY="174.0" mnemonicParsing="false" text="Sine">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="excType" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="excRb1" layoutX="202.0" layoutY="174.0" mnemonicParsing="false" selected="true" text="Step" toggleGroup="$excType" />
+                              <Separator layoutX="170.0" layoutY="236.0" prefWidth="200.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </center>
+         <bottom>
+            <FlowPane alignment="CENTER" hgap="20.0" prefHeight="45.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#onClickRevert" text="Revert" />
+                  <Button mnemonicParsing="false" onMouseClicked="#onClickApply" text="Apply" />
+                  <Button mnemonicParsing="false" onMouseClicked="#onClickErrors" text="Errors..." />
+               </children>
+               <BorderPane.margin>
+                  <Insets top="10.0" />
+               </BorderPane.margin>
+            </FlowPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

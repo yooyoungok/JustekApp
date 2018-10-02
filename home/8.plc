@@ -1,0 +1,7 @@
+command "#1->100x"
+command "#2->100y"
+sleep(500000)
+command "b5r"
+command "b6r"
+sleep(500000)
+command "dis plc 5"

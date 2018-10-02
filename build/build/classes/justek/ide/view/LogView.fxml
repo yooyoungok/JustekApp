@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.LogViewController">
+  <children>
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <center>
+        <AnchorPane prefHeight="600.0" BorderPane.alignment="CENTER">
+          <BorderPane.margin>
+            <Insets />
+          </BorderPane.margin>
+               <children>
+                  <TableView fx:id="fxTableView" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="fxDataColumn" minWidth="-1.0" prefWidth="202.0" text="Date" />
+                      <TableColumn fx:id="fxValueColumn" minWidth="-1.0" prefWidth="253.0" text="Value" />
+                    </columns>
+                  </TableView>
+               </children>
+        </AnchorPane>
+      </center>
+         <top>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="fxDateLabel" text="Log History" HBox.hgrow="NEVER">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Pane HBox.hgrow="ALWAYS" />
+                  <DatePicker fx:id="fxDatePicker" onAction="#getSelectedDate" HBox.hgrow="NEVER">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </DatePicker>
+                  <Label text="~" />
+                  <DatePicker fx:id="fxEndDatePicker" onAction="#getEndSelectedDate" HBox.hgrow="NEVER">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </DatePicker>
+                  <Button mnemonicParsing="false" onAction="#onClickLogButton" text="Log">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </top>
+    </BorderPane>
+  </children>
+</AnchorPane>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.AxisSetup12Controller">
+	<children>
+		<BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<center>
+				<BorderPane BorderPane.alignment="CENTER">
+					<center>
+						<AnchorPane BorderPane.alignment="CENTER">
+							<children>
+								<AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+									<children>
+										<Label layoutY="26.0" text="Auto-Phasing Method" AnchorPane.topAnchor="26.0" />
+										<Label layoutY="56.0" text="Current Level[% of CL]" />
+										<Label layoutY="84.0" text="Displacement[el.cgcl]" />
+										<Label layoutY="215.0" text="Commutation Feedback[cnt]" />
+										<Label layoutY="274.0" text="Position Feedback[cnt]" />
+										<Label layoutY="303.0" text="Active Current[A]" />
+										<TextField fx:id="fxCommutFeedBackField" layoutX="180.0" layoutY="210.0" onAction="#saveData" prefWidth="150.0" AnchorPane.leftAnchor="180.0" />
+										<TextField fx:id="fxVelolcityFeedBackField" layoutX="180.0" layoutY="239.0" onAction="#saveData" prefWidth="150.0" AnchorPane.leftAnchor="180.0" />
+										<TextField fx:id="fxPosicionFeedBackField" layoutX="180.0" layoutY="269.0" onAction="#saveData" prefWidth="150.0" AnchorPane.leftAnchor="180.0" />
+										<TextField fx:id="fxActiveCurrentField" layoutX="180.0" layoutY="298.0" onAction="#saveData" prefWidth="150.0" AnchorPane.leftAnchor="180.0" />
+										<Label layoutY="113.0" text="Velocity[el.cycle/sec]" />
+										<ComboBox fx:id="fxMethodComboBox" layoutX="180.0" layoutY="5.0" onAction="#saveData" prefWidth="369.0" AnchorPane.topAnchor="20.0" />
+										<Label layoutY="244.0" text="Velocity Feedbak[cnt]" />
+										<ProgressBar layoutX="339.0" layoutY="50.0" prefHeight="23.0" prefWidth="200.0" progress="0.0" AnchorPane.leftAnchor="339.0" AnchorPane.topAnchor="50.0" />
+										<TextField fx:id="fxCurrentLevelField" layoutX="180.0" layoutY="50.0" onAction="#saveData" prefWidth="150.0" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="50.0" />
+										<TextField fx:id="fxDeplaceField" layoutX="180.0" layoutY="80.0" onAction="#saveData" prefWidth="150.0" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="80.0" />
+										<ProgressBar layoutX="339.0" layoutY="80.0" prefHeight="23.0" prefWidth="200.0" progress="0.0" AnchorPane.leftAnchor="339.0" AnchorPane.topAnchor="80.0" />
+										<ProgressBar layoutX="339.0" layoutY="111.0" prefHeight="23.0" prefWidth="200.0" progress="0.0" AnchorPane.leftAnchor="339.0" AnchorPane.topAnchor="111.0" />
+										<TextField fx:id="fxVelocityField" layoutX="180.0" layoutY="111.0" onAction="#saveData" prefWidth="150.0" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="111.0" />
+										<CheckBox fx:id="fxVerticalCheckBox" layoutY="186.0" mnemonicParsing="false" onAction="#saveData" text="Unbalanced Vertical Axis" />
+										<Button layoutY="144.0" mnemonicParsing="false" onMouseClicked="#onClickLeft" text="&lt;" />
+										<Button layoutX="32.0" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#onClickHold" text="Hold" />
+										<Button layoutX="81.0" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#onClickRight" text="&gt;" />
+										<Button layoutX="123.0" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#onClickRun" text="Run Commutation" />
+									</children>
+								</AnchorPane>
+							</children>
+							<BorderPane.margin>
+								<Insets left="20.0" />
+							</BorderPane.margin>
+						</AnchorPane>
+					</center>
+				</BorderPane>
+			</center>
+			<bottom>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="45.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+					<children>
+						<FlowPane alignment="CENTER" hgap="20.0" prefHeight="45.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+							<children>
+								<Button mnemonicParsing="false" onMouseClicked="#onClickRevert" text="Revert" />
+								<Button mnemonicParsing="false" onMouseClicked="#onClickApply" text="Apply" />
+								<Button mnemonicParsing="false" onMouseClicked="#onClickErrors" text="Errors..." />
+							</children>
+						</FlowPane>
+					</children>
+               <BorderPane.margin>
+                  <Insets top="10.0" />
+               </BorderPane.margin>
+				</AnchorPane>
+			</bottom>
+		</BorderPane>
+	</children>
+</AnchorPane>

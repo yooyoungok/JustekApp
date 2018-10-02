@@ -1,0 +1,3 @@
+2018년 10월 02일 오후 03시 21분 46초
+NetworkServerManager :: getCommandData
+java.io.IOException: Cannot run program "ethercat": CreateProcess error=2, 지정된 파일을 찾을 수 없습니다

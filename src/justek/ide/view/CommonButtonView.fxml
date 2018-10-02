@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<FlowPane alignment="CENTER_RIGHT" hgap="10.0" prefHeight="40.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.CommonButtonController">
+   <children>
+      <Button mnemonicParsing="false" onAction="#onClickRevert" text="Revert" />
+      <Button mnemonicParsing="false" onAction="#onClickApply" text="Apply" />
+      <Button mnemonicParsing="false" onAction="#onClickError" text="Errors...">
+         <FlowPane.margin>
+            <Insets right="20.0" />
+         </FlowPane.margin>
+      </Button>
+   </children>
+</FlowPane>

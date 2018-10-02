@@ -1,0 +1,38 @@
+	ObservableList<String> objectiveComboList = FXCollections
+			.observableArrayList("PI Controller","PI Controller + LPF","Refine Tuning","Advanced Controller");
+	ObservableList<String> schedulingCombo1List = FXCollections
+			.observableArrayList("Off","Manual","By Speed","By Position","Best Settling","By object 0x2E00 lowbits","By object 0x2E00 high bits");
+	ObservableList<String> schedulingCombo2List1 = FXCollections
+			.observableArrayList("GS Index 1","GS Index 2","GS Index 3","GS Index 4","GS Index 5","GS Index 6");
+	ObservableList<String> schedulingCombo2List2 = FXCollections
+			.observableArrayList("Automatic","GS Index 1","GS Index 2","GS Index 3","GS Index 4","GS Index 5","GS Index 6");
+	ObservableList<String> schedulingCombo2List3 = FXCollections
+			.observableArrayList("Automatic","GS Index 1","GS Index 2","GS Index 3","GS Index 4","GS Index 5","GS Index 6");
+	ObservableList<String> schedulingCombo2List4 = FXCollections
+			.observableArrayList("Automatic","Stand Still – 61","Settling – 62","In Motion – 63");
+	ObservableList<String> schedulingCombo2List5 = FXCollections
+			.observableArrayList("Automatic","GS Index 1","GS Index 2","GS Index 3","GS Index 4","GS Index 5","GS Index 6");
+	ObservableList<String> schedulingCombo2List6 = FXCollections
+			.observableArrayList("Automatic","GS Index 1","GS Index 2","GS Index 3","GS Index 4","GS Index 5","GS Index 6");
+	ObservableList<String> velFilter1ComboList = FXCollections
+			.observableArrayList("Disable","Low-Pass","Lead-Lag","Double Lead-Lag","Notch","Anti-Notch","General Biquad");
+	ObservableList<String> velFilter2ComboList = FXCollections
+			.observableArrayList("Disable","Low-Pass","Lead-Lag","Double Lead-Lag","Notch","Anti-Notch","General Biquad");
+	ObservableList<String> velFilter3ComboList = FXCollections
+			.observableArrayList("Disable","Low-Pass","Lead-Lag","Double Lead-Lag","Notch","Anti-Notch","General Biquad");
+	ObservableList<String> velFilter4ComboList = FXCollections
+			.observableArrayList("Disable","Low-Pass","Lead-Lag","Double Lead-Lag","Notch","Anti-Notch","General Biquad");
+	ObservableList<String> velFilter5ComboList = FXCollections
+			.observableArrayList("Disable","Low-Pass","Lead-Lag","Double Lead-Lag","Notch","Anti-Notch","General Biquad");
+	ObservableList<String> velFilter6ComboList = FXCollections
+			.observableArrayList("Disable","Low-Pass","Lead-Lag","Double Lead-Lag","Notch","Anti-Notch","General Biquad");
+	ObservableList<String> positionFilter1ComboList = FXCollections
+			.observableArrayList("Disable","Low-Pass","Lead-Lag","Double Lead-Lag","Notch","Anti-Notch","General Biquad");
+	ObservableList<String> positionFilter2ComboList = FXCollections
+			.observableArrayList("Disable","Low-Pass","Lead-Lag","Double Lead-Lag","Notch","Anti-Notch","General Biquad");
+	ObservableList<String> schedulingFilter1ComboList = FXCollections
+			.observableArrayList("Disable","Low-Pass","Lead-Lag","Double Lead-Lag","Notch","Anti-Notch","General Biquad");
+	ObservableList<String> schedulingFilter2ComboList = FXCollections
+			.observableArrayList("Disable","Low-Pass","Lead-Lag","Double Lead-Lag","Notch","Anti-Notch","General Biquad");
+	ObservableList<String> schedulingFilter3ComboList = FXCollections
+			.observableArrayList("Disable","Low-Pass","Lead-Lag","Double Lead-Lag","Notch","Anti-Notch","General Biquad");
