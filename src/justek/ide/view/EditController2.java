@@ -187,7 +187,7 @@ public class EditController2 extends BaseController {
 		this.tableView.getItems().addAll(plcData);
 	}
 
-
+	//파일명순으로 정렬...
 	private void sortByNumber() {
 		System.out.println("sortByNumber");
 
@@ -211,11 +211,6 @@ public class EditController2 extends BaseController {
 				return i;
 			}
 		});
-
-		//        for(File f : fileList) {
-		//            System.out.println(f.getName());
-		//        }
-
 	}
 
 	public void addTextAreaChangeEvent(Tab tab) {
@@ -312,8 +307,6 @@ public class EditController2 extends BaseController {
 				System.out.println("Select Item=="+selString);
 				this.consoleTextArea.appendText("\n Justek> "+ selString);
 				this.runCommand(selString);
-				//	           this.consoleTextArea.positionCaret(this.consoleTextArea.getText().length()-1);
-				//	           this.consoleTextArea.requestFocus();
 			}
 		}
 	}
@@ -322,15 +315,7 @@ public class EditController2 extends BaseController {
 	int line_count=0; //TextArea count
 	@FXML
 	public void keyEvent(KeyEvent event) {
-		//		if(event.getSource().equals(consoleListView)) {
-		//			if(event.getCode()==KeyCode.ENTER){
-		//				int count = this.consoleListView.getItems().size();
-		//				String commandString = this.consoleListView.getItems().get(count-1);
-		//				consoleListView.getItems().add("");
-		//				this.runCommand(commandString);
-		//			}
-		//		}
-
+		
 		if (event.getCode()== KeyCode.ENTER) {
 			if(event.getSource().equals(this.fxInputTextField)) {
 				String textData = this.fxInputTextField.getText();
@@ -390,8 +375,6 @@ public class EditController2 extends BaseController {
 			if(result1) {
 				ObservableList<Tab> tabList =this.tabPane.getTabs();
 				for(Tab tab:tabList) {
-					//					System.out.println("Delete Tab=="+tab.getId());
-					//					System.out.println("Delete Tab=="+file.getAbsolutePath());
 					if(tab.getId()!=null&&  tab.getId().contains(file.getName())) {
 						this.tabPane.getTabs().remove(tab);
 						break;
@@ -518,7 +501,7 @@ public class EditController2 extends BaseController {
 		String plcName = parsingValue[parsingValue.length-1];
 		
 		if(runString.contains("enable")) {
-			//해당 PLC가 실행되는지 먼저 확인을 한다..
+//			해당 PLC가 실행되는지 먼저 확인을 한다..
 			if(NetworkServerManager.getInstance().checkPlcFile(plcName)) {
 				DialogManager.getInstance().showServerErrorConfirmDialog("현재 해당 PLC가 실행중입니다.");
 				this.checkPlcStatus();
@@ -539,16 +522,9 @@ public class EditController2 extends BaseController {
 				serverMsg = reader.readLine();
 				if(serverMsg!=null) {
 					System.out.println(serverMsg);
-//					if(serverMsg.contains("ERR")) {
-//						this.consolePane.getSelectionModel().select(this.errorTab);
-//						this.errorTextArea.appendText("Request :"+runString+"\n");
-//						this.errorTextArea.appendText("Response :"+serverMsg+"\n");
-//					}
-//					else {
 					serverMsg = reader.readLine();
 					System.out.println(serverMsg);
 					this.consoleTextArea.appendText("\n Justek> "+serverMsg);
-					//					}
 				}
 			}
 
@@ -556,7 +532,7 @@ public class EditController2 extends BaseController {
 			System.out.println("Client: " + " runCommand :: Finish == " +sendMsg);
 
 		} catch (Exception e) {
-//			e.printStackTrace();
+			e.printStackTrace();
 		}
 	}
 
