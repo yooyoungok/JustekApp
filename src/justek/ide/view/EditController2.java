@@ -48,7 +48,7 @@ import justek.ide.model.PLCInfo;
 import justek.ide.model.manager.DialogManager;
 import justek.ide.model.manager.NetworkServerManager;
 
-public class EditController2 extends BaseController {
+public class EditController2 {
 
 	static final String Tag = "EditController2";
 	final FileChooser fileChooser = new FileChooser();
@@ -535,10 +535,4 @@ public class EditController2 extends BaseController {
 			e.printStackTrace();
 		}
 	}
-
-	@Override
-	public void setData() {
-		this.setHomeTableView();
-	}
-
 }
