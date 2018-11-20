@@ -33,14 +33,15 @@ import org.jfree.data.xy.XYDataset;
 
 import javafx.scene.control.Slider;
 import justek.ide.chart.data.DefaultData;
+import justek.ide.chart.data.DefaultTriggerData;
 import justek.ide.model.CommandConst;
 import justek.ide.utils.StringUtil;
 
-public class GraphPanel implements ChartProgressListener,ChartMouseListenerFX  {
+public class GraphTriggerPanel implements ChartProgressListener,ChartMouseListenerFX  {
 
 	public JFreeChart chart;
 	ChartPanel graphPanel;
-	public DefaultData data;
+	public DefaultTriggerData data;
 	ChartViewer viewer;
 	
 	CrosshairOverlayFX crosshairOverlay;
@@ -471,7 +472,7 @@ public class GraphPanel implements ChartProgressListener,ChartMouseListenerFX  {
 	/**
 	 * Create the panel.
 	 */
-	public GraphPanel() { }
+	public GraphTriggerPanel() { }
 
 	
     /**
@@ -488,7 +489,7 @@ public class GraphPanel implements ChartProgressListener,ChartMouseListenerFX  {
     	this.rangeList = new ArrayList<>();
     	
     	if(this.data==null) {
-    		this.data = new DefaultData();
+    		this.data = new DefaultTriggerData();
     	}   	
     	
     	data.getLeftChart();
@@ -503,8 +504,8 @@ public class GraphPanel implements ChartProgressListener,ChartMouseListenerFX  {
         this.chart.getLegend(0).setVisible(true); //Legend를 보이도록 설정!
         
         XYPlot plot = (XYPlot) chart.getPlot();
-        plot.getDomainAxis().setAutoRange(true);
-        plot.getRangeAxis().setAutoRange(true);
+//        plot.getDomainAxis().setAutoRange(true);
+//        plot.getRangeAxis().setAutoRange(true);
         plot.setDomainPannable(true);
         plot.setRangePannable(true);
         plot.setDomainCrosshairLockedOnData(false);
@@ -540,7 +541,7 @@ public class GraphPanel implements ChartProgressListener,ChartMouseListenerFX  {
     	this.rangeList = new ArrayList<>();
     	
     	if(this.data==null) {
-    		this.data = new DefaultData();
+    		this.data = new DefaultTriggerData();
     	}   	
     	
     	data.getLeftChart();
@@ -553,6 +554,8 @@ public class GraphPanel implements ChartProgressListener,ChartMouseListenerFX  {
         XYPlot plot = (XYPlot) chart.getPlot();
         plot.setDomainPannable(true);
         plot.setRangePannable(true);
+        plot.getDomainAxis().setAutoRange(true);
+        plot.getRangeAxis().setAutoRange(true);        
         plot.setDomainCrosshairLockedOnData(false);
         plot.getRenderer(0).setSeriesPaint(0, Color.red);
         plot.getRangeAxis(0).setLabelPaint(Color.red);
@@ -566,7 +569,7 @@ public class GraphPanel implements ChartProgressListener,ChartMouseListenerFX  {
     	
     	this.rangeList = new ArrayList<>();
     	
-    	this.data = new DefaultData();
+    	this.data = new DefaultTriggerData();
     	
         this.chart = ChartFactory.createXYLineChart("Motion Chart",
                 "Time(ms)", "ActualPosition",null, PlotOrientation.VERTICAL, true, true, false);
@@ -679,6 +682,8 @@ public class GraphPanel implements ChartProgressListener,ChartMouseListenerFX  {
         this.rangeList.add(plot.getRangeAxis(data_index).getLabel());
         plot.setRangeAxisLocation(data_index, AxisLocation.BOTTOM_OR_RIGHT);
         
+        plot.getRangeAxis(data_index).setAutoRange(true);
+        
         XYItemRenderer renderer2 = new StandardXYItemRenderer();
         renderer2.setDefaultToolTipGenerator(new StandardXYToolTipGenerator());
         plot.setRenderer(data_index, renderer2);
@@ -710,6 +715,9 @@ public class GraphPanel implements ChartProgressListener,ChartMouseListenerFX  {
         plot.mapDatasetToRangeAxis(data_index,data_index);  
         this.rangeList.add(plot.getRangeAxis(data_index).getLabel());
         plot.setRangeAxisLocation(data_index, AxisLocation.BOTTOM_OR_LEFT);
+        
+        plot.getRangeAxis(data_index).setAutoRange(true);
+        
         XYItemRenderer renderer2 = new StandardXYItemRenderer();
         renderer2.setDefaultToolTipGenerator(new StandardXYToolTipGenerator());
         plot.setRenderer(data_index, renderer2);

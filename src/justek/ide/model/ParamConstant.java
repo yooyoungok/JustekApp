@@ -27,7 +27,34 @@ public class ParamConstant {
 		public String getValue() {
 			return this.value;
 		}
-
+		
+		public String getSDOSystemValue() {
+			String commandString = "";
+			switch (this) {
+			case PROPOTION_GAIN:
+				commandString = GETSDOVAULE.PROPOTION_GAIN.getValue();
+				break;
+			case INTEGRAL_GAIN:
+				commandString = GETSDOVAULE.INTEGRAL_GAIN.getValue();
+				break;
+			case GAIN_DIVIDE:
+				commandString = GETSDOVAULE.GAIN_DIVIDE.getValue();
+				break;
+			case SCALE:
+				commandString = GETSDOVAULE.SCALE.getValue();
+				break;
+			case FEEDBACK_DERIVATIVE_GAIN:
+				commandString =  GETSDOVAULE.FEEDBACK_DERIVATIVE_GAIN.getValue();
+				break;
+			case VELOCITY_FF_GAIN:
+				commandString =  GETSDOVAULE.VELOCITY_FF_GAIN.getValue();
+				break;
+			case ACCELERATION_FF_GAIN:
+				commandString = GETSDOVAULE.ACCELERATION_FF_GAIN.getValue();
+				break;
+			}
+			return commandString;
+		}
 	}
 
 	public static enum GETSDOVAULE
@@ -50,6 +77,63 @@ public class ParamConstant {
 			return this.value;
 		}
 	}
+	
+	/*************************
+	 * 
+	 * SDO 파라미터 COMMAND
+	 * 
+	 ************************ */
+	
+	public static enum HALLVALUE
+	{
+		PROPOTION_GAIN("Proportional gain"),
+		INTEGRAL_GAIN("Integral gain"),
+		GAIN_DIVIDE("Gain divide"),
+		SCALE("Scale"),
+		FEEDBACK_DERIVATIVE_GAIN("Velocity Feedback Derivative Gain"),
+		VELOCITY_FF_GAIN("Velocity FF Gain"),
+		ACCELERATION_FF_GAIN("Acceleration FF Gain");
+
+		private String value;
+
+		HALLVALUE(String value) {
+			this.value = value;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+		
+		public String getSDOSystemValue() {
+			String commandString = "";
+			switch (this) {
+			case PROPOTION_GAIN:
+				commandString = GETSDOVAULE.PROPOTION_GAIN.getValue();
+				break;
+			case INTEGRAL_GAIN:
+				commandString = GETSDOVAULE.INTEGRAL_GAIN.getValue();
+				break;
+			case GAIN_DIVIDE:
+				commandString = GETSDOVAULE.GAIN_DIVIDE.getValue();
+				break;
+			case SCALE:
+				commandString = GETSDOVAULE.SCALE.getValue();
+				break;
+			case FEEDBACK_DERIVATIVE_GAIN:
+				commandString =  GETSDOVAULE.FEEDBACK_DERIVATIVE_GAIN.getValue();
+				break;
+			case VELOCITY_FF_GAIN:
+				commandString =  GETSDOVAULE.VELOCITY_FF_GAIN.getValue();
+				break;
+			case ACCELERATION_FF_GAIN:
+				commandString = GETSDOVAULE.ACCELERATION_FF_GAIN.getValue();
+				break;
+			}
+			return commandString;
+		}
+
+	}
+
 
 	public final static String AMP_PEAK_CURRENT =  "Amplifier peak current";
 	public final static String SDO_ERROR_REGISTER = "Error register";

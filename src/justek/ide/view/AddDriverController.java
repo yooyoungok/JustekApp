@@ -57,18 +57,21 @@ public class AddDriverController {
     @FXML
     void onCllickSaveDriver(ActionEvent event) {
     	boolean result = DialogManager.getInstance().showConfirmDialogWithResult("새로운 Driver를 추가하시겠습니까?");
+    	String num ="";
     	if(result) {
-    		
     		 for(String name:CommandConst.DRIVER_MAP.keySet()) {
     			 if(name.equals(this.preName)){
+    				 num = CommandConst.DRIVER_MAP.get(name);
     				 CommandConst.driverList.remove(name);
     				 CommandConst.DRIVER_MAP.remove(preName);
     				 CommandConst.driverList.add(this.fxNameTextField.getText());
-    				 String num = String.valueOf( CommandConst.driverList.indexOf(this.fxNameTextField.getText()));
-    				 System.out.println("수정된 드라이버의 번호는 "+ num+"입니다.");
-    				 CommandConst.DRIVER_MAP.put(this.fxNameTextField.getText(),num);
+    				 break;
+//    				 String num = String.valueOf( CommandConst.DRIVER_MAP.size()+1);
     			 }
     		 }
+    		 
+			 System.out.println("수정된 드라이버의 번호는 "+ num+"입니다.");
+			 CommandConst.DRIVER_MAP.put(this.fxNameTextField.getText(),num);
     		 
     		 this.mainApp.SaveDriver(this.fxNameTextField.getText());
     	}

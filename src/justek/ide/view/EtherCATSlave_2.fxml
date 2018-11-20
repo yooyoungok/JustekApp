@@ -8,7 +8,10 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justek.ide.view.EtherCATSlaveController">
    <children>
-      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
          <center>
             <BorderPane BorderPane.alignment="CENTER">
                <bottom>
@@ -176,34 +179,34 @@
                                                          </GridPane.margin>
                                                       </Label>
                                                       <TextField prefHeight="23.0" prefWidth="125.0" styleClass="textField-line_transparent" stylesheets="@application.css" GridPane.columnIndex="1" />
-                                                      <Button mnemonicParsing="false" prefWidth="100.0" text="Pre-Op" GridPane.columnIndex="2" GridPane.columnSpan="2147483647">
+                                                      <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="Pre-Op" GridPane.columnIndex="2" GridPane.columnSpan="2147483647">
                                                          <GridPane.margin>
                                                             <Insets left="10.0" />
                                                          </GridPane.margin>
                                                       </Button>
-                                                      <Button mnemonicParsing="false" prefWidth="100.0" text="Init" GridPane.columnIndex="3" GridPane.columnSpan="2">
+                                                      <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="Init" GridPane.columnIndex="3" GridPane.columnSpan="2">
                                                          <GridPane.margin>
                                                             <Insets />
                                                          </GridPane.margin>
                                                       </Button>
                                                       <TextField prefWidth="150.0" styleClass="textField-line_transparent" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                                       <TextField prefWidth="150.0" styleClass="textField-line_transparent" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                      <Button mnemonicParsing="false" prefWidth="100.0" text="Bootstrap" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                      <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="Bootstrap" GridPane.columnIndex="3" GridPane.rowIndex="1">
                                                          <GridPane.margin>
                                                             <Insets />
                                                          </GridPane.margin>
                                                       </Button>
-                                                      <Button mnemonicParsing="false" prefWidth="100.0" text="Acknowledge" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                                      <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="Acknowledge" GridPane.columnIndex="4" GridPane.rowIndex="1">
                                                          <GridPane.margin>
                                                             <Insets />
                                                          </GridPane.margin>
                                                       </Button>
-                                                      <Button mnemonicParsing="false" prefWidth="100.0" text="Operational" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                      <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="Operational" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                                          <GridPane.margin>
                                                             <Insets left="10.0" />
                                                          </GridPane.margin>
                                                       </Button>
-                                                      <Button mnemonicParsing="false" prefWidth="100.0" text="Init" GridPane.columnIndex="4" />
+                                                      <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="Init" GridPane.columnIndex="4" />
                                                       <TextField prefWidth="150.0" styleClass="textField-line_transparent" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                                       <TextField prefWidth="150.0" styleClass="textField-line_transparent" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                                       <TextField prefWidth="150.0" styleClass="textField-line_transparent" GridPane.columnIndex="1" GridPane.rowIndex="5" />
@@ -232,13 +235,13 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="538.0" prefWidth="1390.0">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="30.0" style="-fx-background-color: skyblue;" styleClass="label_sub_title" text="General Diagnostics" AnchorPane.topAnchor="20.0" />
-                                    <Label layoutX="695.0" layoutY="30.0" style="-fx-background-color: skyblue;" text="Port Diagnostics A" AnchorPane.topAnchor="20.0" />
-                                    <Label layoutX="695.0" layoutY="304.0" style="-fx-background-color: skyblue;" text="Port Diagnostics B" />
-                                    <GridPane layoutX="14.0" layoutY="57.0" prefHeight="420.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="50.0">
+                                    <Label layoutX="14.0" layoutY="30.0" styleClass="label_sub_title" text="General Diagnostics" />
+                                    <Label layoutX="695.0" layoutY="30.0" text="Port Diagnostics A" />
+                                    <Label layoutX="695.0" layoutY="312.0" text="Port Diagnostics B" />
+                                    <GridPane layoutX="14.0" layoutY="57.0" prefHeight="420.0" prefWidth="635.0">
                                       <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="313.0" minWidth="10.0" prefWidth="173.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="422.0" minWidth="10.0" prefWidth="304.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                       </columnConstraints>
                                       <rowConstraints>
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -271,26 +274,26 @@
                                           <Label text="Mailbox Initialization Failed" GridPane.rowIndex="11" />
                                           <Label text="PDI Watchdog Expired" GridPane.rowIndex="12" />
                                           <Label text="PDI Watchdog Expired" GridPane.rowIndex="13" />
-                                          <Label text="-" GridPane.columnIndex="1" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                                          <Label text="Label" GridPane.columnIndex="1" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="13" />
                                        </children>
                                     </GridPane>
-                                    <GridPane layoutX="695.0" layoutY="57.0" prefHeight="240.0" prefWidth="491.0" AnchorPane.topAnchor="50.0">
+                                    <GridPane layoutX="695.0" layoutY="57.0" prefHeight="240.0" prefWidth="635.0">
                                       <columnConstraints>
-                                        <ColumnConstraints hgrow="NEVER" maxWidth="311.0" minWidth="10.0" prefWidth="130.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="449.0" minWidth="10.0" prefWidth="358.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                       </columnConstraints>
                                       <rowConstraints>
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -311,20 +314,20 @@
                                           <Label text="Lost Links" GridPane.rowIndex="5" />
                                           <Label text="Forwarded Links" GridPane.rowIndex="6" />
                                           <Label text="Forwarded Links" GridPane.rowIndex="7" />
-                                          <Label text="-" GridPane.columnIndex="1" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                          <Label text="Label" GridPane.columnIndex="1" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                                        </children>
                                     </GridPane>
-                                    <GridPane layoutX="695.0" layoutY="338.0" prefHeight="240.0" prefWidth="479.0" AnchorPane.topAnchor="330.0">
+                                    <GridPane layoutX="695.0" layoutY="338.0" prefHeight="240.0" prefWidth="635.0">
                                       <columnConstraints>
-                                        <ColumnConstraints hgrow="NEVER" maxWidth="326.0" minWidth="10.0" prefWidth="130.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="476.0" minWidth="10.0" prefWidth="355.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                       </columnConstraints>
                                       <rowConstraints>
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -345,17 +348,17 @@
                                           <Label text="Lost Links" GridPane.rowIndex="5" />
                                           <Label text="Forwarded Links" GridPane.rowIndex="6" />
                                           <Label text="Forwarded Links" GridPane.rowIndex="7" />
-                                          <Label text="-" GridPane.columnIndex="1" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                          <Label text="-" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                          <Label text="Label" GridPane.columnIndex="1" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                                        </children>
                                     </GridPane>
-                                    <Button layoutX="14.0" layoutY="564.0" mnemonicParsing="false" text="Reset All" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="15.0" />
+                                    <Button layoutX="451.0" layoutY="533.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="168.0" text="Reset All" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -379,9 +382,9 @@
                                                                   <RadioButton layoutX="79.0" layoutY="45.0" mnemonicParsing="false" text="Read OD from ESI file" />
                                                                   <Label layoutX="290.0" layoutY="10.0" text="Obejct Type" AnchorPane.topAnchor="10.0" />
                                                                   <ComboBox layoutX="370.0" layoutY="7.0" prefWidth="150.0" />
-                                                                  <Button layoutX="370.0" layoutY="42.0" mnemonicParsing="false" text="Update OD list" />
-                                                                  <Button layoutX="478.0" layoutY="41.0" mnemonicParsing="false" text="Update Value" />
-                                                                  <TableView layoutX="14.0" layoutY="100.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+                                                                  <Button layoutX="489.0" layoutY="42.0" mnemonicParsing="false" text="Update OD list" />
+                                                                  <Button layoutX="597.0" layoutY="41.0" mnemonicParsing="false" text="Update Value" />
+                                                                  <TableView layoutX="14.0" layoutY="100.0" prefHeight="200.0" prefWidth="1074.0">
                                                                     <columns>
                                                                       <TableColumn prefWidth="100.0" text="Index" />
                                                                       <TableColumn prefWidth="100.0" text="Name" />
@@ -439,7 +442,7 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <TableView layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="1036.0" AnchorPane.bottomAnchor="361.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                    <TableView layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="1036.0">
                                       <columns>
                                         <TableColumn prefWidth="150.0" text="Source" />
                                         <TableColumn prefWidth="150.0" text="Active" />
@@ -449,9 +452,9 @@
                                           <TableColumn prefWidth="150.0" text="Comments" />
                                       </columns>
                                     </TableView>
-                                    <ScrollPane layoutX="14.0" layoutY="226.0" prefHeight="376.0" prefWidth="1046.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="220.0">
+                                    <ScrollPane layoutX="14.0" layoutY="226.0" prefHeight="376.0" prefWidth="1046.0">
                                       <content>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0">
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="469.0" prefWidth="1030.0">
                                              <children>
                                                 <Label layoutX="14.0" layoutY="10.0" text="Transitions" />
                                                 <Label layoutX="260.0" layoutY="10.0" text="Command Data" />
@@ -470,13 +473,13 @@
                                                 <CheckBox layoutX="14.0" layoutY="465.0" mnemonicParsing="false" text="OP(Op-&gt;PreOp)" />
                                                 <CheckBox layoutX="14.0" layoutY="500.0" mnemonicParsing="false" text="OS(Op-&gt;SafeOp)" />
                                                 <Label layoutX="260.0" layoutY="45.0" text="Comment" />
-                                                <TextField layoutX="260.0" layoutY="80.0" prefWidth="654.0" />
+                                                <TextField layoutX="260.0" layoutY="80.0" prefHeight="29.0" prefWidth="654.0" />
                                                 <TextField layoutX="568.0" layoutY="115.0" />
                                                 <TextField layoutX="568.0" layoutY="150.0" />
-                                                <ComboBox layoutX="568.0" layoutY="185.0" prefWidth="173.0" />
-                                                <ComboBox layoutX="568.0" layoutY="220.0" prefWidth="172.0" />
+                                                <ComboBox layoutX="568.0" layoutY="185.0" prefHeight="29.0" prefWidth="173.0" />
+                                                <ComboBox layoutX="568.0" layoutY="220.0" prefHeight="29.0" prefWidth="172.0" />
                                                 <CheckBox layoutX="568.0" layoutY="255.0" mnemonicParsing="false" text="Hex" />
-                                                <TextField layoutX="260.0" layoutY="290.0" prefWidth="653.0" />
+                                                <TextField layoutX="260.0" layoutY="290.0" prefHeight="29.0" prefWidth="653.0" />
                                                 <CheckBox layoutX="260.0" layoutY="360.0" mnemonicParsing="false" text="Complete Access" />
                                                 <CheckBox layoutX="260.0" layoutY="395.0" mnemonicParsing="false" text="Active" />
                                                 <Label layoutX="260.0" layoutY="115.0" text="Cmd Type" />
@@ -560,22 +563,30 @@
                                     <Label layoutX="14.0" layoutY="14.0" text="Start Address 0x" />
                                     <Label layoutX="280.0" layoutY="14.0" text="Length (in Bytes)" />
                                     <Label layoutX="583.0" layoutY="14.0" text="End Address 0x" />
-                                    <TextField layoutX="142.0" layoutY="9.0" prefWidth="127.0" />
-                                    <TextField layoutX="411.0" layoutY="9.0" prefWidth="129.0" />
-                                    <TextField layoutX="711.0" layoutY="9.0" prefWidth="130.0" />
+                                    <TextField layoutX="142.0" layoutY="9.0" prefHeight="29.0" prefWidth="127.0" />
+                                    <TextField layoutX="411.0" layoutY="9.0" prefHeight="29.0" prefWidth="129.0" />
+                                    <TextField layoutX="711.0" layoutY="9.0" prefHeight="29.0" prefWidth="130.0" />
                                     <Button layoutX="858.0" layoutY="9.0" mnemonicParsing="false" text="Update" />
-                                    <Label layoutX="14.0" layoutY="54.0" text="Settings" />
-                                    <RadioButton layoutX="77.0" layoutY="54.0" mnemonicParsing="false" text="Bits" />
-                                    <RadioButton layoutX="152.0" layoutY="54.0" mnemonicParsing="false" text="Bytes" />
-                                    <CheckBox layoutX="246.0" layoutY="54.0" mnemonicParsing="false" text="Hex" />
-                                    <TableView layoutY="81.0" prefHeight="480.0" prefWidth="1370.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="81.0">
-                                      <columns>
-                                        <TableColumn prefWidth="220.0" text="Offset" />
-                                        <TableColumn minWidth="0.0" prefWidth="165.0" text="Length" />
-                                          <TableColumn prefWidth="282.0" text="Value" />
-                                          <TableColumn prefWidth="272.0" text="Description" />
-                                      </columns>
-                                    </TableView>
+                                    <Label layoutX="36.0" layoutY="60.0" text="Settings" />
+                                    <RadioButton layoutX="37.0" layoutY="95.0" mnemonicParsing="false" text="Bits" />
+                                    <RadioButton layoutX="112.0" layoutY="95.0" mnemonicParsing="false" text="Bytes" />
+                                    <CheckBox layoutX="206.0" layoutY="95.0" mnemonicParsing="false" text="Hex" />
+                                    <ScrollPane layoutY="150.0" prefHeight="393.0" prefWidth="968.0">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="449.0" prefWidth="963.0">
+                                             <children>
+                                                <TableView layoutX="14.0" layoutY="14.0" prefHeight="436.0" prefWidth="940.0">
+                                                  <columns>
+                                                    <TableColumn prefWidth="220.0" text="Offset" />
+                                                    <TableColumn minWidth="0.0" prefWidth="165.0" text="Length" />
+                                                      <TableColumn prefWidth="282.0" text="Value" />
+                                                      <TableColumn prefWidth="272.0" text="Description" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </ScrollPane>
                                  </children>
                               </AnchorPane>
                            </content>

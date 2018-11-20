@@ -44,9 +44,11 @@ import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 
 import justek.ide.MainApp;
+import justek.ide.chart.data.Constant;
 import justek.ide.chart.data.GraphData;
 import justek.ide.chart.data.GraphTriggerData;
 import justek.ide.chart.view.GraphPanel;
+import justek.ide.chart.view.GraphTriggerPanel;
 import justek.ide.model.CommandConst;
 import justek.ide.model.RealTimeInfo;
 import justek.ide.model.TriggerInfo;
@@ -55,6 +57,7 @@ import justek.ide.model.listener.RealTimeEventListener;
 import justek.ide.model.listener.TreeEventListener;
 import justek.ide.model.listener.TriggerEventListener;
 import justek.ide.model.manager.DialogManager;
+import justek.ide.model.manager.NetworkServerManager;
 import justek.ide.utils.StringUtil;
 
 public class RecorderController implements TreeEventListener,TriggerEventListener,RealTimeEventListener{
@@ -121,7 +124,7 @@ public class RecorderController implements TreeEventListener,TriggerEventListene
     @FXML
     private ToggleButton fxRightToggleButton;
     
-	private GraphPanel panel;
+	private GraphTriggerPanel panel;
 	private ChartViewer viewer;
 	private ObservableList<String> list;
 	
@@ -197,7 +200,7 @@ public class RecorderController implements TreeEventListener,TriggerEventListene
 	
 	@FXML
 	private void initialize() {
-		this.panel = new GraphPanel();
+		this.panel = new GraphTriggerPanel();
 		JFreeChart chart = panel.defaultCreateChart();
 		viewer = new ChartViewer(chart);
 		this.borderPane.setCenter(viewer);
@@ -226,7 +229,7 @@ public class RecorderController implements TreeEventListener,TriggerEventListene
 		this.sliderY1.setDisable(true);
 		this.sliderY2.setDisable(true);
 		
-		this.fxCountLabel.setText("");
+//		this.fxCountLabel.setText("");
 		
 //		this.seriesComboBox.setItems(sourceList);
 //		this.seriesComboBox.setValue(sourceList.get(0));
@@ -352,6 +355,11 @@ public class RecorderController implements TreeEventListener,TriggerEventListene
 	 * @since 2018. 7. 5.
 	 */
 	public void startLongTermTrigger() {
+		
+		
+		//현재 데이터 수집 시점의 offset값을 저정한다.
+		NetworkServerManager.getInstance().getPositionOffSet(String.valueOf(CommandConst.DRIVER_NUMBEER-1));
+		
 		this.triggerStart=true;
 		this.ignoreStart=false;
 		
@@ -457,6 +465,19 @@ public class RecorderController implements TreeEventListener,TriggerEventListene
 	@FXML
 	public void IgnoreTriggerRun() {
 		System.out.println("IgnoreTriggerRun");
+		System.out.println("Select Resolution==="+this.resolutionComoboBox.getSelectionModel().getSelectedItem().toString());
+		
+		
+		//현재 데이터 수집 시점의 offset값을 저정한다.
+		NetworkServerManager.getInstance().getPositionOffSet(String.valueOf(CommandConst.DRIVER_NUMBEER-1));
+
+		//실행할 프로그램 Argument를 설정한다. 
+		//프로그램은 10초당 1번 파일을 저장한다. 20초면 2번을  으로 지정한다. 
+		//COUNT=설정시간/resolution/10(기본저장시간에 필요한 시간)
+		int count = Integer.valueOf(this.fxRecordTimeTextField.getText())/Integer.valueOf(this.resolutionComoboBox.getSelectionModel().getSelectedItem().toString())/10;		
+		String path = "/home/jscs1/works/xlogproc.sh "+ this.resolutionComoboBox.getSelectionModel().getSelectedItem().toString()+" "+String.valueOf(count);
+		System.out.println(Tag+":: Trigger 저장경로..."+path);
+
 		if(CommandConst.DEBUG) return;
 		
 		this.triggerStart=false;
@@ -473,16 +494,9 @@ public class RecorderController implements TreeEventListener,TriggerEventListene
 		
 		Runtime runtime = Runtime.getRuntime();
 		try {
-//			File file = new File("3.out");
-//			File mfile = new File("3.dat");
-//			if(file.exists()) {
-//				file.delete();
-//			}
-//			if(mfile.exists()) {
-//				mfile.delete();
-//			}
-//			Process process = runtime.exec("/home/jscs1/justek_motionware/bin/lon.sh");
-			Process process = runtime.exec("/home/jscs1/justek_motionware/etherCAT_data/getData.sh");
+
+			//			Process process = runtime.exec("/home/jscs1/justek_motionware/bin/lon.sh");
+			Process process = runtime.exec(path);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -888,6 +902,7 @@ public class RecorderController implements TreeEventListener,TriggerEventListene
 		int hour=0;
 		int min=0;
 		int sec=0;
+		int totalSec=0;
 		/*
 		 * repeatPeriod 의 시간이 지날 때마다 execute() 메소드를 호출하도록 설정한다
 		 * 단위 : ms  
@@ -913,6 +928,7 @@ public class RecorderController implements TreeEventListener,TriggerEventListene
 				public void run()
 				{
 					sec++;
+					totalSec++;
 					if(sec==60) {
 						min++;
 						sec=0;
@@ -923,10 +939,11 @@ public class RecorderController implements TreeEventListener,TriggerEventListene
 					}
 					
 					if(triggerStart==true) {
-						int recordTime = Integer.valueOf(info.getResolution())*10;
+//						int recordTime = Integer.valueOf(info.getResolution())*10*2; //xlogporc.sh resolution 2의 경우
+						int recordTime = Integer.valueOf(fxRecordTimeTextField.getText());
 						System.out.println(Tag+" :: Recording Time :" + recordTime);
 						
-						if(sec==recordTime) { // 수정할것.
+						if(totalSec==recordTime) { // 수정할것.
 //							GraphTriggerData.getInstance().stopLogProcess();  자동으로 멈추기 때문에 9월6일 이후 필요없다.
 							timer.removeTimer(timerId);
 							processBar.setVisible(false);

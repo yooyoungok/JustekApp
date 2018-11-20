@@ -155,10 +155,11 @@ public class RealTimeThread extends Timer{
 //		System.out.println(Tag+" :: "+num);
 		
 		ObservableList<String> commandList = FXCollections.observableArrayList();
-		String command0 = CommandConst.GET_DRIVER_STATUS.replace("Driver", num);
-		String command1 = CommandConst.GET_DRIVER_ACTUAL_POSITION.replace("Driver", num);
-		String command2 = CommandConst.GET_DRIVER_TARGET_POSITION.replace("Driver", num);
-		String command3 = CommandConst.GET_DRIVER_ACTUAL_VELOCITY.replace("Driver", num);
+		int newNum = Integer.valueOf(num)-1; // 0부터 처리하므로 -1을 해야함... 
+		String command0 = CommandConst.GET_DRIVER_STATUS.replace("Driver", String.valueOf(num));
+		String command1 = CommandConst.GET_DRIVER_ACTUAL_POSITION.replace("Driver", String.valueOf(newNum));
+		String command2 = CommandConst.GET_DRIVER_TARGET_POSITION.replace("Driver", String.valueOf(newNum));
+		String command3 = CommandConst.GET_DRIVER_ACTUAL_VELOCITY.replace("Driver", String.valueOf(num));
 		commandList.add(command0);
 		commandList.add(command1);
 		commandList.add(command2);
@@ -186,9 +187,12 @@ public class RealTimeThread extends Timer{
 				this.listener.realTimeDataInfoEvent(info);
 			}			
 			else {
-//				System.out.println("======================== listener null "+info.DriverNo+"========================");
+				System.out.println("======================== listener null "+info.DriverNo+"========================");
 				
 			}
+		}
+		else {
+			System.out.println(Tag+"======================Error Size "+resultList.size()+"========================");
 		}
 	}
 
@@ -245,16 +249,16 @@ public class RealTimeThread extends Timer{
 
 	@Override
 	public void execute() {
-		
-		if(CommandConst.DEBUG) {
-			this.getInfo();
-		}
-		else {
+//		
+//		if(CommandConst.DEBUG) {
+//			this.getInfo();
+//		}
+//		else {
 		// 타이머 실행
 		//		Calendar cal = Calendar.getInstance();
 		//		System.out.println( "RealTimeThread 실행 [" + cal.get(Calendar.MINUTE) + ":" + cal.get(Calendar.SECOND) + "]");
 			this.getAllRealTimeData(); // 드라이버 전체의 실시간 상태정보를 가져온다.
-		}
+//		}
 	}
 
 	@Override

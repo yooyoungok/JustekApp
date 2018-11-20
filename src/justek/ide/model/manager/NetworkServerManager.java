@@ -17,6 +17,8 @@ import java.net.UnknownHostException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.prefs.BackingStoreException;
+import java.util.prefs.Preferences;
 
 import com.supinan.util.timer.Timer;
 import com.supinan.util.timer.TimerStopType;
@@ -24,6 +26,7 @@ import com.supinan.util.timer.TimerStopType;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import justek.ide.MainApp;
 import justek.ide.dao.MemberDAO;
 import justek.ide.model.CommandConst;
 import justek.ide.model.SDOInfo;
@@ -265,12 +268,12 @@ public class NetworkServerManager {
 		
 		ObservableList<String> resultList = FXCollections.observableArrayList();
 		
-		if(CommandConst.DEBUG) {
-			resultList.add("/10.plc R");
-			resultList.add("/11.plc R");
-			resultList.add("/31.plc R");
-			return resultList;
-		}
+//		if(CommandConst.DEBUG) {
+////			resultList.add("/10.plc R");
+////			resultList.add("/11.plc R");
+////			resultList.add("/31.plc R");
+//			return null;
+//		}
 		
 		if(!checkNetworkConnection())  { return null ;}
 		if(!checkSocket()) return null ;
@@ -427,7 +430,9 @@ public class NetworkServerManager {
 			BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
 			while ((szLine = br.readLine()) != null) {
 				System.out.println(szLine);
-				result.add(szLine);
+				if(szLine.contains("SM")) {
+					result.add(szLine);
+				}
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -437,6 +442,19 @@ public class NetworkServerManager {
 		}
 
 		return result;
+	}
+	
+	public void changeEtherCATMode(String mode,String dirNum) {
+		System.out.println("changeEtherCATMode");
+		Runtime runtime = Runtime.getRuntime();
+
+		try {
+			Process process = runtime.exec("ethercat states -p "+dirNum+" "+mode);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("changeEtherCATMode Error");
+			ErrorLogManager.getInstance().addErrorLog(Tag,"getCommandData",e);
+		}
 	}
 	
 	/**
@@ -1001,15 +1019,25 @@ public class NetworkServerManager {
 		if(!checkNetworkConnection())  { return ;}
 		if(!checkSocket()) return;
 
+		//MemberDAO의 insertLog()를 호출하여 실행 Log를 DB에 저장한다.
+//		MemberDAO.getInstance().insertLog(command);
+		
 		try {
 			Socket socketClient = new Socket(CommandConst.address, 12345);
 			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socketClient.getOutputStream()));
 			//			String command ="#"+numberDriveNo+"$";
-			String command ="$$";
-			//MemberDAO의 insertLog()를 호출하여 실행 Log를 DB에 저장한다.
-			MemberDAO.getInstance().insertLog(command);
+			String command = "ereset";
 			writer.write(command+"\r\n");
 			writer.flush();
+			
+			command ="$$";
+			writer.write(command+"\r\n");
+			writer.flush();
+	
+			command ="homeall";
+			writer.write(command+"\r\n");
+			writer.flush();
+			
 			socketClient.close();
 		} catch (Exception e) {
 			DialogManager.getInstance().showServerErrorConfirmDialog(e.getMessage());
@@ -1298,14 +1326,12 @@ public class NetworkServerManager {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 		return reponse;
 	}
 
 	public static ObservableList<String> getDriverStaus(ObservableList<String> commandList) {	
 		ObservableList<String> response = FXCollections.observableArrayList() ;
 		try {
-
 			if(realTimeSocket.isClosed()) {
 				System.out.println(Tag+" : realTimeSocket isClosed");
 				SocketAddress me = new InetSocketAddress(CommandConst.address,12345);
@@ -1315,7 +1341,7 @@ public class NetworkServerManager {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(realTimeSocket.getInputStream()));
 			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(realTimeSocket.getOutputStream()));
 
-			//			System.out.println(Tag+" commandList size == "+commandList.size());
+//						System.out.println(Tag+" commandList size == "+commandList.size());
 			for(String value:commandList) {
 //								System.out.println(Tag+" : commandList ="+value);
 				writer.write(value+"\r\n");
@@ -1330,10 +1356,9 @@ public class NetworkServerManager {
 //					System.out.println(Tag+" : reponse ="+valueLine);
 				}
 				else {
-					//					System.out.println(Tag+" : reponse_error ="+szLine);
+					System.out.println(Tag+" : reponse_error ="+szLine);
 				}
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -1360,6 +1385,32 @@ public class NetworkServerManager {
 		return isConnection;
 	}
 
+	
+	//그래프를 그리기 위한 모터 위치값의 OFFSET값을 받아온다...
+	public void getPositionOffSet(String dirNo) {
+		String reponse = "78"; //11월20일 3시10분 값.. 
+		if (!CommandConst.DEBUG) {
+			try {
+				Socket socketClient = new Socket(CommandConst.address, 12345);
+				BufferedReader reader = new BufferedReader(new InputStreamReader(socketClient.getInputStream()));
+				BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socketClient.getOutputStream()));
+				String command = CommandConst.GET_MOTOR_OFFSET.replace("Driver", String.valueOf(dirNo));
+				writer.write(command+"\r\n");
+				writer.flush();
+				if(reader.readLine().equals(command)) {
+					System.out.println(Tag+" : reponse ="+command);
+					reponse = reader.readLine();				
+				}
+				socketClient.close();
+			} catch(IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		//받아온 옵셋값을 저정한다.
+		Preferences prefs = Preferences.userNodeForPackage(MainApp.class);
+		prefs.put("OFFSET_"+dirNo, reponse);
+	}
 
 	/** ################################################################## */
 
@@ -1388,7 +1439,7 @@ public class NetworkServerManager {
 		public void execute() {
 			Calendar cal = Calendar.getInstance();
 			System.out.println("TimerCall 호출! " + cal.get(Calendar.HOUR_OF_DAY) + "시 " +
-					cal.get(Calendar.MINUTE) + "분 " + cal.get(Calendar.SECOND) + "초");
+								cal.get(Calendar.MINUTE) + "분 " + cal.get(Calendar.SECOND) + "초");
 
 			// Update the Label on the JavaFx Application Thread
 			Platform.runLater(new Runnable()
@@ -1409,7 +1460,7 @@ public class NetworkServerManager {
 		 */
 		@Override
 		public void stopTimer(TimerStopType type) {
-			System.out.println("TimerCall 종료:" + type.name());
+			System.out.println("TimerCall 종료 :: " + type.name());
 		}
 	}	
 }

@@ -29,7 +29,6 @@ public class ButtonCell extends TableCell<PLCInfo, String> {
 					NetworkServerManager.getInstance().runPlcFile(info.getName());
 					setText("실행중");
 					int dot = info.getName().indexOf('.');
-					info.isRun = true;
 					String runString2 = info.getName().substring(0, dot);
 					view.getItems().add("enable plc "+runString2);
 					cellButton.setStyle("-fx-background-color: #ee1010; -fx-text-fill: #FFFFFF;");
@@ -40,7 +39,6 @@ public class ButtonCell extends TableCell<PLCInfo, String> {
 					PLCInfo info = getTableView().getItems().get(getIndex());
 					NetworkServerManager.stopPlcFile(info.getName());
 					setText("대기중");
-					info.isRun = false;
 					int dot = info.getName().indexOf('.');
 					String runString2 = info.getName().substring(0, dot);
 					view.getItems().add("disable plc "+runString2);

@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import justek.ide.MainApp;
 import justek.ide.model.CommandConst;
 import justek.ide.model.EditingCell;
@@ -301,11 +302,11 @@ public class EtherCATMasterController implements TreeEventListener {
 		
     	ObservableList<String>  result = NetworkServerManager.getInstance().getEtherCATDAta();
     	if(result!=null) {
-    		for(int i=1;i<result.size();i++) {
+    		for(int i=0;i<result.size();i++) {
     			System.out.println(result.get(i));
     			EtherCATMasterInfo info = new EtherCATMasterInfo();
     			String[] list = result.get(i).split(" ");
-    			info.setName(CommandConst.driverList.get(i-1));
+    			info.setName(CommandConst.driverList.get(i));
     			info.setState(list[4]);
     			this.diagTableData.add(info);
     		}
@@ -326,6 +327,24 @@ public class EtherCATMasterController implements TreeEventListener {
 	} 
 	
 	
+    @FXML
+    void onClickProOp(ActionEvent event) {
+    	System.out.println("EtherCATMasterController == onClickProOp ");
+    	NetworkServerManager.getInstance().changeEtherCATMode("PREOP",String.valueOf(CommandConst.DRIVER_NUMBEER));
+    }
+
+    @FXML
+    void onClickSafeOp(ActionEvent event) {
+    	System.out.println("EtherCATMasterController == onClickSafeOp ");
+    	NetworkServerManager.getInstance().changeEtherCATMode("SAFEOP",String.valueOf(CommandConst.DRIVER_NUMBEER));
+    }
+	
+    @FXML
+    void onClickOperational(ActionEvent event) {
+    	System.out.println("EtherCATSlaveController == onClickSafeOp ");
+    	NetworkServerManager.getInstance().changeEtherCATMode("OP",String.valueOf(CommandConst.DRIVER_NUMBEER));
+    }
+    
 	//test data
 	private void setDummyData() {
 		EtherCATMasterInfo info = new EtherCATMasterInfo();
@@ -351,7 +370,6 @@ public class EtherCATMasterController implements TreeEventListener {
 		info2.setState("-");
 		
 		this.diagTableData.add(info2);
-		
 		
 	}
 }

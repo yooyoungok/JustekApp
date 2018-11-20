@@ -1,6 +1,7 @@
 
 package justek.ide.view;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
@@ -68,6 +69,8 @@ public class EtherCATSlaveController2 implements TreeEventListener{
 	@FXML
 	private TextField fxCurrentStateField;
 	
+	@FXML
+	private TextField fxReqestStateField;
 	
 	XMLUtils mXmlUtils;
 	
@@ -386,4 +389,43 @@ public class EtherCATSlaveController2 implements TreeEventListener{
     	}
 	}
     
+    @FXML
+    void onClickProOp(ActionEvent event) {
+    	System.out.println("EtherCATSlaveController == onClickProOp ");
+    	this.fxReqestStateField.setText("PREOP");
+    	NetworkServerManager.getInstance().changeEtherCATMode("PREOP",String.valueOf(CommandConst.DRIVER_NUMBEER));
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	this.getCurrentFieldData();
+    }
+
+    @FXML
+    void onClickSafeOp(ActionEvent event) {
+    	System.out.println("EtherCATSlaveController == onClickSafeOp ");
+    	this.fxReqestStateField.setText("SAFEOP");
+    	NetworkServerManager.getInstance().changeEtherCATMode("SAFEOP",String.valueOf(CommandConst.DRIVER_NUMBEER));
+    	try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+		}
+    	this.getCurrentFieldData();
+    }
+    
+    @FXML
+    void onClickOperational(ActionEvent event) {
+    	System.out.println("EtherCATSlaveController == onClickOperational ");
+    	this.fxReqestStateField.setText("OP");
+    	NetworkServerManager.getInstance().changeEtherCATMode("OP",String.valueOf(CommandConst.DRIVER_NUMBEER));
+    	try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+		}
+    	this.getCurrentFieldData();
+    }
 }

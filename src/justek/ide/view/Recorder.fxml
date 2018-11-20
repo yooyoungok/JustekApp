@@ -69,7 +69,7 @@
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin></Label>
-                                    <TextField fx:id="fxRecordTimeTextField" alignment="CENTER_RIGHT" prefWidth="100.0" promptText="사용자가 원하시는 RecordTime을 입력하세요" text="20" visible="false">
+                                    <TextField fx:id="fxRecordTimeTextField" alignment="CENTER_RIGHT" prefWidth="100.0" promptText="사용자가 원하시는 RecordTime을 입력하세요" text="20">
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin>

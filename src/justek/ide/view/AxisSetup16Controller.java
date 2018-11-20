@@ -264,8 +264,11 @@ public class AxisSetup16Controller implements EventHandler<KeyEvent>,TreeEventLi
 	private ComboBox<String> fxResolutionComboBox;
 	@FXML
 	private Label fxRecordingTimeLabel;
-	
-	
+    @FXML
+    private Button fxJogLeftButton;
+    @FXML
+    private Button fxJogRightButton;
+    
 	public int selectDriveNo = 1;
 	public String numberDriveNo = new Integer(selectDriveNo).toString();
 
@@ -654,12 +657,18 @@ public class AxisSetup16Controller implements EventHandler<KeyEvent>,TreeEventLi
 
 		if(this.runHeldCheckbox.isSelected()) {
 			if(this.isRunHeld) {
-				NetworkServerManager.stop(this.numberDriveNo);
+				NetworkServerManager.stop(this.numberDriveNo);				
+				this.fxJogLeftButton.setStyle("-fx-background-color:\r\n" + 
+						"#000000,linear-gradient(#7ebcea, #2f4b8f), "
+						+ "linear-gradient(#426ab7, #263e75), "
+						+ "linear-gradient(#395cab, #223768);");
+				
 				this.isRunHeld = false;
 			}
 			else {
 				String speed = StringUtil.removeCommna(this.fxSpeed.getText());
 				if(speed!=null)  NetworkServerManager.handleJoggingLeft(numberDriveNo, speed);
+				this.fxJogLeftButton.setStyle("-fx-background-color: red;");
 				this.isRunHeld = true;
 			}
 		}
@@ -676,10 +685,15 @@ public class AxisSetup16Controller implements EventHandler<KeyEvent>,TreeEventLi
 		if(this.runHeldCheckbox.isSelected()) {
 			if(this.isRunHeld) {
 				NetworkServerManager.stop(this.numberDriveNo);
+				this.fxJogRightButton.setStyle("-fx-background-color:\r\n" + 
+						"#000000,linear-gradient(#7ebcea, #2f4b8f), "
+						+ "linear-gradient(#426ab7, #263e75), "
+						+ "linear-gradient(#395cab, #223768);");
 				this.isRunHeld = false;
 			}
 			else {
 				String speed = StringUtil.removeCommna(this.fxSpeed.getText());
+				this.fxJogRightButton.setStyle("-fx-background-color: red;");
 				if(speed!=null)  NetworkServerManager.handleJoggingRight(numberDriveNo, speed);
 				this.isRunHeld = true;
 			}
@@ -844,36 +858,6 @@ public class AxisSetup16Controller implements EventHandler<KeyEvent>,TreeEventLi
 		}
 	}
 
-	/** 현재 사용하지 않음..  2018.06.12-> onClickChartDraw()로 대체 */
-	@FXML
-	private void recordingStart() {
-		System.out.println("Chart Draw Start");
-		this.tabPane.getSelectionModel().select(this.chartTab);
-
-		//add 2018.04.26(차트그리지 못하는 문제 수정)
-		panel.data.LeftChartName  = this.seriesComboBox.getSelectionModel().getSelectedItem();
-		panel.data.RightChartName  = this.series2ComboBox.getSelectionModel().getSelectedItem();
-
-		if(this.borderPane.getCenter()==null) {
-			this.panel = new GraphPanel();
-			JFreeChart chart =  panel.createChart();
-			viewer = new ChartViewer(chart);
-			this.borderPane.setCenter(viewer);
-			this.panel.addCrossHair(viewer);
-		}
-		else {
-			this.panel.removeCrossHair(viewer);
-			this.panel.clearSeries();
-			viewer.getChart().getXYPlot().setDataset(0, null);
-			viewer.getChart().getXYPlot().setDataset(1, null);
-			viewer.setChart(panel.createChart());
-			this.panel.addCrossHair(viewer);
-			System.out.println("Already Draw Chart");
-		}
-
-		this.setChartInfo();
-	}
-	
     @FXML
     void onClickResolution(ActionEvent event) {
     	int time = Integer.valueOf(this.fxResolutionComboBox.getSelectionModel().getSelectedItem());
@@ -888,14 +872,20 @@ public class AxisSetup16Controller implements EventHandler<KeyEvent>,TreeEventLi
 	}
 
 	/**
-	 * Log 정보를 저장하기위한 프로그림을 실행한다.
+	 * Log 정보를 저장하기위한 프로그림을 실행한다. // 설정된 시간(Timer 실행) 이 종료되면 자동으로 그래프를 그린다..
 	 * */
 	@FXML
 	public void logStart() {
 		System.out.println("logStart");
+		
+		//현재 데이터 수집 시점의 offset값을 저정한다.
+		NetworkServerManager.getInstance().getPositionOffSet(String.valueOf(CommandConst.DRIVER_NUMBEER-1));
+		
 		this.tabPane.getSelectionModel().select(1);
 		this.chartController.setRecordingTimeView(this.recordingTime);
-
+		
+		
+		
 		if(CommandConst.DEBUG) return;
 
 		Runtime runtime = Runtime.getRuntime();
@@ -908,87 +898,15 @@ public class AxisSetup16Controller implements EventHandler<KeyEvent>,TreeEventLi
 			if(mfile.exists()) {
 				mfile.delete();
 			}
-
-//						Process process = runtime.exec("/home/jscs1/justek_motionware/bin/lon.sh");
+			
 //			Process process = runtime.exec("/home/jscs1/justek_motionware/etherCAT_data/getData.sh");
-			Process process = runtime.exec("/home/jscs1/works/logproc.sh "+ this.fxResolutionComboBox.getSelectionModel().getSelectedItem());
+			Process process = runtime.exec("/home/jscs1/works/xlogproc.sh "+ this.fxResolutionComboBox.getSelectionModel().getSelectedItem()+" 1");
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
-	//Now Not Use! 2018.06.24
-	@FXML
-	public void longTermStart() {
-		System.out.println("longTermStart");
-
-		Runtime runtime = Runtime.getRuntime();
-		try {
-			Process process = runtime.exec("./bin/shm_helper1");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	//Not Use!
-	//	@FXML
-	//	private void recordingStop() {
-	//			System.out.println("Chart File Save");
-	//			
-	//			File mfile = new File("log_pos.dat");
-	//			BufferedReader br;
-	//			FileReader fr = null; 
-	//			String line =null;
-	//			
-	//			File pos_file = new File("pos.txt");
-	//			File acc_file = new File("acc.txt");
-	//			
-	//			BufferedWriter pos_out;
-	//			BufferedWriter acc_out;
-	//			
-	//			if(mfile.exists()) {
-	//			
-	//			try{
-	//				fr = new FileReader(mfile); 
-	//				br = new BufferedReader(fr);
-	//
-	//				pos_out = new BufferedWriter(new FileWriter(pos_file));
-	//				acc_out = new BufferedWriter(new FileWriter(acc_file));
-	//				
-	//				double ta_pos1 = 0;
-	//				double ta_pos2 = 0;
-	//				double ta_pos3 = 0;
-	//				double target_pos;
-	//				double actual_pos;
-	//				double err_pos;
-	//				double accel;
-	//				
-	//				String[] parsingList;
-	//				while((line = br.readLine()) != null){
-	//					parsingList = line.split(",");
-	//					target_pos = Double.parseDouble(parsingList[0]);
-	//					actual_pos = Double.parseDouble(parsingList[1]);
-	//					ta_pos1 = ta_pos2;
-	//					ta_pos2 = ta_pos3;
-	//					ta_pos3 = target_pos;
-	//					err_pos = target_pos-actual_pos; //error_position
-	//					
-	//					accel = (ta_pos3-ta_pos2)-(ta_pos2-ta_pos1);
-	//					pos_out.write(Double.toString(err_pos)+"\n");
-	//					acc_out.write(Double.toString(accel)+"\n");
-	//				}
-	//				
-	//				
-	//				pos_out.close();
-	//				acc_out.close();
-	//				
-	//			}catch(IOException e) {
-	//				e.printStackTrace(); 
-	//			}
-	//			}
-	//	}
 
 	@FXML
 	private void recordingStop2() {
@@ -1575,7 +1493,6 @@ public class AxisSetup16Controller implements EventHandler<KeyEvent>,TreeEventLi
 				if(Source!=null) {
 					if(numberDriveNo.equals(Source.DriverNo)) {
 						info = Source;
-
 						String value = StringUtil.removeDot(info.StausWords);
 						value = StringUtil.getDecimalToHexValue(value);
 						//						System.out.println(Tag +" getDecimalToHexValue = "+value);
@@ -1598,7 +1515,7 @@ public class AxisSetup16Controller implements EventHandler<KeyEvent>,TreeEventLi
 	public void clieckMenu() {
 		// TODO Auto-generated method stub
 		this.selectDriveNo = CommandConst.DRIVER_NUMBEER;
-//		System.out.println(Tag+"::"+selectDriveNo);
+		System.out.println(Tag+"::"+selectDriveNo);
 		numberDriveNo = new Integer(selectDriveNo).toString();
 
 		this.getDriverPositionInfo(this.numberDriveNo);

@@ -238,10 +238,20 @@ public class ConsoleViewController {
 			}
 
 			//SupinanTimer가 생성한 timer아이디를 timerId로 저장한다.
-			this.timerId = timer.addTimer(new TimerCall(500));
+			this.timerId = timer.addTimer(new TimerCall(300));
 
+			if(runString.contains("ps")) {
+				serverMsg = reader.readLine();		
+				serverMsg = reader.readLine(); // 첫번재와 두번재는 확인하지 않아도 됨...		
+
+				while (!(serverMsg = reader.readLine()).isEmpty()) {
+					System.out.println(Tag+" : reponse ="+serverMsg);
+					this.fxResultTextArea.appendText("\n Justek> "+serverMsg);
+				}
+
+			}
 			/* plc 파일을 실행하는 경우는 response가 없으므로 Server Message를 받지 않는다. 2초후에 Timer가 자동으로 socket를 닫는다.*/
-			if(!runString.contains("plc")) {
+			else if(!runString.contains("plc")) {
 				
 				serverMsg = reader.readLine();
 				if(serverMsg!=null) {

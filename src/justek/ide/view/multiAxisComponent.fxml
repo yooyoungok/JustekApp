@@ -162,13 +162,13 @@
       <Separator prefWidth="200.0" />
       <FlowPane alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" styleClass="flow-pane-center-left">
          <children>
-            <Button mnemonicParsing="false" onMousePressed="#handleJogLeft" onMouseReleased="#handleJogStop" text="&lt;" />
+            <Button fx:id="fxJogLeftButton" mnemonicParsing="false" onMousePressed="#handleJogLeft" onMouseReleased="#handleJogStop" text="&lt;" />
             <CheckBox fx:id="runHeldCheck" alignment="CENTER" mnemonicParsing="false" prefHeight="16.0" prefWidth="85.0" text="Run Held">
                <FlowPane.margin>
                   <Insets left="18.0" right="18.0" />
                </FlowPane.margin>
             </CheckBox>
-            <Button mnemonicParsing="false" onMousePressed="#handleJogRight" onMouseReleased="#handleJogStop" text="&gt;" />
+            <Button fx:id="fxJogRightButton" mnemonicParsing="false" onMousePressed="#handleJogRight" onMouseReleased="#handleJogStop" text="&gt;" />
          </children>
          <VBox.margin>
             <Insets bottom="3.0" />

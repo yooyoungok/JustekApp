@@ -91,13 +91,13 @@
                                           <Label layoutX="26.0" layoutY="77.0" text="Current State" />
                                           <TextField fx:id="fxCurrentStateField" editable="false" layoutX="278.0" layoutY="72.0" />
                                           <Button layoutX="493.0" layoutY="72.0" mnemonicParsing="false" prefWidth="125.0" text="Init" />
-                                          <Button layoutX="493.0" layoutY="112.0" mnemonicParsing="false" prefWidth="125.0" text="Pre-Op" />
-                                          <Button layoutX="493.0" layoutY="154.0" mnemonicParsing="false" prefWidth="125.0" text="Safe-Op" />
-                                          <Button layoutX="493.0" layoutY="195.0" mnemonicParsing="false" prefWidth="125.0" text="Operational" />
+                                          <Button layoutX="493.0" layoutY="112.0" mnemonicParsing="false" onAction="#onClickProOp" prefWidth="125.0" text="Pre-Op" />
+                                          <Button layoutX="493.0" layoutY="154.0" mnemonicParsing="false" onAction="#onClickSafeOp" prefWidth="125.0" text="Safe-Op" />
+                                          <Button layoutX="493.0" layoutY="195.0" mnemonicParsing="false" onAction="#onClickOperational" prefWidth="125.0" text="Operational" />
                                           <Button layoutX="493.0" layoutY="239.0" mnemonicParsing="false" prefWidth="125.0" text="Bootstrap" />
                                           <Button layoutX="493.0" layoutY="281.0" mnemonicParsing="false" prefWidth="125.0" text="Acknowledge" />
                                           <Label layoutX="26.0" layoutY="200.0" text="Requested State" />
-                                          <TextField layoutX="278.0" layoutY="195.0" />
+                                          <TextField fx:id="fxReqestStateField" layoutX="278.0" layoutY="195.0" />
                                           <Label layoutX="26.0" layoutY="325.0" text="DL Status" />
                                           <Label layoutX="26.0" layoutY="366.0" text="AL Status Code and Description " />
                                           <Label layoutX="29.0" layoutY="402.0" text="Online Position" />

@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
 
@@ -234,6 +235,9 @@ public class RootLayoutController implements RealTimeEventListener {
 	@FXML
 	private void initialize() {
 
+		//서버상태 표시
+//		handleOffLine();
+		
 		this.nodeList = this.getDefaultNodeInfo();
 		this.realTimeTabMap = new HashMap<>();
 		this.tabMap = new HashMap<>();
@@ -246,10 +250,6 @@ public class RootLayoutController implements RealTimeEventListener {
 
 		CommandConst.DRIVER = this.nodeList.get(1).getValue();
 		fxDriverLabel.setText(CommandConst.DRIVER);
-
-		//서버상태 표시
-		handleOffLine();
-
 		this.fxIPComboBox.setItems(CommandConst.SERVO_IP_LIST);
 
 		//		contextMenu1.getItems().addAll(menuItemNew, menuItemOpen,menuItemSave, menuItemClear, menuItemAddDriver, menuItemAddController);	
@@ -300,6 +300,8 @@ public class RootLayoutController implements RealTimeEventListener {
 		this.setControllerTree();
 		this.addTerminalPane();
 		this.selectMainTabPane();
+		
+		this.setDriverID(); //2018.11.08-> 서버를 클라이언트가 실행하지 않는것으로 변경이 되어서 hal 변수가 설정하도록 요청한다. 
 	}   
 
 
@@ -325,14 +327,18 @@ public class RootLayoutController implements RealTimeEventListener {
 
 		for(int i=0;i<size;i++) {
 			if(CommandConst.DRIVER_MAP.containsKey(CommandConst.driverList.get(i))) {
-				String command = CommandConst.SET_ACTUAL_POSITION.replace("Driver", String.valueOf(CommandConst.DRIVER_MAP.get(CommandConst.driverList.get(i))));
+//				String command = CommandConst.SET_ACTUAL_POSITION.replace("Driver", String.valueOf(CommandConst.DRIVER_MAP.get(CommandConst.driverList.get(i))));
+				//현재 드라이버 번호보다 -1을 작게 인식을한다... 
+				String command = CommandConst.SET_ACTUAL_POSITION.replace("Driver", String.valueOf(i));
 				NetworkServerManager.setDriverIDSet(command);
 			}
 		}
 
 		for(int i=0;i<size;i++) {
 			if(CommandConst.DRIVER_MAP.containsKey(CommandConst.driverList.get(i))) {
-				String command = CommandConst.SET_TARGET_POSITION.replace("Driver", String.valueOf(CommandConst.DRIVER_MAP.get(CommandConst.driverList.get(i))));
+//				String command = CommandConst..replace("Driver", String.valueOf(CommandConst.DRIVER_MAP.get(CommandConst.driverList.get(i))));
+				//현재 드라이버 번호보다 -1을 작게 인식을한다... 
+				String command = CommandConst.SET_TARGET_POSITION.replace("Driver", String.valueOf(i));
 				NetworkServerManager.setDriverIDSet(command);
 			}
 		}
@@ -343,7 +349,17 @@ public class RootLayoutController implements RealTimeEventListener {
 				NetworkServerManager.setDriverIDSet(command);
 			}
 		}
-
+		
+		//Motor OffSet HAL변수를 할당한다.
+		for(int i=0;i<size;i++) {
+			if(CommandConst.DRIVER_MAP.containsKey(CommandConst.driverList.get(i))) {
+//				String command = CommandConst.SET_MOTOR_OFFSET.replace("Driver", String.valueOf(CommandConst.DRIVER_MAP.get(CommandConst.driverList.get(i))));
+				//현재 드라이버 번호보다 -1을 작게 인식을한다... 
+				String command = CommandConst.SET_MOTOR_OFFSET.replace("Driver", String.valueOf(i));
+				NetworkServerManager.setDriverIDSet(command);
+			}
+		}
+		
 		boolean result = NetworkServerManager.openSocket();
 		//실시간 정보를 요청한다.
 		if(result) {
@@ -393,7 +409,6 @@ public class RootLayoutController implements RealTimeEventListener {
 					}
 					tabMap.remove(tab.getId());
 				}
-
 				if(realTimeTabMap.containsKey(tab.getId())){
 					realTimeTabMap.remove(tab.getId());
 				}
@@ -507,10 +522,10 @@ public class RootLayoutController implements RealTimeEventListener {
 		}
 	}
 
+	//실시간정보가 필요한 화면은 Hash
 	public void putControllerMap(String key, Object controller) {
 		this.realTimeTabMap.put(key, controller);
 	}
-
 
 	public void addButtonPane() {
 		try {
@@ -694,10 +709,10 @@ public class RootLayoutController implements RealTimeEventListener {
 							}
 						}
 						else {
-							CommandConst.isController = false;
-							CommandConst.DRIVER_NUMBEER = i-1;
-							System.out.println(Tag+"Driver Select Number =="+ CommandConst.DRIVER_NUMBEER);
 							CommandConst.DRIVER = item.getValue();
+							int number = CommandConst.driverList.indexOf(CommandConst.DRIVER)+1;
+							CommandConst.DRIVER_NUMBEER = number;
+							System.out.println(Tag+"Driver Select Number =="+ CommandConst.DRIVER_NUMBEER);							
 							fxDriverLabel.setText(CommandConst.DRIVER);
 							if(this.mainApp.listener!=null) {
 								System.out.println("Driver Select == Listener");
@@ -715,10 +730,11 @@ public class RootLayoutController implements RealTimeEventListener {
 						}
 						//EtherCAT 정보화면이 아닌경우 선택 드라이버로 label를 변경한다.
 						else {
-							CommandConst.DRIVER_NUMBEER = i-1;
 							CommandConst.DRIVER = item.getValue();
+							int number = CommandConst.driverList.indexOf(CommandConst.DRIVER)+1;
+							CommandConst.DRIVER_NUMBEER = number;
+							System.out.println(Tag+"Driver Select Number =="+ CommandConst.DRIVER_NUMBEER);							
 							fxDriverLabel.setText(CommandConst.DRIVER);
-
 							if(this.mainApp.listener!=null) {
 								System.out.println("Driver Select == Listener");
 								System.out.println(Tag+"Driver Select Number =="+ CommandConst.DRIVER_NUMBEER);
@@ -822,7 +838,7 @@ public class RootLayoutController implements RealTimeEventListener {
 		alert.setHeaderText("AddDriver");
 		Optional<ButtonType> result = alert.showAndWait(); 		
 		if ((result.isPresent()) && (result.get() == foo)) { 
-			int count = CommandConst.driverList.size();
+			int count = CommandConst.driverList.size()+1;
 			String name = "Driver"+count;
 			CommandConst.driverList.add(name);
 			CommandConst.DRIVER_MAP.put(name, String.valueOf(count)); // Map에도 추가한다.
@@ -848,7 +864,8 @@ public class RootLayoutController implements RealTimeEventListener {
 			CommandConst.driverList.remove(selectedName);
 			CommandConst.DRIVER_MAP.remove(selectedName); //Map에서도 삭제한다.
 			this.nodeList.clear();
-			this.nodeList = getDefaultNodeInfo();
+//			this.nodeList = getDefaultNodeInfo();
+			this.nodeList = this.getUpdateNodeInfo();
 			this.setTree();	
 		}
 
@@ -884,6 +901,7 @@ public class RootLayoutController implements RealTimeEventListener {
 	//모터에 연결된 EtherCAT정보를 업데이트한다.
 	private void handleAutoScan() {
 		this.initializeNew();
+		CommandConst.isEtherCAT = true;
 		mainApp.EtherCATMaster();
 	}
 
@@ -1158,7 +1176,8 @@ public class RootLayoutController implements RealTimeEventListener {
 
 		try {
 			if(this.fxOnLineRadioMenuItem.isSelected()) {
-				runtime.exec("/bin/bash /usr/bin/linuxcnc /home/jscs1/linuxcnc/configs/pmac/pmac_justek_disp.ini");
+//				runtime.exec("/bin/bash /usr/bin/linuxcnc /home/jscs1/linuxcnc/configs/pmac/pmac_justek_disp.ini");
+				runtime.exec("/bin/bash /usr/bin/linuxcnc /home/jmac/linuxcnc/configs/pmac/pmac_justek.ini");
 
 				try {
 					Thread.sleep(5000);
@@ -1320,11 +1339,28 @@ public class RootLayoutController implements RealTimeEventListener {
 		TreeItem<String> nodeA = new TreeItem<>("Controller");
 		nodes.add(nodeA);
 
-		for(String value :CommandConst.DRIVER_MAP.keySet()) {
-			TreeItem<String> node = new TreeItem<>(value);
-			nodes.add(node);
 
+		ArrayList keyList = new ArrayList(CommandConst.DRIVER_MAP.keySet());
+		
+		for (int i = keyList.size() - 1; i >= 0; i--) {
+			//get key
+			String key = (String) keyList.get(i);
+			System.out.println("Key :: " + key);
+			//get value corresponding to key
+			String value = CommandConst.DRIVER_MAP.get(key);
+			System.out.println("Value :: " + value);
+			System.out.println("--------------------------------");
+			TreeItem<String> node = new TreeItem<>(key);
+			nodes.add(node);
 		}
+
+
+		
+//		for(String value :CommandConst.DRIVER_MAP.keySet().iterator()) {
+//			TreeItem<String> node = new TreeItem<>(value);
+//			nodes.add(node);
+
+//		}	
 		//		TreeItem<String> node3 = new TreeItem<>("EL9800");
 		//		nodes.add(node3);
 		return nodes;
@@ -1419,10 +1455,6 @@ public class RootLayoutController implements RealTimeEventListener {
 			Socket socketClient = new Socket(CommandConst.address, 12345);
 
 			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socketClient.getOutputStream()));
-
-			//			for(int i=1;i<=CommandConst.driverList.size();i++) {
-			//				writer.write("#"+String.valueOf(i)+"k\r\n");
-			//			}
 			writer.write("estop\r\n");
 			writer.flush();
 
@@ -1442,7 +1474,7 @@ public class RootLayoutController implements RealTimeEventListener {
 //		this.nodeList.add(node3);
 		treeView.setRoot(root);
 
-		CommandConst.DRIVER = this.nodeList.get(1).getValue();
+		CommandConst.DRIVER = CommandConst.driverList.get(0);
 	}
 
 	public  void setAxisTree() {
@@ -1543,8 +1575,4 @@ public class RootLayoutController implements RealTimeEventListener {
 	public void setSystemConfigPane(TabPane systemConfigPane) {
 		this.systemConfigPane = systemConfigPane;
 	}
-
-
-
-
 }

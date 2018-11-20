@@ -1,4 +1,4 @@
-package justek.ide.chart.data;
+package justek.ide.model;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,16 +11,10 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.text.NumberFormat;
-import java.util.prefs.Preferences;
 
 import com.supinan.util.timer.SupinanTimer;
 
-import justek.ide.MainApp;
-import justek.ide.model.CommandConst;
-import justek.ide.model.TriggerChartThread;
-import justek.ide.model.TriggerInfo;
 import justek.ide.model.listener.TriggerEventListener;
-import justek.ide.model.manager.DialogManager;
 
 public class GraphTriggerData implements TriggerEventListener {
 
@@ -48,14 +42,13 @@ public class GraphTriggerData implements TriggerEventListener {
 
 	public void setTriggerInfo(TriggerInfo info,int dirNo,TriggerEventListener listener) {
 		this.triggerInfo = info;
-//		this.dirNo = dirNo-1;
-		this.dirNo = dirNo; //Driver Num 가 변경되어 수정 (2018.06.27)
+		this.dirNo = dirNo-1;
 		this.listener = listener;
 	}
 	
 	public void checkFile() {
 		
-		if(CommandConst.isWindow) return;
+		if(CommandConst.DEBUG) return;
 		
 //		File folder = new File("./motionware/motion_server/pdata/");
 		File folder = new File("./pdata/");
@@ -65,22 +58,22 @@ public class GraphTriggerData implements TriggerEventListener {
 	}
 	
 	public void runLogProcess() {
-		if(!CommandConst.isWindow) {
+		if(!CommandConst.DEBUG) {
 
-//			timer = new SupinanTimer();
-//			thread = TriggerChartThread.getInstance(2000,"Trigger",String.valueOf(this.dirNo));
-//			thread.fileCount=0;
-//			thread.addListener(this);
-//			thread.setTriggerInfo(this.triggerInfo);
-//			this.threadId = timer.addTimer(thread);
+			timer = new SupinanTimer();
+			thread = TriggerChartThread.getInstance(5000,"Trigger",String.valueOf(this.dirNo));
+			thread.fileCount=0;
+			thread.addListener(this);
+			thread.setTriggerInfo(this.triggerInfo);
+			this.threadId = timer.addTimer(thread);
 			
-//			this.execTrigger(); -> 2018.08.02 수정이후 필용성이 엇어짐.. 
+			this.execTrigger();
 			
 			Runtime runtime = Runtime.getRuntime();
 			try {
-//				Process process = runtime.exec("/home/jscs1/justek_motionware/motionware/motion_server/log_proc2");
-				Process process = runtime.exec("/home/jscs1/works/xlogproc.sh "+this.triggerInfo.getResolution()+" 2");
-//				Process process = runtime.exec("/home/jscs1/works/logproc.sh "+this.triggerInfo.getResolution());
+				Process process = runtime.exec("/home/jscs1/justek_motionware/motionware/motion_server/log_proc2");
+//				Process process = runtime.exec("ls -lt");
+//				BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
 				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -102,28 +95,6 @@ public class GraphTriggerData implements TriggerEventListener {
 		}
 	}
 	
-	public void stopLogProcess() {
-		
-		if(CommandConst.DEBUG) {
-			return;
-		}
-		
-		if(!CommandConst.isWindow) {
-			Runtime runtime = Runtime.getRuntime();
-			try {
-				Process process = runtime.exec("/home/jscs1/justek_motionware/getTriggerData/stopGetTriggerData.sh");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		else {
-			DialogManager.getInstance().showServerErrorConfirmDialog("Trigger Stop");
-		}
-	}
-	
-	
-	//Not Use(since 2018.08.02)
 	public void execTrigger() {
 		try {
 			Socket socketClient = new Socket(CommandConst.address, 12345);
@@ -158,7 +129,7 @@ public class GraphTriggerData implements TriggerEventListener {
 	}
 	
 	public void runLogProcess(String recordTime,String resolution) {
-		if(!CommandConst.isWindow) {
+		if(!CommandConst.DEBUG) {
 
 			timer = new SupinanTimer();
 			thread = TriggerChartThread.getInstance(5000,"Trigger",String.valueOf(this.dirNo));
@@ -184,14 +155,14 @@ public class GraphTriggerData implements TriggerEventListener {
 	}
 	
 	public boolean checkOutFileExists(String fileName) {
-//		this.fileCount = this.thread.fileCount-1;
-//		this.fileName = fileName;
+		this.fileCount = this.thread.fileCount-1;
+		this.fileName = fileName;
 		boolean result = false;
-		File file = new File("./log_trace.1");
+		File file = new File(fileName);
 		if(file.exists()) {
 			result = true;
 		}
-		return  result;
+		return result;
 	}
 	
 	public void checkChartFile() {
@@ -310,11 +281,6 @@ public class GraphTriggerData implements TriggerEventListener {
 		boolean result = false;
 		System.out.println("checkTrigger");
 
-        Preferences prefs = Preferences.userNodeForPackage(MainApp.class);
-        double MotorOffset =   Double.valueOf(prefs.get("OFFSET_"+dirNo, null));
-        
-		this.fileName = "./home/trigger/trigger.txt"; //임의로 강제 입력해준다..수정해야함...
-		
 		String slope =this.triggerInfo.getSlope();
 		double level = Double.parseDouble(this.triggerInfo.getLevel());
 		
@@ -362,20 +328,21 @@ public class GraphTriggerData implements TriggerEventListener {
 				int record_count=0;
 				while((line = reader.readLine()) != null){
 					parsingList = line.split(" ");
-					System.out.println("checkTrigger :: "+line);
+					System.out.println("checkTrigger"+line);
 					
 					record_count++;
 					if(Integer.parseInt(parsingList[0])==dirNo) {
 //						pre_target_pos = Double.parseDouble(parsingList[2]);
 //						pre_actual_pos =  Double.parseDouble(parsingList[3]);
 //						pre_actual_vel =  Double.parseDouble(parsingList[4]);
-						pre_value=Double.parseDouble(parsingList[offset])-MotorOffset;
+						pre_value=Double.parseDouble(parsingList[offset]);
 						pre_errPos = Double.parseDouble(parsingList[5])-Double.parseDouble(parsingList[2]);
 						break;
 					}
 				}
 					
 				while((line = reader.readLine()) != null){
+//					System.out.println("checkTrigger 2=="+line);
 					parsingList = line.split(" ");
 					record_count++;
 
@@ -392,7 +359,7 @@ public class GraphTriggerData implements TriggerEventListener {
 						if(this.triggerInfo.getSource().equals("PositionError")){
 							if(slope.equals(CommandConst.POSITIVE_EDGE) && pre_errPos<level && cur_errPos>level || 
 									slope.equals(CommandConst.NEGATIVE_EDGE) && pre_errPos>level && cur_errPos<level) {
-//								System.out.println("Trigger Event Occured_2 pre_errPos =="+pre_errPos+" cur_errPos =="+cur_errPos);
+								System.out.println("Trigger Event Occured_2 pre_errPos =="+pre_errPos+" cur_errPos =="+cur_errPos);
 								this.readData(this.dirNo, record_count,fileName,offset);
 								result = true;
 								break;
@@ -432,8 +399,7 @@ public class GraphTriggerData implements TriggerEventListener {
 	}
 	
 	public void readData(int dirNo, int record_count,String fileName,int offSet) {
-		        	    
-		System.out.println("GraphTriggerData readData");
+		System.out.println("GraphTriggerData File Save");
 		int bf_fileCount = this.fileCount-1;
 		int af_fileCcount = this.fileCount+1;
 		
@@ -441,17 +407,14 @@ public class GraphTriggerData implements TriggerEventListener {
 		int resolution= Integer.parseInt(this.triggerInfo.getResolution());
 		int duration = Integer.parseInt(this.triggerInfo.getRecordTime());
 		int delay =Integer.parseInt(this.triggerInfo.getDelay());// delay
-		int record_per_file = 10000*2*2;
-//		int record_per_file = duration * 1000 / resolution * 3;
+		int record_per_file = duration * 1000 / resolution * 3;
 		
 		int bf_count=0;
 		int af_count=0;
-//		int start_count= record_count -  delay/resolution*3;
-//		int end_count = start_count + duration *1000 /resolution * 3  ;		
-		int start_count= record_count - delay*2;
-		int end_count = 10000*2*2 ; //현재는 모든 파일이 10000개씩 고정으로 저장된
+		int start_count= record_count -  delay/resolution*3;
+		int end_count = start_count + duration *1000 /resolution * 3  ;
 		
-		System.out.println("GraphTriggerData =start_count "+start_count/2);
+		System.out.println("GraphTriggerData =start_count "+start_count);
 		System.out.println("GraphTriggerData =resolution "+resolution);
 		System.out.println("GraphTriggerData =duration "+duration);
 		System.out.println("GraphTriggerData =delay "+delay);
@@ -484,20 +447,20 @@ public class GraphTriggerData implements TriggerEventListener {
 		String line =null;
 		
 //		Acceleration","PositionError","TargetPosition", "ActualPosition","TargetVelocity","ActualVelocity
-		File actual_pos_file = new File("./home/trigger/"+CommandConst.chartList.get(3)+".txt");
+		File actual_pos_file = new File("./home/"+CommandConst.chartList.get(3)+".txt");
 		if(actual_pos_file.exists()) actual_pos_file.delete();
 		
-		File target_pos_file = new File("./home/trigger/"+CommandConst.chartList.get(2)+".txt");
-		File actual_vel_file = new File("./home/trigger/"+CommandConst.chartList.get(5)+".txt");
-		File err_pos_file = new File("./home/trigger/"+CommandConst.chartList.get(1)+".txt");
-		File target_vel_file = new File("./home/trigger/"+CommandConst.chartList.get(4)+".txt");
-		File target_acc_file = new File("./home/trigger/"+CommandConst.chartList.get(0)+".txt");
+		File target_pos_file = new File("./home/"+CommandConst.chartList.get(2)+".txt");
+		File actual_vel_file = new File("./home/"+CommandConst.chartList.get(5)+".txt");
+		File err_pos_file = new File("./home/"+CommandConst.chartList.get(1)+".txt");
+		File target_vel_file = new File("./home/"+CommandConst.chartList.get(4)+".txt");
+		File target_acc_file = new File("./home/"+CommandConst.chartList.get(0)+".txt");
 		
-		int target_pos = 0;
-		int actual_pos = 0;
-		int actual_vel = 0;
-		int target_vel = 0;
-		int target_acc = 0;
+		double target_pos = 0;
+		double actual_pos = 0;
+		double actual_vel = 0;
+		double target_vel = 0;
+		double target_acc = 0;
 		double err_pos=0;
 		
 		String[] parsingList;
@@ -527,18 +490,18 @@ public class GraphTriggerData implements TriggerEventListener {
 					if((line = br.readLine()) != null){
 						parsingList = line.split(" ");
 						if(Integer.parseInt(parsingList[0])==dirNo) {
-							target_pos =Integer.parseInt(parsingList[2]);
-							actual_pos = Integer.parseInt(parsingList[5]);
-							actual_vel =  Integer.parseInt(parsingList[6]);
-							target_vel = Integer.parseInt(parsingList[3]);
-							target_acc = Integer.parseInt(parsingList[4]);
+							target_pos =Double.parseDouble(parsingList[2]);
+							actual_pos = Double.parseDouble(parsingList[5]);
+							actual_vel =  Double.parseDouble(parsingList[6]);
+							target_vel = Double.parseDouble(parsingList[3]);
+							target_acc = Double.parseDouble(parsingList[4]);
 							err_pos =actual_pos-target_pos;
 
-							target_pos_out.write(Integer.toString(target_pos)+"\n");
-							actual_pos_out.write(Integer.toString(actual_pos)+"\n");
-							actual_vel_out.write(Integer.toString(actual_vel)+"\n");
-							target_vel_out.write(Integer.toString(target_vel)+"\n");
-							target_acc_out.write(Integer.toString(target_acc)+"\n");
+							target_pos_out.write(Double.toString(target_pos)+"\n");
+							actual_pos_out.write(Double.toString(actual_pos)+"\n");
+							actual_vel_out.write(Double.toString(actual_vel)+"\n");
+							target_vel_out.write(Double.toString(target_vel)+"\n");
+							target_acc_out.write(Double.toString(target_acc)+"\n");
 							err_pos_out.write(Double.toString(err_pos)+"\n");
 						}
 					}
@@ -560,18 +523,18 @@ public class GraphTriggerData implements TriggerEventListener {
 					if((line = br.readLine()) != null){
 						parsingList = line.split(" ");
 						if(Integer.parseInt(parsingList[0])==dirNo) {
-							target_pos =Integer.parseInt(parsingList[2]);
-							actual_pos = Integer.parseInt(parsingList[5]);
-							actual_vel =  Integer.parseInt(parsingList[6]);
-							target_vel = Integer.parseInt(parsingList[3]);
-							target_acc = Integer.parseInt(parsingList[4]);
+							target_pos =Double.parseDouble(parsingList[2]);
+							actual_pos = Double.parseDouble(parsingList[5]);
+							actual_vel =  Double.parseDouble(parsingList[6]);
+							target_vel = Double.parseDouble(parsingList[3]);
+							target_acc = Double.parseDouble(parsingList[4]);
 							err_pos =actual_pos-target_pos;
 
-							target_pos_out.write(Integer.toString(target_pos)+"\n");
-							actual_pos_out.write(Integer.toString(actual_pos)+"\n");
-							actual_vel_out.write(Integer.toString(actual_vel)+"\n");
-							target_vel_out.write(Integer.toString(target_vel)+"\n");
-							target_acc_out.write(Integer.toString(target_acc)+"\n");
+							target_pos_out.write(Double.toString(target_pos)+"\n");
+							actual_pos_out.write(Double.toString(actual_pos)+"\n");
+							actual_vel_out.write(Double.toString(actual_vel)+"\n");
+							target_vel_out.write(Double.toString(target_vel)+"\n");
+							target_acc_out.write(Double.toString(target_acc)+"\n");
 							err_pos_out.write(Double.toString(err_pos)+"\n");
 						}
 					}
@@ -590,18 +553,18 @@ public class GraphTriggerData implements TriggerEventListener {
 						parsingList = line.split(" ");
 						
 						if(Integer.parseInt(parsingList[0])==dirNo) {
-							target_pos =Integer.parseInt(parsingList[2]);
-							actual_pos = Integer.parseInt(parsingList[5]);
-							actual_vel =  Integer.parseInt(parsingList[6]);
-							target_vel = Integer.parseInt(parsingList[3]);
-							target_acc = Integer.parseInt(parsingList[4]);
+							target_pos =Double.parseDouble(parsingList[2]);
+							actual_pos = Double.parseDouble(parsingList[5]);
+							actual_vel =  Double.parseDouble(parsingList[6]);
+							target_vel = Double.parseDouble(parsingList[3]);
+							target_acc = Double.parseDouble(parsingList[4]);
 							err_pos =actual_pos-target_pos;
 
-							target_pos_out.write(Integer.toString(target_pos)+"\n");
-							actual_pos_out.write(Integer.toString(actual_pos)+"\n");
-							actual_vel_out.write(Integer.toString(actual_vel)+"\n");
-							target_vel_out.write(Integer.toString(target_vel)+"\n");
-							target_acc_out.write(Integer.toString(target_acc)+"\n");
+							target_pos_out.write(Double.toString(target_pos)+"\n");
+							actual_pos_out.write(Double.toString(actual_pos)+"\n");
+							actual_vel_out.write(Double.toString(actual_vel)+"\n");
+							target_vel_out.write(Double.toString(target_vel)+"\n");
+							target_acc_out.write(Double.toString(target_acc)+"\n");
 							err_pos_out.write(Double.toString(err_pos)+"\n");
 						}
 					}
@@ -618,162 +581,11 @@ public class GraphTriggerData implements TriggerEventListener {
 		fr.close();
 		
 		if(this.listener!=null) {
-			System.out.println("찾아서 그래프를 그립니다.");
 			this.listener.SingleTriggerEvent(this.triggerInfo.getSource());
-		}
-		else {
-			System.out.println("못 찾아서 그래프를 못 그립니다.");
 		}
 		
 		}catch(IOException e) {
 			e.printStackTrace(); 
-		}
-	}
-	
-	/**
-	 * User가 Acceleration","PositionError","TargetPosition", "ActualPosition","TargetVelocity","ActualVelocity"의 정보 수집을 위한
-	 * 프로그램 실행을 종료시 위 5가지의 정보를 각각의 파일로 저장한다.
-	 * @author : YOO YOUNGOK 
-	 * @method  saveData
-	 * @param dirNo String -> Driver Number
-	 * @return  void
-	 * @exception  IOException
-	 * @see
-	 * @since 2018. 6. 26.
-	 */
-	public boolean saveData(int dirNo) {
-		
-        Preferences prefs = Preferences.userNodeForPackage(MainApp.class);
-        int MotorOffset =   Integer.valueOf(prefs.get("OFFSET_"+dirNo, null));
-        
-		
-		System.out.println("Chart File Save = "+ dirNo);
-
-//		File mfile = new File("/home/jscs1/works/log_trace.1");
-		File mfile = new File("./log_trace.1");
-		
-		if(CommandConst.DEBUG) {
-			mfile = new File("./home/log_trace.1");
-		}
-		
-		BufferedReader br;
-		FileReader fr = null; 
-		String line =null;
-
-		//		Acceleration","PositionError","TargetPosition", "ActualPosition","TargetVelocity","ActualVelocity
-		File posError_file = new File("./home/trigger/"+CommandConst.chartList.get(1)+".txt") ;// posion_error;
-		File acc_file = new File("./home/trigger/"+CommandConst.chartList.get(0)+".txt");
-		File actual_pos_file = new File("./home/trigger/"+CommandConst.chartList.get(3)+".txt");
-		File target_pos_file = new File("./home/trigger/"+CommandConst.chartList.get(2)+".txt");
-		File target_vel_file = new File("./home/trigger/"+CommandConst.chartList.get(4)+".txt");
-		File actual_vel_file = new File("./home/trigger/"+CommandConst.chartList.get(5)+".txt");
-		File trigger_file = new File("./home/trigger/trigger.txt");
-
-		BufferedWriter acc_out;
-		BufferedWriter pos_out;
-		BufferedWriter target_pos_out;
-		BufferedWriter actual_pos_out;
-		BufferedWriter target_vel_out;
-		BufferedWriter actual_vel_out;	
-		BufferedWriter trigger_out;
-		
-		if(mfile.exists()) {
-			System.out.println("log_trace.1 exists");
-			try{
-				fr = new FileReader(mfile); 
-				br = new BufferedReader(fr);
-
-				pos_out = new BufferedWriter(new FileWriter(posError_file));
-				acc_out = new BufferedWriter(new FileWriter(acc_file));
-				target_pos_out = new BufferedWriter(new FileWriter(target_pos_file));
-				actual_pos_out = new BufferedWriter(new FileWriter(actual_pos_file));
-				target_vel_out = new BufferedWriter(new FileWriter(target_vel_file));
-				actual_vel_out = new BufferedWriter(new FileWriter(actual_vel_file));
-				trigger_out = new BufferedWriter(new FileWriter(trigger_file));
-				
-				int ta_pos1 = 0;
-				int ta_pos2 = 0;
-				int ta_pos3 = 0;
-				int target_pos = 0;
-				int actual_pos = 0;
-				int err_pos = 0;
-				int accel = 0;
-
-				int actual_vel = 0;
-
-				
-				int ac_pos1 = 0;
-				int ac_pos2 = 0;
-				int ac_pos3 = 0;
-				
-				String[] parsingList;
-
-				int j = 0;
-				while((line = br.readLine()) != null){
-					System.out.println(" Save Data = "+line);
-					parsingList = line.split(" ");
-
-					if(Integer.parseInt(parsingList[0])==dirNo) {
-						target_pos = Integer.parseInt(parsingList[2])-MotorOffset;
-						actual_pos = Integer.parseInt(parsingList[3])-MotorOffset;
-//						actual_vel =  Integer.parseInt(parsingList[4]);
-
-						ta_pos1 = ta_pos2;
-						ta_pos2 = ta_pos3;
-						ta_pos3 = target_pos;
-						err_pos = actual_pos-target_pos; //error_position
-						accel = (ta_pos3-ta_pos2)-(ta_pos2-ta_pos1); //  T.Acc
-
-						ac_pos1 = ac_pos2;
-						ac_pos2 = ac_pos3;
-						ac_pos3 = actual_pos;
-						actual_vel = ac_pos3-ac_pos2;  // Actual Velocity 계산
-						
-						if(j<2) {
-							System.out.println("Accel Data parsingList[2]= "+parsingList[2]);
-							System.out.println("Accel Data ta_pos1= "+ ta_pos1);
-							System.out.println("Accel Data ta_pos2= "+ ta_pos2);
-							System.out.println("Accel Data ta_pos3= "+ ta_pos3);
-							System.out.println("Accel Data actual_vel = "+ actual_vel);
-						}
-						else {
-							target_pos_out.write(Integer.toString(target_pos)+"\n");
-							actual_pos_out.write(Integer.toString(actual_pos)+"\n");
-							actual_vel_out.write(Integer.toString(actual_vel)+"\n"); // Actual Velocity
-							target_vel_out.write(Integer.toString(ta_pos3-ta_pos2)+"\n"); // Target Velocity
-							acc_out.write(Integer.toString(accel)+"\n");
-							pos_out.write(Double.toString(err_pos)+"\n");
-							trigger_out.write(parsingList[0]+" "+parsingList[1]+" "+Integer.toString(target_pos)+" "
-											  +Integer.toString(ta_pos3-ta_pos2)+" "+Integer.toString(accel)+" "+Integer.toString(actual_pos) +" "+Integer.toString(actual_vel)+"\n");
-							
-						}
-
-						j++;
-						
-					}
-				}
-
-				pos_out.close();
-				acc_out.close();
-				target_pos_out.close();
-				actual_pos_out.close();
-				actual_vel_out.close();
-				target_vel_out.close();
-				trigger_out.close();
-				
-				fr.close();
-				
-				return true;
-				
-			}catch(IOException e) {
-				e.printStackTrace(); 
-				return false;
-			}
-		}
-		else {
-			System.out.println("LogTrace.1. Not exsits");
-			DialogManager.getInstance().showServerErrorConfirmDialog("수집된 정보가 없습니다.");
-			return false;
 		}
 	}
 	
@@ -857,98 +669,6 @@ public class GraphTriggerData implements TriggerEventListener {
 //		}
 //	}
 	
-//	public void makeTriggerFile() {
-//		
-//		System.out.println("Chart File Save");
-//
-//		File mfile = new File("/home/jscs1/works/log_trace.1");
-//		
-//		if(CommandConst.DEBUG) {
-//			mfile = new File("./home/log_trace.1");
-//		}
-//		
-//		BufferedReader br;
-//		FileReader fr = null; 
-//		String line =null;
-//		
-//		File result_file = new File("./home/trigger/Trigger.txt");
-//		
-//		if(mfile.exists()) {
-//			System.out.println("etherCAT.out exists");
-//			try{
-//				fr = new FileReader(mfile); 
-//				br = new BufferedReader(fr);
-//
-//
-//				int ta_pos1 = 0;
-//				int ta_pos2 = 0;
-//				int ta_pos3 = 0;
-//				int target_pos = 0;
-//				int actual_pos = 0;
-//				int err_pos = 0;
-//				int accel = 0;
-//
-//				int actual_vel = 0;
-//
-//				
-//				int ac_pos1 = 0;
-//				int ac_pos2 = 0;
-//				int ac_pos3 = 0;
-//				
-//				String[] parsingList;
-//
-//				int j = 0;
-//				while((line = br.readLine()) != null){
-//					parsingList = line.split(" ");
-//
-//					
-//						target_pos = Integer.parseInt(parsingList[2]);
-//						actual_pos = Integer.parseInt(parsingList[3]);
-//						actual_vel =  Integer.parseInt(parsingList[4]);
-//
-//						ta_pos1 = ta_pos2;
-//						ta_pos2 = ta_pos3;
-//						ta_pos3 = target_pos;
-//						err_pos = actual_pos-target_pos; //error_position
-//						accel = (ta_pos3-ta_pos2)-(ta_pos2-ta_pos1); //  T.Acc
-//
-//						ac_pos1 = ac_pos2;
-//						ac_pos2 = ac_pos3;
-//						ac_pos3 = actual_pos;
-//						actual_vel = ac_pos2-ac_pos1;  // Actual Velocity 계
-//						
-//						if(j<2) {
-//							System.out.println("Accel Data parsingList[2]= "+parsingList[2]);
-//							System.out.println("Accel Data ta_pos1= "+ ta_pos1);
-//							System.out.println("Accel Data ta_pos2= "+ ta_pos2);
-//							System.out.println("Accel Data ta_pos3= "+ ta_pos3);
-//							System.out.println("Accel Data actual_vel = "+ actual_vel);
-//						}
-//						else {
-////							target_pos_out.write(Integer.toString(target_pos)+"\n");
-////							actual_pos_out.write(Integer.toString(actual_pos)+"\n");
-////							actual_vel_out.write(Integer.toString(actual_vel)+"\n"); // Actual Velocity
-////							target_vel_out.write(Integer.toString(ta_pos2-ta_pos1)+"\n"); // Target Velocity
-////							acc_out.write(Integer.toString(accel)+"\n");
-////							pos_out.write(Double.toString(err_pos)+"\n");
-//						}
-//
-//						j++;
-//						
-//				}
-//
-//
-//				fr.close();
-//				System.out.println("트리거 데이터 저장 완료");
-//			}catch(IOException e) {
-//				e.printStackTrace(); 
-//			}
-//		}
-//		else {
-//			System.out.println("etherCAT.out Not exsits");
-//			DialogManager.getInstance().showServerErrorConfirmDialog("수집된 정보가 없습니다.");
-//		}
-//	}
 
 	@Override
 	public void NormalTriggerEvent(String Source) {
@@ -961,17 +681,12 @@ public class GraphTriggerData implements TriggerEventListener {
 		// TODO Auto-generated method stub
 		System.out.println("ChartTriggerData SingleTriggerEvent");
 		this.timer.removeTimer(this.threadId);
-		System.out.println(Tag+":: ChartTriggerData SingleTriggerEvent removeTimer");
-//		this.timer.closeTimer();
-		
-		this.fileName = "./home/trigger/trigger.txt";
-		
-		boolean result = this.checkTrigger(); //-> Tigger조건에 맞는 데이터가 없는경우와 있는경우 구분
-//		if(!result) {
-//			if(this.thread.fileCount<10) {
-//				System.out.println("ChartTriggerData SingleTriggerEvent FileCount ##"+this.thread.fileCount);
-//				this.threadId = this.timer.addTimer(this.thread);
-//			}
-//		}
+		boolean result = this.checkTrigger();
+		if(!result) {
+			if(this.thread.fileCount<10) {
+				System.out.println("ChartTriggerData SingleTriggerEvent FileCount ##"+this.thread.fileCount);
+				this.threadId = this.timer.addTimer(this.thread);
+			}
+		}
 	}
 }

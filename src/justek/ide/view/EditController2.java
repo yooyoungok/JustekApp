@@ -125,14 +125,16 @@ public class EditController2 {
 	 */
 	private void checkPlcStatus() {
 		this.plcList = NetworkServerManager.getInstance().checkAllPlcFile();
-		if(this.plcList==null) return;
-		
-		for(String value : plcList) {
-			String[] parsing = value.split(" "); // [.../10.plc R] 의 형태로..제공됨
-			String[] plcName = parsing[0].split("/");
-			String name = plcName[plcName.length-1];
-			System.out.println(Tag+"======== checkPlcStatus = name");
-			this.plcMap.put(name, parsing[1]);
+		if(this.plcList!=null) {
+			for(String value : plcList) {
+				String[] parsing = value.split(" "); // [.../10.plc R] 의 형태로..제공됨
+				String[] plcName = parsing[parsing.length-3].split("/");
+				String name = plcName[plcName.length-1];
+				System.out.println(Tag+"======== checkPlcStatus plc name == "+name);
+				System.out.println(Tag+"======== checkPlcStatus == "+parsing.length);
+				System.out.println(Tag+"======== checkPlcStatus == "+parsing[parsing.length-1]);
+				this.plcMap.put(name,parsing[parsing.length-1]);
+			}
 		}
 		
 		this.setHomeTableView();
@@ -392,12 +394,12 @@ public class EditController2 {
 
 		//		 fileChooser.setInitialDirectory(new File(System.getProperty("./home/")));
 
-		fileChooser.setInitialDirectory(new File("./home/"));
+		fileChooser.setInitialDirectory(new File("/home/jscs1/linuxcnc/configs/pmac/programs/"));
 
 		fileChooser.getExtensionFilters().clear();
 		// Add Extension Filters
 		fileChooser.getExtensionFilters().addAll(//
-				new FileChooser.ExtensionFilter("PLC", "*.plc")); //
+				new FileChooser.ExtensionFilter("PLC", "*.plc","PROG","*.prog")); //
 
 		File file = fileChooser.showOpenDialog(this.mainApp.getPrimaryStage());
 
@@ -420,25 +422,35 @@ public class EditController2 {
 		fileChooser.getExtensionFilters().clear();
 		// Add Extension Filters
 		fileChooser.getExtensionFilters().addAll(//
-				new FileChooser.ExtensionFilter("PLC", "*.plc")); //
+				new FileChooser.ExtensionFilter("PLC", "*.plc","PROG","*.prog")); //
 
 		Tab tab = this.tabPane.getSelectionModel().getSelectedItem();
 		TextArea content = (TextArea)tab.getContent();
-//		fileChooser.setInitialDirectory(new File("./home/"));
-		fileChooser.setInitialDirectory(new File("/home/jscs1/linuxcnc/configs/pmac/programs/"));
+		if(CommandConst.isWindow) {
+			fileChooser.setInitialDirectory(new File("./home/"));
+		}
+		else {
+			fileChooser.setInitialDirectory(new File("/home/jscs1/linuxcnc/configs/pmac/programs/"));
+		}
+		
 		File file = fileChooser.showSaveDialog(this.mainApp.getPrimaryStage());
 
-		System.out.println("addNode saveFileChoolser Item=="+file.getAbsolutePath());
-		if (file != null) {
-			if(tab.getId()!=null) {
-				saveTextToFile(content.getText().toString(),file);
-				this.openFile(file);
+		if(file!=null) {
+			System.out.println("addNode saveFileChoolser Item=="+file.getAbsolutePath());
+			if (file != null) {
+				if(tab.getId()!=null) {
+					saveTextToFile(content.getText().toString(),file);
+					this.openFile(file);
+				}
+				else {
+					saveTextToFile(content.getText().toString(),file);
+					tab.setText(file.getName());
+					tab.setId(file.getAbsolutePath());
+				}
 			}
-			else {
-				saveTextToFile(content.getText().toString(),file);
-				tab.setText(file.getName());
-				tab.setId(file.getAbsolutePath());
-			}
+		}
+		else {
+			System.out.println("저장을 위한 선택한 파일이 없습니다.");
 		}
 	}
 
@@ -482,6 +494,7 @@ public class EditController2 {
 		}
 	}
 
+	//저장할  Text의 내용을 파일에 입력한다.
 	private void saveTextToFile(String content, File file) {
 		try {
 			PrintWriter writer;
@@ -518,7 +531,17 @@ public class EditController2 {
 			writer.write(sendMsg);
 			writer.flush();
 
-			if(!runString.contains("plc")) {
+			if(runString.contains("ps")) {
+				serverMsg = reader.readLine();		
+				serverMsg = reader.readLine(); // 첫번재와 두번재는 확인하지 않아도 됨...		
+
+				while (!(serverMsg = reader.readLine()).isEmpty()) {
+					System.out.println(Tag+" : reponse ="+serverMsg);
+					this.consoleTextArea.appendText("\n Justek> "+serverMsg);
+				}
+
+			}
+			else if(!runString.contains("plc")) {
 				serverMsg = reader.readLine();
 				if(serverMsg!=null) {
 					System.out.println(serverMsg);

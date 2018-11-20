@@ -21,6 +21,9 @@ public class WatchNodeController {
 	private ComboBox<String> nameBox;
 	@FXML
 	private ComboBox<String> signalbox;
+    @FXML
+    private ComboBox<String> fxParamComboBox;
+    
 	@FXML
 	private TextField valueLabel;
 	@FXML
@@ -35,6 +38,9 @@ public class WatchNodeController {
 	@FXML
 	private void initialize() {
 		nameBox.setItems(CommandConst.driverList);
+		if (fxParamComboBox!=null) {
+			fxParamComboBox.setItems(CommandConst.PARAMETER_LIST);
+		}
 		this.setSignalBoxData();
 		this.valueLabel.setText(" ");
 	}
@@ -44,15 +50,40 @@ public class WatchNodeController {
 		for(String string:CommandConst.STATUS_LIST ) {
 			sdoValue.add(string);
 		}
-
-		for(ParamConstant.SDOVALUE env:ParamConstant.SDOVALUE.values() ) {
+		
+		for(ParamConstant.SDOVALUE env:ParamConstant.SDOVALUE.values()) {
 			System.out.println(env.name());
 			sdoValue.add(env.getValue());
 		}
-
 		this.signalbox.setItems(sdoValue);
 	}	
 
+	//WatchNode2-> 파라미터 선택에 따른 Signal정보 리스트를 업데이트한다.
+	public void setSignalBoxData(String parameterValue) {
+		
+		//업데이트전 현재의 리스트를 삭제한다.
+		this.signalbox.getItems().clear();
+		ObservableList<String> sdoValue =  FXCollections.observableArrayList();
+		sdoValue.clear();
+		if(parameterValue.equals("SDO")) {
+			for(ParamConstant.SDOVALUE env:ParamConstant.SDOVALUE.values() ) {
+//				System.out.println(env.name());
+				sdoValue.add(env.getValue());
+			}
+		}
+		else if(parameterValue.equals("PDO")) {
+			for(String string:CommandConst.STATUS_LIST ) {
+				sdoValue.add(string);
+			}
+		}
+		else if(parameterValue.equals("HALL")) {
+			for(String string:CommandConst.STATUS_LIST ) {
+				sdoValue.add(string);
+			}
+		}
+		this.signalbox.setItems(sdoValue);
+	}
+	
 	@FXML
 	void onClickCancel(ActionEvent event) {
 		if(this.listener!=null) {
@@ -61,9 +92,16 @@ public class WatchNodeController {
 		this.fxDeleteButton.setVisible(false);
 		this.nameBox.getSelectionModel().clearSelection();
 		this.signalbox.getSelectionModel().clearSelection();
+		this.fxParamComboBox.getSelectionModel().clearSelection();
 		this.valueLabel.setText("");
 	}
 
+    @FXML
+    void onClickAddSignal(ActionEvent event) {
+    	String parm = this.fxParamComboBox.getSelectionModel().getSelectedItem();
+    	this.setSignalBoxData(parm);
+    }
+    
 	public void addListener(WatchNodeListener listener) {
 		this.listener = listener;
 	}
@@ -105,7 +143,6 @@ public class WatchNodeController {
 				if(status!=null) {
 					this.valueLabel.setText(status);
 				}
-
 				return;
 			}
 			

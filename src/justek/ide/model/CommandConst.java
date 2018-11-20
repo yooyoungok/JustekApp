@@ -27,7 +27,7 @@ public class CommandConst {
 
 	public static String address = "192.168.1.207";
 //	public final static String address = "192.168.100.51";
-	public static boolean DEBUG = true;
+	public static boolean DEBUG = false;
 	public static boolean isWindow = false;
 	
 	public static boolean SYSTEM_CONFIG = false;
@@ -98,13 +98,13 @@ public class CommandConst {
 	public final static ObservableList<String> SINGLE_AXIS_FUNTION_OUT_LIST = FXCollections.observableArrayList("GP","PLIM","MLIM","HALL_U","HALL_V","HALL_W","FAULT");
 	
 	public static ObservableList<String> STATUS_LIST = FXCollections.observableArrayList(TP,AP,AV,PE,ST);
-	
+	public static ObservableList<String> PARAMETER_LIST = FXCollections.observableArrayList("SDO","PDO","HALL"); //WatchWindow의 Parameter 리스트
 	public final static ObservableList<String> TRIGGER_RLIST = FXCollections.observableArrayList("TargetPosition","ActualPosition","TargetVelocity","ActualVelocity","TargetAcceleration","PositionError","StatusParameter","UserParameter");
 	public static ObservableList<String> driverList = FXCollections.observableArrayList("Driver1", "Driver2");
 	public final static ObservableList<String> chartList = FXCollections.observableArrayList("TargetAcceleration","PositionError","TargetPosition", "ActualPosition","TargetVelocity","ActualVelocity");
 	
 	public final static ObservableList<String> RECORD_TIME_LIST = FXCollections.observableArrayList("10","20","300");
-	public final static ObservableList<String> RESOULTION_LIST = FXCollections.observableArrayList("1","2","4","5","10");
+	public final static ObservableList<String> RESOULTION_LIST = FXCollections.observableArrayList("1","2","4","8","10");
 	
 	
 	public final static ObservableList<Color> COLOR_LIST = FXCollections.observableArrayList(Color.cyan,Color.green,Color.MAGENTA,Color.DARK_GRAY);
@@ -140,8 +140,10 @@ public class CommandConst {
 	
 	/** Driver는 선택된 Driver 번호로 replace된다.*/
 	public final static String SET_DRIVER = "hDriver00->lcec.0.Driver.srv-status-word";
-	public final static String SET_ACTUAL_POSITION = "hDriver30->lcec.0.Driver.srv-pos-extenc";
-	public final static String SET_TARGET_POSITION = "hDriver20->lcec.0.Driver.srv-pos-cmd";
+//	public final static String SET_ACTUAL_POSITION = "hDriver30->lcec.0.Driver.srv-pos-fb";
+//	public final static String SET_TARGET_POSITION = "hDriver20->lcec.0.Driver.srv-pos-cmd";
+	public final static String SET_ACTUAL_POSITION = "hDriver30->axis.Driver.joint-pos-fb";
+	public final static String SET_TARGET_POSITION = "hDriver20->axis.Driver.joint-pos-cmd";
 	public final static String SET_TARGET_VELOCITY = "hDriver10->lcec.0.Driver.srv-vel-fb";
 	
 	/** Driver는 선택된 Driver 번호로 replace된다.*/
@@ -149,7 +151,10 @@ public class CommandConst {
 	public final static String GET_DRIVER_TARGET_POSITION = "hDriver20";
 	public final static String GET_DRIVER_ACTUAL_POSITION = "hDriver30";
 	public final static String GET_DRIVER_ACTUAL_VELOCITY = "hDriver10";
+	public final static String GET_MOTOR_OFFSET = "hDriver40";	
 
+	public final static String SET_MOTOR_OFFSET = "hDriver40->axis.Driver.motor-offset";
+	
 	/** ServerIP Array */
 	public final static ObservableList<String> SERVO_IP_LIST = FXCollections.observableArrayList("192.168.1.207","192.168.1.248");
 }

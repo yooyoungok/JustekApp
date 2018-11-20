@@ -3,6 +3,7 @@ package justek.ide.view;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -78,6 +79,12 @@ public class multiAxisComponent implements NodeRealDataUpdateListener {
 
 	@FXML
 	private CheckBox runHeldCheck;
+	
+    @FXML
+    private Button fxJogLeftButton;
+
+    @FXML
+    private Button fxJogRightButton;
 
 	//삭제를 위해서 Pane을 저장한다.
 	private VBox nodePane;
@@ -254,11 +261,16 @@ public class multiAxisComponent implements NodeRealDataUpdateListener {
 		if(this.runHeldCheck.isSelected()) {
 			if(this.isRunHeld) {
 				NetworkServerManager.stop(driverNo);
+				this.fxJogLeftButton.setStyle("-fx-background-color:\r\n" + 
+						"#000000,linear-gradient(#7ebcea, #2f4b8f), "
+						+ "linear-gradient(#426ab7, #263e75), "
+						+ "linear-gradient(#395cab, #223768);");
 				this.isRunHeld = false;
 			}
 			else {
 				String speed = StringUtil.removeCommna(this.fxSpeedField.getText());
 				if(speed!=null)  NetworkServerManager.handleJoggingLeft(driverNo, speed);
+				this.fxJogLeftButton.setStyle("-fx-background-color: red;");
 				this.isRunHeld = true;
 			}
 		}
@@ -278,12 +290,16 @@ public class multiAxisComponent implements NodeRealDataUpdateListener {
 		if(this.runHeldCheck.isSelected()) {
 			if(this.isRunHeld) {
 				NetworkServerManager.stop(driverNo);
-				
+				this.fxJogRightButton.setStyle("-fx-background-color:\r\n" + 
+						"#000000,linear-gradient(#7ebcea, #2f4b8f), "
+						+ "linear-gradient(#426ab7, #263e75), "
+						+ "linear-gradient(#395cab, #223768);");
 				this.isRunHeld = false;
 			}
 			else {
 				String speed = StringUtil.removeCommna(this.fxSpeedField.getText());
 				if(speed!=null)  NetworkServerManager.handleJoggingRight(driverNo, speed);
+				this.fxJogRightButton.setStyle("-fx-background-color: red;");
 				this.isRunHeld = true;
 			}
 		}

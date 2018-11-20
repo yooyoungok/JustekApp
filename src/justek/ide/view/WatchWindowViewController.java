@@ -68,7 +68,7 @@ public class WatchWindowViewController implements WatchNodeListener, RealTimeEve
         try {
             // Load the fxml file and create a new stage for the popup.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/WatchNode.fxml"));
+            loader.setLocation(MainApp.class.getResource("view/WatchNode2.fxml"));
             AnchorPane nodePane = (AnchorPane) loader.load();
             WatchNodeController controller = loader.getController();
             controller.addListener(this);
@@ -116,7 +116,7 @@ public class WatchWindowViewController implements WatchNodeListener, RealTimeEve
 	public void realTimeDataInfoEvent(RealTimeInfo Source) {
 //		System.out.println(Tag +" :: realTimeDataInfoEvent :: paneMap.size()=" + this.paneMap.size());
 		
-		System.out.println(Tag +" :: realTimeDataInfoEvent :: RealTimeInfo=" + Source.toString());
+//		System.out.println(Tag +" :: realTimeDataInfoEvent :: RealTimeInfo=" + Source.toString());
 		
 		String key = Source.DriverNo+"_"+CommandConst.AP;
 		if(this.paneMap.containsKey(key)) {
